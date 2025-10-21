@@ -1,0 +1,23 @@
+.type-icon {
+  height: 1em;
+  padding: 0 0.1em;
+  vertical-align: sub;
+}
+.type-infusion .type-icon {
+  filter: drop-shadow(0 0 0.15em #a10018);
+}
+.type-material .type-icon {
+  filter: drop-shadow(0 0 0.15em #dc7900);
+}
+.type-minion .type-icon {
+  filter: drop-shadow(0 0 0.15em #dcb24a);
+}
+.type-outpost .type-icon {
+  filter: drop-shadow(0 0 0.15em #5c9238);
+}
+.type-gateway .type-icon {
+  filter: drop-shadow(0 0 0.15em #5664b9);
+}
+.type-immortality .type-icon {
+  filter: drop-shadow(0 0 0.15em #754dac);
+}

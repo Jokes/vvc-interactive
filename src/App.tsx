@@ -1,38 +1,61 @@
 import { useState } from 'react'
-import iconInfusion from './assets/icon_infusion.svg'
-import iconMaterial from './assets/icon_material.svg'
-import iconMinion from './assets/icon_minion.svg'
-import iconOutpost from './assets/icon_outpost.svg'
-import iconGateway from './assets/icon_gateway.svg'
-import iconImmortality from './assets/icon_immortality.svg'
+import { PerkTypeIdentifier } from './perkTypes'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-          <img src={iconInfusion} className="logo react" alt="Infusion" />
-          <img src={iconMaterial} className="logo react" alt="Material" />
-          <img src={iconMinion} className="logo react" alt="Minion" />
-          <img src={iconOutpost} className="logo react" alt="Outpost" />
-          <img src={iconGateway} className="logo react" alt="Gateway" />
-          <img src={iconImmortality} className="logo react" alt="Immortality" />
-      </div>
-      <h1>VVC Interactive</h1>
+    <div id="app-container">
+    <div id="sidebar">
+      <ul>
+        <li><div className="nav-button">Introduction</div>
+          <ul>
+            <li className="nav-button">Conduit Types</li>
+            <li className="nav-button">Bridges</li>
+            <li className="nav-button">Worlds</li>
+            <li className="nav-button">Crowns</li>
+            <li className="nav-button">Least Conduits</li>
+            <li className="nav-button">Perk Types</li>
+          </ul>
+        </li>
+        <li className="nav-button">Base Perks</li>
+        <li className="nav-button">Drawbacks</li>
+        <li className="nav-button">Earthless Supplement</li>
+        <li><div className="nav-button">Worlds</div>
+          <ul>
+            <li className="nav-button"></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="main-panel">
+      <h1 id="main-title">VVC Interactive</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={
+          () => {
+            setCount((count) => count + 1)
+          }
+        }>
           you have clicked this button {count} times
         </button>
         <p>
           <code>under construction</code>
         </p>
       </div>
-      <p className="read-the-docs">
+      <div>
+          The six perk types are <PerkTypeIdentifier perkType='Infusion' />
+          , <PerkTypeIdentifier perkType='Material' />
+          , <PerkTypeIdentifier perkType='Minion' />
+          , <PerkTypeIdentifier perkType='Outpost' />
+          , <PerkTypeIdentifier perkType='Gateway' />
+          , and <PerkTypeIdentifier perkType='Immortality' />.
+      </div>
+      <p className="infobox">
         bottom text
       </p>
-    </>
+      </div>
+    </div>
   )
 }
 
