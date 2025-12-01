@@ -12,6 +12,10 @@
   padding: 1em;
 }
 
+.perk-mention {
+  font-style: italic;
+}
+
 .infobox {
   color: #888;
 }
