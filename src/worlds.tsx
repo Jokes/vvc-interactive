@@ -635,6 +635,362 @@ const worldPrison = {
   }
 }
 
+const rimNature: Perk = {
+  id: "rim-nature",
+  title: "Nature",
+  cost: -1,
+  content: (<p>The Rim is filled with countless beasts of all sorts, alike to those from many eras of Earth's history, and some which bear no clear resemblance to those in any known period of time. While they are a great danger to wayward travelers, they will not hunt you, and as long as you treat them with respect they will not fight you. You can intuit their ways and needs, communicate with them as much as they are able, and even induce them to help, on occasion.</p>)
+}
+const rimBinding: Perk = {
+  id: "rim-binding",
+  title: "Binding",
+  cost: -1,
+  types: ['Minion'],
+  content: (<p>Created to serve, serfs are easily bent to the will of a Conduit. It takes only a few interactions to earn their loyalty. Not only does this last their entire lives, but it even passes on to their offspring. While you live, this bond can only be broken by another Conduit, and even then not within a few generations. A Conduit of the Rim may have 200 bound serfs, or 1000 with a Crown.</p>)
+}
+const rimDomestication: Perk = {
+  id: "rim-domestication",
+  title: "Domestication",
+  cost: -1,
+  prereqs: [rimBinding, rimNature],
+  content: (<p>You share your connection with nature to your bound serfs. They are no longer hunted by wild beasts, and with time and generations, they can breed animals that are more amenable to cooperation with people. Beasts of burden can increase the abilities of the community, and animals that produce useful resources like edible eggs or milk, and textiles like fur or feathers are soon much prized.</p>)
+}
+const rimFire: Perk = {
+  id: "rim-fire",
+  title: "Fire",
+  cost: -1,
+  prereqs: [rimBinding],
+  content: (<p>You have finally cured your serfs of their animalistic fear of fire. With fire, they can cook food, rendering a greater array of foods edible. This also unlocks the ability to use fire and heat in crafting, unlocking that paramount of materials: Metal. Your serfs can smelt and forge all sorts of new tools.</p>)
+}
+const rimPreaching: Perk = {
+  id: "rim-preaching",
+  title: "Preaching",
+  cost: -1,
+  prereqs: [rimBinding],
+  content: (<p>Your serfs can spread your binding. Their passionate oration can convert wild serfs to your service. They cannot convert serfs of another Conduit, and attempting to do so may result in holy wars, depending on your teachings and how they interpret them. You can override another Conduit's binding personally, if necessary. Serfs converted without your personal intervention gain the benefits of your binding and become loyal to you without counting toward your Minion total.</p>)
+}
+const rimAbstract: Perk = {
+  id: "rim-abstract",
+  title: "Abstract",
+  cost: -1,
+  prereqs: [rimBinding],
+  content: (<p>Your serfs can perceive of concepts beyond what can be directly described by simply referencing the world around them. They understand the concept of beauty, and will pursue it for its purely aesthetic value. Their aesthetic preferences follow after your own, and both their works and their bodies match yours. Their philosophy and mathematics gain the capacity to advance far farther as well.</p>)
+}
+const rimWriting: Perk = {
+  id: "rim-writing",
+  title: "Writing",
+  cost: -2,
+  prereqs: [rimBinding],
+  content: (<p>One of the toughest blocks to remove from the serf mind is that against visual language, but once you do they take to reading and writing with gusto. The written word lets them pass your words or their own technological discoveries down through the generations without error, and they allow for messages to be sent over great distances. Your serfs also find an appreciation for reading and writing for recreational purposes.</p>)
+}
+const rimAgriculture: Perk = {
+  id: "rim-agriculture",
+  title: "Agriculture",
+  cost: -1,
+  prereqs: [rimBinding],
+  content: (<p>Agriculture comes with the perception of time. Not just calendars, but even the recognition that planting seeds now leads to future prosperity. With agriculture, there are schedules. Not only that, but agriculture means your serfs can stay in one place, without the need to follow game or forage new lands. That means that they can build longer-lasting homes and buildings as well.</p>)
+}
+const rimSociety: Perk = {
+  id: "rim-society",
+  title: "Society",
+  cost: -2,
+  prereqs: [rimAbstract, rimAgriculture],
+  content: (<p>Your serfs can progress beyond tribes and clans. You no longer need to micro-manage them. They can form schools, military orders, companies, and fully fledged governments. They have the power of bureaucracy. Individual serfs become highly specialized, supported by their fellows in proportion to their output via economics in some form. Buildings see more differentiation as well, with homes, shops, and offices designed to suit specific purposes.</p>)
+}
+const rimOverseerFortress: Perk = {
+  id: "rim-overseer-fortress",
+  title: "Overseer Fortress",
+  cost: -1,
+  types: ['Outpost'],
+  content: (<p>Rim is divided into many distinct biomes, and near the center of each lies an ancient fortress, a self-repairing and self-maintaining control point. It automatically displays a map of the area it governs, identifying threats and resources, and can be networked to any remnant technology of this place that you find and activate, including other overseer fortresses. Each one has automated defenses which keep out serfs and wild animals, but which ignore Conduits.</p>)
+}
+const rimUthuli: Perk = {
+  id: "rim-uthuli",
+  title: "Uthuli",
+  cost: -2,
+  prereqs: [rimOverseerFortress],
+  content: (<p>Songs of an ancient time fill your mind. Your lungs are filled with the methods used, perhaps, by the creators of the Rim to control its machines. As you sing, their land flows and forms at your will. You can shape the land to suit you, and you can call forth new land full of fertile resources. The nuance and specificity depends on your mastery of the song, but once you've mastered a song you can have your bound serfs sing along with you, bolstering your song and shaping the world on a scale proportionate to the numbers of your choir.</p>)
+}
+const rimAdaptation: Perk = {
+  id: "rim-adaptation",
+  title: "Adaptation",
+  cost: -2,
+  prereqs: [rimBinding, rimOverseerFortress],
+  content: (<p>A Conduit can use the instruments of the ancients to alter the genome of a serf, aligning them to the biome governed by any specific fortress they control. These changes can be quite extensive, adding prehensile tails in a jungle or even gills in a sea. However, they always retain a humanoid bodyplan, the same approximate size, and pointed ears.</p>)
+}
+const rimMasks: Perk = {
+  id: "rim-masks",
+  title: "Masks",
+  cost: -2,
+  prereqs: [rimAdaptation],
+  types: ['Infusion'],
+  content: (<p>In a fortress, you can use a serf to make a mask, destroying the serf in the process. That mask contains the adaptations, infusions, and other modifications that the serf in question had, whether inherited or otherwise. Whoever wears the mask benefits from the same changes, their body temporarily changing. If the mask is removed, it is destroyed and their body reverts over a period of time depending on the degree of change. Serfs do not notice the masks, and cannot tell the difference between the mask's wearer and the serf from whom it was made.</p>)
+}
+const rimAssimilation: Perk = {
+  id: "rim-assimilation",
+  title: "Assimilation",
+  cost: -1,
+  prereqs: [rimMasks],
+  types: ['Minion'],
+  content: (<p>Your mastery of Masks allows you to craft new, generic serf masks that require no sacrifice to create. These masks, when placed on a person's face, gradually fuse with them and turn them into a serf entirely. Anyone who is more or less human can be converted, after which they are subject to any limitations on serfs that you have not lifted, and are subject to your binding. Even if they were originally unwilling, they cannot overcome their new nature. You can choose whether to make them female or leave them as male serfs, but their offspring will all be female.</p>)
+}
+const rimRebirthTanks: Perk = {
+  id: "rim-rebirth-tanks",
+  title: "Rebirth Tanks",
+  cost: -3,
+  prereqs: [rimOverseerFortress],
+  types: ['Immortality'],
+  content: (<p>In each fortress there is a room containing cylinders filled with blue liquid, large enough to hold a human with room to spare. These accept DNA samples, and will clone the body of the donor. The clone is mindless and inert but technically alive. When the donor dies, their mind will enter the new clone, and they will automatically be released. If the person is a Conduit with a connection to Rim, this works no matter what world they are on, otherwise it works anywhere on Rim. It fails if there is no fully formed clone ready. Each clone takes one Rim year to grow.</p>)
+}
+const rimMassGateway: Perk = {
+  id: "rim-mass-gateway",
+  title: "Mass Gateway",
+  cost: -3,
+  prereqs: [rimOverseerFortress],
+  types: ['Gateway'],
+  content: (<p>This huge device is a force of great change for the Conduits who wield it. It can transfer almost any amount of matter to any fortress you are connected to, including one on another world, if you create one using the Gateway Investiture perk. These gateways require time to charge, in proportion to the amount of matter being sent.</p>)
+}
+const worldRim = {
+  id: "base-worlds-rim",
+  title: "Rim",
+  tagline: "adapted from Cruxador's Conduit Rework",
+  description: (
+    <>
+    <p>The Rim is a ring world, a boundless circle as wide as a planet, and stretching farther than you could walk in a thousand lifetimes. Space expands endlessly, the Rim growing ever-larger as new land is born of vulcanism and boundless natural resources are revealed. The purpose of the Rim is unknown, but the machines that maintain and control it yet remain, perhaps with hints to its origin within.</p>
+    <p>Time, like space, flows like water here. Fifty years in Rim equate to only one elsewhere.</p>
+    <p>Rim is populated by a race of elfin creatures who call themselves serfs. They are alike to humans in both mind and body, but lesser in both respects. They are short and slight, though they are agile and can have strength somewhat beyond their proportions, as their lifestyle is often more physical than that of modern humanity. Their minds are not inherently less able, for they are capable of language, tool use, and great emotional depth, but they have insurmountable blocks within their mind. These limits prevent them from ever rising above savagery, and likewise encourage them to venerate Conduits. Removing those blocks would be the errand of many of their generations.</p>
+    <p>They are all female and reproduce parthenogenetically, in litters of several young. They live a few decades, though those who a Conduit interacts with directly may take on some of their timelessness. Their tribes vary physically according to their environment, each somewhat different in ethnic features.</p>
+    <p>Effects that rely on the nature of other worlds happen at the timescale of that world, not at Rim's boosted timescale. This includes Conduit point gain.</p>
+    </>
+  ),
+  conduitDescription: (<p>As you take more perks in Rim, your ears taper like those of the serfs and your aging slows, eventually approaching stasis. Your perspective broadens, and it becomes easy to take long views and see the whole picture, though focusing on minor details feels more and more tedious as they are further and further beneath you. Those influenced by the Rim are titled Tribune.</p>),
+  perks: [
+    rimNature, rimBinding, rimDomestication, rimFire, rimPreaching, rimAbstract, rimWriting, rimAgriculture,
+    rimSociety, rimOverseerFortress, rimUthuli, rimAdaptation, rimMasks, rimAssimilation, rimRebirthTanks,
+    rimMassGateway
+  ],
+  crown: {
+    id: "rim-crown",
+    title: "Crown: Consul",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in the Rim are called Consuls, and rule over the greatest empires of any Conduits, at least with regards to population.</p>
+      <p><PerkListing perk={rimPreaching} /> can convert the serfs of other Conduits, provided they are not also Consuls, and your serfs can spread your influence through holy tracts or even memetic glyphs.</p>
+      <p><PerkListing perk={rimAdaptation} /> may adapt to foreign worlds, not just the biomes of Rim. Likewise, you bring the machines of the ancients in your very bloodstream, and the songs of <PerkListing perk={rimUthuli} /> work even outside the range of your Overseer Fortresses, and even on other worlds.</p>
+      <p><PerkListing perk={rimAssimilation} /> allows you to make an additional type of mask from a serf, one that retains an imprint of their originator without harming them in the making. These masks may be placed on statues, and they speak with the words and memories of the serf, lasting indefinitely and allowing you to retain their knowledge. If placed on a person, this mask allows that person to commune with the imprinted memories while they wear the serf's face, but is destroyed on removal like a normal Mask.</p>
+      <p>Rim wildlife tamed with <PerkLink perk={rimDomestication} /> can be modified with <PerkListing perk={rimAdaptation} /> or any other perk that could apply to your bound serfs.</p>
+      <p>Finally, you connect on a deeper level to the workings of the ancients. The relics and ruins you encounter make intuitive sense to you; you can use them easily, modify them with some study, and recreate them with significant effort. This includes Overseer Fortresses, though they may take years to construct.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "rim-dangers",
+    title: "Dangers",
+    firstTitle: "Time",
+    firstContent: (<p>One who is well invested in the Rim ages more slowly, but travelers unprepared may find themselves spending a lifetime and then returning to a world that scarcely missed them.</p>),
+    secondTitle: "Feral Serfs",
+    secondContent: (<p>Though serfs seem designed to serve Conduits, they are dangerous until tamed. They know the environment well, and are tempered by it, and they outnumber you.</p>),
+    thirdTitle: "Megafauna",
+    thirdContent: (<p>Rim is home to all manner of animals, some of which exist in the past of the world and others have never been seen in the fossil record. Not all are dangerous, but enough are.</p>)
+  },
+  poi: {
+    id: "rim-poi",
+    title: "Remnants",
+    firstTitle: "Sky Lands",
+    firstContent: (<p>Great shades drift overhead, the gravity inverted, or entirely chaotic. They block out the sun and simulate night, but they also exert gravity, causing tides, and there seem to be biomes upon their surface as well.</p>),
+    secondTitle: "Day and Shadow",
+    secondContent: (<p>The night and day typically cycle over the course of about 24 hours, but in some places the skylands get messed up somehow, instead causing nights or days that last for years at a time.</p>),
+    thirdTitle: "Ruins",
+    thirdContent: (<p>The ancients left behind all manner of machines and buildings. Some are incredibly potent, but most are notable mostly for the hints about the past that they contain.</p>)
+  },
+  breaching: {
+    id: "rim-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Where the Rim brushes the boundaries between worlds, anachronistic animals, long thought extinct, start to appear. Small things at first, then bigger ones. Time seems to slip away, or drag on forever, and in extreme cases a serf may come through.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>Establishing an outpost of Rim causes the Rim to form a new Overseer Fortress. Its domain extends substantially further than outposts of other worlds, allowing the Overseer Fortress to govern a larger area. It also brings over a small tribe of serfs, to serve and maintain the area. In the outpost, more time passes than in the world outside of it, though the effect is much more subtle than in Rim itself.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>Opening a Mass Gateway in another world connects it to a network, allowing you to teleport either to a specific gateway on the other side of a bridge, anywhere in the larger array of Mass Gateways connected to Overseer Fortresses.</p>)
+  }
+}
+
+const yomiNecrophagy: Perk = {
+  id: "yomi-necrophagy",
+  title: "Necrophagy",
+  cost: -2,
+  types: ['Infusion'],
+  content: (<p>Shades are frail, and there is no food to be had in Yomi. You feast, thus, upon the dead. As a result, your skin fades in color, becoming pale and grey. Your need for food fades, though your hunger doesn't, and you no longer need sleep. You do not tire of labor mentally either, and the oblivion of mindless work feels comfortable. Your blood, though, becomes slightly luminous and shades crave to consume it.</p>)
+}
+const yomiLiquor: Perk = {
+  id: "yomi-liquor",
+  title: "Liquor",
+  cost: -3,
+  prereqs: [yomiNecrophagy],
+  types: ['Material'],
+  content: (<p>When you wring a shade out, a small amount of liquid remains, some sort of ectoplasm. A bit of your own blood starts the fermentation process. When distilled, you create a potent liquor with a flavor profile depending on your emotional state as you supplied the blood. Drinking it invigorates you and causes your wounds to regenerate, but at the cost of small amounts of your memory, starting with the faintest and least valued. The stronger you distill it, the greater the effect, but the regeneration prevents drunkenness from becoming debilitating. Anyone who drinks it, when they die, is sucked into Yomi and becomes a shade.</p>)
+}
+const yomiMist: Perk = {
+  id: "yomi-mist",
+  title: "Mist",
+  cost: -2,
+  content: (<p>The chill mist of Yomi cleanses memory and personality. While it normally has little effect on a living person, you have breathed it in so much that you can breathe it out. Your breath always seems to steam as if it were below freezing out, and you can intentionally breathe so much out that it forms a cloud around you, cloaking yourself in forgetting. The mist shrouds your movements, and whoever inhales it will lose their immediate memories, forgetting hostility to you and, most likely, any transgression you have caused.</p>)
+}
+const yomiBonesOfMistAndBlood: Perk = {
+  id: "yomi-bones-of-mist-and-blood",
+  title: "Bones of Mist and Blood",
+  cost: -2,
+  prereqs: [yomiMist, yomiNecrophagy],
+  types: ['Infusion'],
+  content: (<p>You have steeped in the mist so long that it now suffuses your marrow, and its chill focuses you. Your reflexes improve and you move faster, in proportion to points spent in Yomi. Your precision and accuracy, too, benefit in proportion, as you control your bones directly. You produce more blood than usual, and can replenish your own blood by drinking the blood of others. As a side effect, you are also immune to anemia and most cancers.</p>)
+}
+const yomiCorpseCandleEye: Perk = {
+  id: "yomi-corpse-candle-eye",
+  title: "Corpse Candle Eye",
+  cost: -1,
+  prereqs: [yomiMist],
+  types: ['Gateway'],
+  content: (<p>The night is your partner. Mist is clear to you, transparent, but sheds a light that only you can see. Even in pitch blackness, you can exude your mist and see wherever it flows. Even if the mist is a substantial distance away, this remains true as it focuses the intensity of your vision. In the long nights of Yomi, where the mists only burn off in the distant morning, this means that you may be able to see over a very substantial area.</p>)
+}
+const yomiHospitality: Perk = {
+  id: "yomi-hospitality",
+  title: "Hospitality",
+  cost: -1,
+  prereqs: [yomiLiquor, yomiMist],
+  content: (<p>During the long night, you mix mist and ash to create a clay, and throw it into the form of a pot. The liquor you pour into this takes on notes of spice, dark chocolate, and a hint of hogo, and bears a power of detente. Accepting a drink from it creates a pact of peace between both the giver and receiver, and neither can harm the other within the next three days or they will suffer thrice the injury and ten times the agony. Additionally, the aroma of the liquor alone will ease hostility and assuage chaos, instilling peace instead, and encouraging natural healing.</p>)
+}
+const yomiBreath: Perk = {
+  id: "yomi-breath",
+  title: "Breath",
+  cost: -1,
+  types: ['Minion'],
+  content: (<p>Shades lack breath, like the dead things that they are. By breathing into their mouths, you can share some of yours. Your breath gives them enough focus to be useful to you, and to communicate. They are not inherently loyal to you, but they crave more of the life that you bear. Giving your breath like this means that you will remain slightly short of breath for a month or so. You can safely give your breath a dozen times before you have to stop and wait for it to return; if you give any more, you may suffocate.</p>)
+}
+const yomiDevilsFlesh: Perk = {
+  id: "yomi-devils-flesh",
+  title: "Devil's Flesh",
+  cost: -2,
+  prereqs: [yomiBreath, yomiNecrophagy],
+  content: (<p>Shades barely have true bodies, and can't readily maintain physicality outside of Yomi. You can change that, however, by crafting them new bodies from the refined flesh of other shades. Once assembled, it simply takes a bit of your blood to give it life. The form of the body is up to you, but there is a natural form for every shade, which you will get a feel for as you make more bodies. The further you deviate from this natural form, the shorter the time before the body is destroyed by wear and tear - and the greater the agony that the shade will suffer as it happens.</p>)
+}
+const yomiOni: Perk = {
+  id: "yomi-oni",
+  title: "Oni",
+  cost: -3,
+  prereqs: [yomiDevilsFlesh, yomiLiquor],
+  types: ['Immortality'],
+  content: (<p>On your death, you become a shade and return to Yomi if you are somewhere else. You, however, retain your faculties sufficient to use your perks and consume shades. Once you drink some liquor, you form a new body. It resembles your own previous body, but it is larger, stronger, tougher, and more ogrish in proportion to the amount of harm you've suffered and caused since you last formed a new body. This can only take effect if you have a proper body, so if you die again while a shade, it won't work.</p>)
+}
+const yomiToil: Perk = {
+  id: "yomi-toil",
+  title: "Toil",
+  cost: -1,
+  prereqs: [yomiBreath],
+  types: ['Outpost'],
+  content: (<p>The shades who have tasted your breath become overseers to those who haven't. They direct the fruitless labors of the shades to serve you. They can sculpt entire palaces from obsidian, but few resources are to be had in Yomi, so they butcher other shades, making leather of their hides and tools of their bones. They lack the skill for any complex industry, but shades are excellent at manual labor.</p>)
+}
+const yomiSoulwell: Perk = {
+  id: "yomi-soulwell",
+  title: "Soulwell",
+  cost: -2,
+  prereqs: [yomiToil],
+  content: (<p>Your shades build you a deep hole, and their remains swirl around the edges. Both the essence and the memories remain here, making a whirlpool of lost experiences. By submerging yourself in the well, you may experience lost memories, though they are fleeting. Small fragments of thought, of feeling, and of lives once lived bring to you the merest motes of the wisdom that death has severed. By meditating in the well, you can subvert the forgetting of Yomi, belay the wrath, and seek knowledge long lost.</p>)
+}
+const yomiSmithy: Perk = {
+  id: "yomi-smithy",
+  title: "Smithy",
+  cost: -1,
+  prereqs: [yomiToil],
+  types: ['Material'],
+  content: (<p>Many shades are beaten into the ash of the ground, consecrating a smithy wherein soulsteel can be forged. Soulsteel is made by folding shades over on themselves thousands of times and cold-forging them into a tremendously hard and sharp steel. It retains the chill of the grave, and any wound inflicted with this steel will not naturally heal, but neither will it fester. Those killed by it become shades. It is also reasonably useful as structural steel.</p>)
+}
+const yomiVengeance: Perk = {
+  id: "yomi-vengeance",
+  title: "Vengeance",
+  cost: -1,
+  prereqs: [yomiSmithy, yomiBonesOfMistAndBlood],
+  content: (<p>Forge a weapon in the name of one who has wronged you. Your resentment becomes part of the steel, and it remembers. Every wound it inflicts is multiplied, chaotic duplicates of the force inflicted hitting the enemy from every angle. The number of blows is proportionate to points spent on Yomi, and also the strength of the grudge with which the weapon was forged. Forgiveness robs it of its power.</p>)
+}
+const yomiRedSunAura: Perk = {
+  id: "yomi-red-sun-aura",
+  title: "Red Sun Aura",
+  cost: -2,
+  types: ['Infusion'],
+  content: (<p>The red sun has shone upon you so long that it now shines within you. Even in other worlds, your gaze bears the wrath of the red sun, and those you turn your anger upon wither and tire, in proportion to points spent in Yomi and to the antipathy that you feel towards them. In the most extreme case, even their flesh can be burnt away, leaving nothing but ash. Your own skin is lit red in the sun's light but you are immune to harm from it.</p>)
+}
+const yomiHeartOfSunAndSteel: Perk = {
+  id: "yomi-heart-of-sun-and-steel",
+  title: "Heart of Sun and Steel",
+  cost: -1,
+  prereqs: [yomiSmithy, yomiRedSunAura],
+  content: (<p>Your heart burns like the red sun itself. When aroused in wrath, your combat ability heightens and your muscles grow more powerful. Hesitation and distraction flee before your decisive action, and all schemes are useless in the face of superior force. Furthermore, any soulsteel weapon you kill someone with becomes attuned to you, leaping to match your intent but turning in anyone else's hands. You also will not suffer from cardiac afflictions as long as your heart isn't physically destroyed or removed.</p>)
+}
+const worldYomi = {
+  id: "base-worlds-yomi",
+  title: "Yomi",
+  tagline: "adapted from Cruxador's Conduit Rework",
+  description: (
+    <>
+    <p>The bleak fields of Yomi are strewn with ashes of untold ages, and far above them, a crimson sun burns with great heat but little light. It remains up for months, nearly unmoving, then slips below the horizon and leaves the world dark for months more. A chill mist drifts through the starless night, but the sky is mercilessly clear through the days. Obsidian spires and castles dot the landscape, and slow processions of shades flow through them, like rivers of shambling, disaffected ants. The ravens which circle overhead are far larger than they appear.</p>
+    <p>Yomi is inhabited by shades, feckless beings resembling humans, but chaotic in nature. They are transparent and ever so slightly luminous, and most barely retain their minds, toiling endlessly towards some unrecognized aim. They are rarely effectual in doing so, as they are only somewhat directed and often distracted by some other equally useless task. The locals are convinced that they are dead souls being cleansed for reincarnation, though nobody seems to know the source of that information and there's no way to check.</p>
+    <p>The lords of Yomi are the Oni, shades which have formed physical bodies, giving them an absolute advantage over the shades in pretty much every regard. If they ever had anything they truly cared about, however, most have long lost it. They spend their time variously in wrathful violence, drunken stupor, or other base physical glories. While they often enslave legions of shades to build them great estates and empires, they just as readily destroy each other's homes - and, nearly as readily, their own.</p>
+    </>
+  ),
+  conduitDescription: (<p>As you spend time and gain perks in Yomi, the suffering of others begins to feel more distant to you, which usually implies a fading compassion, and potentially disdain. You also become more aware of the sins and flaws of others, and at 20 points spent, you gain an inherent sense of whether someone has transgressed against you or betrayed you. Conduits of Yomi are called Ronin.</p>),
+  perks: [
+    yomiNecrophagy, yomiLiquor, yomiMist, yomiBonesOfMistAndBlood, yomiCorpseCandleEye, yomiHospitality, yomiBreath,
+    yomiDevilsFlesh, yomiOni, yomiToil, yomiSoulwell, yomiSmithy, yomiVengeance, yomiRedSunAura, yomiHeartOfSunAndSteel
+  ],
+  crown: {
+    id: "yomi-crown",
+    title: "Crown: Daimyo",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in Yomi are the Daimyo, warlords that slaughter shades and the living alike with impunity. The Daimyo's skin transcends color, becoming a dark ashy black.</p>
+      <p>A Daimyo's <PerkLink perk={yomiCorpseCandleEye} /> develops into an entirely new sense, forming misty eyes in new locations and allowing the Conduit to see even nowhere near their body.</p>
+      <p>A Daimyo loses no memories even when drinking <PerkLink perk={yomiLiquor} />.</p>
+      <p>The shades commanded by a Daimyo can remember more practical details of their work, and can be directed to do even relatively complicated tasks. A Daimyo can even instruct their <PerkLink perk={yomiToil} />ing shades to forge bodies of <PerkLink perk={yomiDevilsFlesh} />, and needs only contribute a drop of blood when it is complete. <PerkLink perk={yomiBonesOfMistAndBlood} /> allow them to provide it readily.</p>
+      <p>When you form a new <PerkLink perk={yomiOni} /> body, it is still increasingly larger and stronger every time, but you can retain your beauty if you prefer.</p>
+      <p>Daimyo may forge weapons of <PerkLink perk={yomiVengeance} /> not only against individuals, but against entire demographics. The duplicate attacks are spread among many nearby individuals.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "yomi-dangers",
+    title: "Dangers",
+    firstTitle: "Day",
+    firstContent: (<p>The Red Sun shines eternally on eternally weathering souls. Under its light, you find yourself drying, weathering, aging and becoming ashy. Under its light, you tire.</p>),
+    secondTitle: "Night",
+    secondContent: (<p>The nights are dark, and the mist which fills them prevents light from transmitting even when introduced. Worse, it seeps into you, bringing a wretched chill and eating away at your memories.</p>),
+    thirdTitle: "Violence",
+    thirdContent: (<p>Day or night, the oni lords march their ashen ashigaru, shades in obsidian armor, into pointless wars to harvest the corpses of their enemies. Anything in the way must hide, fight, or perish.</p>)
+  },
+  poi: {
+    id: "yomi-poi",
+    title: "Edifices",
+    firstTitle: "The Walking Fortress",
+    firstContent: (<p>A great tower strides on dozens of legs, each operated by hundreds of shades. It brings the high ground with it, allowing its oni master to always hold the advantage.</p>),
+    secondTitle: "Wyrm Mount",
+    secondContent: (<p>A long hill in the form of a great wyrm is actually home to an oni khagan most deranged. Within the belly of the obsidian wyrm, wyrms of flesh are manufactured, and they spill from its mouth to the plains below.</p>),
+    thirdTitle: "The Lost Ark",
+    thirdContent: (<p>An ancient boat, inexplicably of wood, lies wrecked and alone. Shades and oni alike avoid her remains.</p>)
+  },
+  breaching: {
+    id: "yomi-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Near bridges to Yomi, people become irritable and lose willingness to overlook minor slights. Color seeps away from the landscape, and things seem to age more rapidly. At night, or in shaded places away from the sun, mist seeps out and erodes memories.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>A great comet streaks down from the sun. Though it strikes the ground, the calamity is still limited in size to the usual scale of an outpost, spreading ash across the landscape. The comet itself forms a mess of obsidian haunted by shades and emanating mist at night.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>Every gateway to Yomi beyond the reach of the sun, and thus is most likely underground. The passageway fills with mist, blocking sight to most, and shades toil at the gate, making it ever more labyrinthine if not restricted with an iron fist, obscuring the exact place where the transition between worlds exists.</p>)
+  }
+}
+
 export const baseWorlds: readonly World[] = [
-  worldEarth, worldBevin, worldPrison
+  worldEarth, worldBevin, worldPrison, worldRim, worldYomi
 ]

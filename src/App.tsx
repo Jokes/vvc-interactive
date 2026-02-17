@@ -16,6 +16,8 @@ export interface Perk {
   readonly types?: readonly PerkType[];
   readonly prereqs?: readonly Perk[];
   readonly repeatable?: boolean;
+  readonly worldtied?: boolean;
+  readonly investiture?: boolean;
   readonly iscrown?: boolean;
   readonly cost: number;
   readonly content: ReactNode;
@@ -90,7 +92,7 @@ export function PerkListing({ perk }: { perk: Perk }) {
         <b>{perk.title}</b> | {COSTFORMAT.format(perk.cost)}
         {!!perk.prereqs?.length && <> | Requires <CommaSeparatedList items={perk.prereqs?.map((p) => <PerkLink perk={p} />)} /></>}
         {!!perk.types?.length && <> |</>} {perk.types?.map((t) => <PerkTypeIdentifier key={t} perkType={t} />)}
-        {perk.repeatable && <> | Repeatable</>}
+        {perk.repeatable && <> | Repeatable{perk.worldtied && <> (Per World)</>}</>}
       </div>
       <div className='perk-content'>
         {perk.content}
@@ -106,6 +108,7 @@ function App() {
     title: "Extra World",
     cost: -2,
     repeatable: true,
+    worldtied: true,
     content: (
       <>
         <p>This perk can be taken multiple times. For Pioneers and Scions, it costs 2 points the first time, and the cost increases by 1 for each subsequent world: 3 the second time, 4 the third time, and so on. For Wanderers, it always costs 2.</p>
@@ -172,6 +175,7 @@ function App() {
     title: "Immutable",
     cost: -2,
     repeatable: true,
+    worldtied: true,
     content: (<p>As a Conduit connects more deeply to a world, it changes them: mental changes that take effort and dedication to resist, and physical changes that can only be mitigated using other powers. When you take this perk, choose one world you're connected to. You gain full control over the changes caused by your investment in that world, and can suppress or permit them at will. You can take this perk once per world.</p>)
   };
   const basePerkGatewayBasis: Perk = {
@@ -186,6 +190,7 @@ function App() {
     cost: -1,
     prereqs: [basePerkGatewayBasis],
     repeatable: true,
+    investiture: true,
     content: (
       <>
         <p>At any bridge to a world where you have taken a Gateway perk, you can construct a Gateway according to that perk's specifications, consecrate it with a drop of Conduit blood, and activate it using this perk. If you choose, while constructing the Gateway, you can also establish a "key": a specific condition that controls passage, such as "the Gateway only opens at certain times of day" or "only those carrying a certain item may pass". A Gateway may have only one key condition, and it must be concrete and simple: "only descendants of this individual may pass" works, but "only those loyal to this individual may pass" does not.</p>
@@ -218,6 +223,7 @@ function App() {
     cost: -1,
     prereqs: [basePerkInductionBasis],
     repeatable: true,
+    investiture: true,
     content: (<p>With a few minutes of spiritual labor focused on a nearby recipient, grant them a connection to any one of your worlds that they are not already connected to. A Conduit recipient gains nothing more, except that if they were already connected to that world, the points they paid for that connection are freed from their point gain total. A non-Conduit recipient will become a Least Conduit, and a Least Conduit recipient may become a full Conduit if this is their fifth connection. You have no further control of or connection to them once you make this investiture.</p>)
   };
   const basePerkSynergy: Perk = {
@@ -250,6 +256,7 @@ function App() {
     cost: -2,
     prereqs: [basePerkExtraWorld],
     repeatable: true,
+    worldtied: true,
     content: (<p>Your time as a Conduit has imbued you with the stuff of many disparate worlds, each more unique than the last. And yet none of them are perfect. You may crystallize that dissatisfaction into a Genesis Seed, which holds the potential for the creation of a new world, and allows you to connect to that world once you create it. Each <ShallowPerkLink pid="base-genesis-investiture" ptitle="Genesis Investiture" /> requires its own separate Genesis Seed.</p>)
   }
   const basePerkGenesisInvestiture: Perk = {
@@ -258,6 +265,8 @@ function App() {
     cost: -98,
     prereqs: [basePerkGenesisSeed],
     repeatable: true,
+    investiture: true,
+    worldtied: true,
     content: (
       <>
         <p>By investing an incredible amount of time and effort, you can create an entirely new world from scratch. Its nature is influenced by the perks you have taken in other worlds, but you have a substantial amount of freedom determining what form it takes. Once it's created, you have no more influence over it than any other Conduit.</p>
@@ -335,6 +344,7 @@ function App() {
     title: "Living Bridge",
     cost: 1,
     repeatable: true,
+    worldtied: true,
     content: (<p>You may take this once per world you connect to, at any of three opportunities: (1) when you connect to that world for the first time, (2) the first time you enter the world, if you connected to it beforehand, or (3) when you spend your 20th point in the world. You will carry with you a tangible aura of that world, as though you were an open bridge to it. If you have <PerkLink perk={basePerkSoftContact} />, you may no longer conceal your connection to that world from Conduit senses, but the extra control granted by <PerkLink perk={basePerkSoftContact} /> allows you to mitigate your aura considerably, down to a minimum of one subtle physical effect.</p>)
   }
   const drawbacks = [
@@ -464,19 +474,22 @@ function App() {
           content: (
             <dl>
               <dt><PerkTypeIdentifier perkType='Infusion' /></dt>
-              <dd>These are perks which have some tangible effect on the nature or processes of the body. Although the Infusions of different worlds are often not explicitly designed to be compatible, when combined in a single Conduit they always find some way to get along, informed by the Conduit's own nature as well as the natures of the worlds involved. Creating a Synergy between two Infusions is therefore never necessary just in order to synthesize them into a useful and interesting result, but can be very powerful when building on the base created by the existing synthesis.</dd>
+              <dd>
+                <p>These are perks which have some tangible effect on the nature or processes of the body. Although the Infusions of different worlds are often not explicitly designed to be compatible, when combined in a single Conduit they always find some way to get along, informed by the Conduit's own nature as well as the natures of the worlds involved. Creating a Synergy between two Infusions is therefore never necessary just in order to synthesize them into a useful and interesting result, but can be very powerful when building on the base created by the existing synthesis.</p>
+                <p>Of all perk types, Infusions are the easiest to share. The shared version of a perk is always diminished in some way relative to the original.</p>
+              </dd>
               <dt><PerkTypeIdentifier perkType='Material' /></dt>
               <dd>These are perks which provide ongoing access to some tangible resource. It's usually necessary to visit the world in question to harvest the resource, but individual perks and worlds may vary, and many resources are harvestable at bridges or Outposts.</dd>
               <dt><PerkTypeIdentifier perkType='Minion' /></dt>
               <dd>
-                <p>These are perks which provide companions or subordinates with the capacity for independent action. Minions are always loyal to the Conduit, though the exact form of that loyalty may vary from world to world and perk to perk.</p>
+                <p>These are perks which provide companions or subordinates capable of independent action. Minions are always loyal to the Conduit, though the exact form of that loyalty may vary from world to world and perk to perk.</p>
                 <p>When a Conduit bonds to a Minion, the bond routes through the world whose perk granted that Minion. When gaining a Minion with a Synergy perk, the Conduit can choose which of the perk's parent worlds to route the bond through. Once a bond is set, it cannot be moved between worlds except by using applicable perks, for example Converts (but not Eyeless) to shift a Minion to the Prison, or Assimilation (but not Binding) to shift a Minion to the Rim. The Minions themselves can travel freely without affecting their bonds.</p>
                 <p>In general, the maximum number of Minion bonds that a Conduit can sustain through a single world is 50, or 200 with a Crown; some perks allow organizing Minions into hierarchies, and in that case each supervisor Minion can sustain 50 or 200 subordinate Minions as appropriate. Specific Minion perks may have other effects on Minion caps. Warlock bonds are direct to the Conduit and do not count toward Minion caps.</p>
                 <p>If a Conduit finds themselves with more Minion bonds in a world than they can sustain, they keep all their Minions, but can't gain more in that world until they have room.</p>
                 <p>A Scion has no limit on Minion bonds in their Crowned world, and can form their Minions in any world into hierarchies even without a Minion hierarchy perk.</p>
               </dd>
               <dt><PerkTypeIdentifier perkType='Outpost' /></dt>
-              <dd>These are perks which provide the ability to create whatever infrastructure is associated with a world's Outposts. Each world is different, but an Outpost usually consists of a significant piece of territory or a useful structure. The perk by itself only creates the infrastructure, and can be used without the <PerkLink perk={basePerkOutpostBuilding} /> base perk; but by combining a world's Outpost perk with the <PerkLink perk={basePerkOutpostBuilding} /> base perk, a Conduit can create an Outpost at a bridge to that world.</dd>
+              <dd>These are perks which provide the ability to create whatever infrastructure is associated with a world's Outposts. Each world is different, but an Outpost usually consists of a significant piece of territory or a useful structure. Used by itself, a world's Outpost perk only creates that structure or shapes that territory, but by combining it with the <PerkLink perk={basePerkOutpostBuilding} /> base perk, a Conduit can create an Outpost at a bridge to that world.</dd>
               <dt><PerkTypeIdentifier perkType='Gateway' /></dt>
               <dd>
                 <p>These are perks which provide the ability to create whatever mechanism is associated with a world's Gateways. Each world is different, but Gateway perks often provide some kind of fast travel ability even outside of their use in creating stable portals between worlds. The perk by itself only does as its description says, and can be used without the Gateway base perks; but by combining a world's Gateway perk with a <PerkLink perk={basePerkGatewayInvestiture} />, a Conduit can create a Gateway at a bridge to that world.</p>
