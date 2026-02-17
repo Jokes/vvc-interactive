@@ -9,20 +9,20 @@ import './perkTypes.css'
 export type PerkType = 'Infusion' | 'Material' | 'Minion' | 'Outpost' | 'Gateway' | 'Immortality';
 
 const PERK_TYPE_TO_ICON = {
-    Infusion: iconInfusion,
-    Material: iconMaterial,
-    Minion: iconMinion,
-    Outpost: iconOutpost,
-    Gateway: iconGateway,
-    Immortality: iconImmortality
+  Infusion: iconInfusion,
+  Material: iconMaterial,
+  Minion: iconMinion,
+  Outpost: iconOutpost,
+  Gateway: iconGateway,
+  Immortality: iconImmortality
 }
 
-export function PerkTypeIdentifier ({perkType}: {perkType: PerkType}) {
-    const classTypeName = `type-${perkType.toLowerCase()}`
-    return (
-        <span className={classTypeName}>
-            <img src={PERK_TYPE_TO_ICON[perkType]} className="type-icon" alt={perkType} />
-            {perkType}
-        </span>
-    );
+export function PerkTypeIdentifier({ perkType }: { perkType: PerkType }) {
+  const classTypeName = `type-${perkType.toLowerCase()}`
+  return (
+    <span className={classTypeName}>
+      <img src={PERK_TYPE_TO_ICON[perkType]} className="type-icon" alt={perkType} />
+      {perkType}
+    </span>
+  );
 }
