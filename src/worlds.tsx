@@ -991,6 +991,889 @@ const worldYomi = {
   }
 }
 
+const desertFruitOfTheHeart: Perk = {
+  id: "desert-fruit-of-the-heart",
+  title: "Fruit of the Heart",
+  cost: -2,
+  types: ['Infusion'],
+  content: (<p>Rare trees whose fruit resemble human hearts in appearance but taste of musky sexual fluids open your mind to the Pink Desert. You gain an enhanced intuition for the desires and insecurities of whoever you interact with. This effect is subtle, but it goes well with a secondary effect: Your bodily fluids become addictive. A dose or two are unlikely to do much, but much more than that and the imbiber will start having withdrawal symptoms after a few days without a taste.</p>)
+}
+const desertThrallherd: Perk = {
+  id: "desert-thrallherd",
+  title: "Thrallherd",
+  cost: -1,
+  prereqs: [desertFruitOfTheHeart],
+  types: ['Minion'],
+  content: (<p>Those addicted to your fluids have a more pervasive connection to you. You always know their approximate direction and distance, as you would with a bridge, and you have a general sense of how well they're feeling. They tend to feel extremely loyal to you. Though it is theoretically possible for them to betray you, they will crave your approval - or at least your body.</p>)
+}
+const desertRefinedFlesh: Perk = {
+  id: "desert-refined-flesh",
+  title: "Refined Flesh",
+  cost: -2,
+  types: ['Infusion'],
+  content: (<p>Water in the Pink Desert is rarely simple water. Every oasis has its own character. Most are intoxicating, with flavors like the delectable treats of other worlds. While the bulk of their effects are usually temporary, they also have an enhancing effect on you, greatly increasing your endurance. Your muscles last longer without tiring, you last longer in sex, and you need less hydration. Additionally, you heal more quickly. Some waters resent being drunken of, but most take pleasure from it.</p>)
+}
+const desertFertility: Perk = {
+  id: "desert-fertility",
+  title: "Fertility",
+  cost: -1,
+  prereqs: [desertRefinedFlesh],
+  content: (<p>Your body's fertility is under your control. You can impregnate and be impregnated in equal measure, and you can "hold back" and prevent impregnation. Your pregnancies are especially easy and uncomplicated, and quicker as well. Your children are always born healthy, never burdened with genetic time bombs that might afflict them or their own children with serious illness later in life, and they inherit your infusions. They are also more likely to be loyal to you. </p>)
+}
+const desertBloodline: Perk = {
+  id: "desert-bloodline",
+  title: "Bloodline",
+  cost: -3,
+  prereqs: [desertFertility],
+  types: ['Immortality'],
+  content: (<p>Your children are more willing to work together and put the family above themselves. You, on the other hand, can use them to reincarnate. If you die, you enter the body of your youngest descendant, including those in the womb. Their body doesn't change, except as a result of your infusions, which activate after birth. Their mind is subsumed by yours, and you regain your memories between the ages of two and six. If you have no living descendants, this method fails.</p>)
+}
+const desertOasis: Perk = {
+  id: "desert-oasis",
+  title: "Oasis",
+  cost: -1,
+  prereqs: [desertRefinedFlesh],
+  types: ['Outpost', 'Gateway'],
+  content: (<p>Water wells up beneath you from the sands. You are the erokami of this water, and if you leave it for too long, it dries up. However, you can feel whatever enters your water as if it were your own body, and in fact the water is effectively your bodily fluid. The flow rate scales on points spent in Pink Desert, from a weak household faucet all the way up to a raging river; to be precise, in a minute your Oasis produces as many gallons of water as the square of your points spent in the Pink Desert. </p>)
+}
+const desertGlass: Perk = {
+  id: "desert-glass",
+  title: "Glass",
+  cost: -1,
+  types: ['Material'],
+  content: (<p>You have learned to exhale pink mist into the sands, shaping them by your will into items of glass. The glass is quite durable, light, and can be made as rigid or as flexible as you like. The glass can hold an edge, but doesn't have to. Items you make of glass are alike to your own body while you have physical contact with them. Whatever they touch, you feel as though it was you, and they are fairly sensitive erogenous zones.</p>)
+}
+const desertRestraint: Perk = {
+  id: "desert-restraint",
+  title: "Restraint",
+  cost: -2,
+  prereqs: [desertGlass],
+  content: (<p>Glass formed fast enough can be handy in a fight. While it's not likely to make an especially useful structure afterwards, the speed of your shaping means you can form tentacles of sand which then solidify and bind an opponent or victim. While bound in this way, and while you touch the glass, you have control over their orgasms. When you don't touch the glass, they can't orgasm at all. The only escapes are to break your glass, which takes great strength especially if you make it thick, or to dodge the glass before being bound.</p>)
+}
+const desertArt: Perk = {
+  id: "desert-art",
+  title: "Art",
+  cost: -1,
+  prereqs: [desertGlass],
+  content: (<p>You utilize the pink sands to make artistic implements, and when using those implements the art you make engages multiple senses. Songs that cause images, paintings that cause you to taste what is depicted in them, meals which remind the eater of a memory that you had, even if they never experienced it. All these sensations are illusory, but what beauty they contain!</p>)
+}
+const desertCitadel: Perk = {
+  id: "desert-citadel",
+  title: "Citadel",
+  cost: -3,
+  prereqs: [desertGlass, desertOasis],
+  content: (<p>What could be simpler than mixing water and earth to make mud? But it is a subtler art to mix the water of your own oasis with the Pink Sand and breathe the result into bricks. Through long effort, you direct and stack these bricks into buildings and palaces, creating a mighty walled city. The site of shelter is of great appeal to the erokami, and many will join you, should you allow them. Within your walls, they will drift towards more domestic roles. Most likely become good citizens, less wild and rapine, more humanoid and productive.</p>)
+}
+const desertAlpha: Perk = {
+  id: "desert-alpha",
+  title: "Alpha",
+  cost: -1,
+  content: (<p>You have a bit of erokami in you, and you can play their game at the highest level. In other words, you can make any sexual encounter a competition - and except against especially powerful erokami, you will almost certainly win. You gain sexual potency with every time you dominate at sex, and you can subjugate those you best. You can also choose to refuse changes imposed by other erokami, though this may offend them. Finally, you overcome such limits as orientation - everyone is susceptible to your appeal, regardless of their other preferences.</p>)
+}
+const desertBinder: Perk = {
+  id: "desert-binder",
+  title: "Binder",
+  cost: -2,
+  prereqs: [desertAlpha, desertRestraint],
+  content: (<p>When you defeat someone at sex while they are bound in your glass, you may refine the glass that binds them into a small jewel. The bound person goes free, but you keep the jewel, which represents their obligation to you. At any time you may destroy the jewel to summon the one bound by it and command them to perform a single service for you. They will vanish back to the place they were summoned from once their task is complete. These jewels slowly weaken over time, and will disintegrate on their own after a number of years equal to your points spent in the Pink Desert.</p>)
+}
+const desertItem: Perk = {
+  id: "desert-item",
+  title: "Item",
+  cost: -2,
+  prereqs: [desertBinder],
+  content: (<p>You can insert a binding jewel into an item to empower the item and preserve the jewel. Each erokami has their own unique traits and focus, and an item with an erokami bound to it will share some of those powers, even when the erokami is not summoned. When they are, it gains a specific ability related to their nature. Jewels bound into items take twice as long to disintegrate, and can be removed without damage to the jewel.</p>)
+}
+const desertPossession: Perk = {
+  id: "desert-possession",
+  title: "Possession",
+  cost: -2,
+  prereqs: [desertBinder],
+  content: (<p>You can insert binding jewels into people by anointing the jewel with their blood or other fluids. This summons the erokami into their body. The erokami controls the body, and its true owner has only the experience of a waking dream while controlled. The erokami can manifest aspects of their own bodies if needed. Jewels bound into people take half as long to disintegrate, and can only be removed by destroying the jewel.</p>)
+}
+const desertShadowbound: Perk = {
+  id: "desert-shadowbound",
+  title: "Shadowbound",
+  cost: -1,
+  prereqs: [desertPossession],
+  content: (<p>You can insert a binding jewel into your own shadow. The erokami within is normally hidden, but can spring forth at your command. Unbound by the physical, its traits and abilities are able to become more esoteric. It is also controlled more directly by you, just as your shadow is controlled by your body. Furthermore, it is bound so closely to you that its time never runs out - it remains bound to you indefinitely. Only one can be bound in this way at a time; shadowbinding a new jewel destroys the old one.</p>)
+}
+const worldDesert = {
+  id: "base-worlds-desert",
+  title: "Pink Desert",
+  tagline: "adapted from Cruxador's Conduit Rework",
+  description: (
+    <>
+    <p>The Pink Desert stretches infinitely in every direction, flat expanses of rose-colored sand dotted by the occasional settlement or oasis. The rivers that cross this land seem to come from nowhere and go nowhere, their waters emerging from the sands, flowing for miles or hundreds of miles, and then petering out. The cities are made of the sands themselves, which can be fired into an opaque glass of surprising structural integrity, and every city is a place where pink mists of prosperity cloak the intrigue and schemes of inhuman minds.</p>
+    <p>There are people in this world, after a fashion. The erokami may appear almost any kind of way, but those most human in appearance are not necessarily most human in behavior. Every item aside from the sands themselves, no matter how inhuman, is an erokami, and every erokami conducts their social life primarily through sex. Nearly every tree or stone has some manner of protrusion or orifice, or both, and most also excrete some heady, intoxicating substance. Sex is a competitive affair for the erokami though, always with a top and a bottom, and sex that is about intimacy rather than power is no more common in the Pink Desert than on Earth.</p>
+    </>
+  ),
+  conduitDescription: (<p>As you take more perks in the Pink Desert, your skin tone drifts toward pinker or purpler hues. Your body takes on some aspects of erokami you dally with, transforming ever so slightly each time. Those influenced by the Pink Desert are titled Vizier.</p>),
+  perks: [
+    desertFruitOfTheHeart, desertThrallherd, desertRefinedFlesh, desertFertility, desertBloodline, desertOasis,
+    desertGlass, desertRestraint, desertArt, desertCitadel, desertAlpha, desertBinder, desertItem, desertPossession,
+    desertShadowbound
+  ],
+  crown: {
+    id: "desert-crown",
+    title: "Crown: Sultan",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in the Pink Desert are called Sultans, ruling over oases and commanding entire treasuries of erokami.</p>
+      <p><PerkLink perk={desertRefinedFlesh} /> also makes you more durable and stronger.</p>
+      <p>Your <PerkLink perk={desertBinder} /> jewels are not expended on use, and there is no limit to the amount of time you can expect an erokami to work on a specific task. You can create jewels automatically for anyone in your bloodline, as well as any minion including those from other worlds.</p>
+      <p>You can bind jewels together using <PerkLink perk={desertItem} />, combining the erokami in both jewels into a more powerful erokami that unifies their personalities and powers.</p>
+      <p>The waters of your <PerkLink perk={desertOasis} /> can impregnate others. You can influence what traits your <PerkLink perk={desertBloodline} /> inherits, and shape them slightly.</p>
+      <p>Items made of your <PerkLink perk={desertGlass} /> act like parts of your body even when you are not in contact with them, unless you will them to detach. If they are flexible, they can move and distort according to your will just as if they were your own appendages. You can also choose to give them to other people instead of or in addition to yourself, letting them feel the sensations of the item.</p>
+      <p>If you store jewels in your <PerkLink perk={desertCitadel} />, the erokami bound to them will be drawn to the Citadel to live there.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "desert-dangers",
+    title: "Dangers",
+    firstTitle: "Wild Gods",
+    firstContent: (<p>The erokami, especially those outside the cities, are controlled by powerful lusts. Although they can suppress them, their desire always simmers beneath the surface and they have, at best, a tenuous grasp on consent.</p>),
+    secondTitle: "Thirst",
+    secondContent: (<p>The Pink Desert is completely dry between its oases, and its denizens will scheme to rob you of your bodily fluids. Though they don't desire to kill you directly, and would be surprised to learn how much water you need to survive, the most common death for an outsider in the Pink Desert is dehydration.</p>),
+    thirdTitle: "Taxes",
+    thirdContent: (<p>The citadel oases are the safest places, if you have some great wealth. But their masters only shelter those who pay tribute with gifts of sufficient beauty or eroticism.</p>)
+  },
+  poi: {
+    id: "desert-poi",
+    title: "Erokami",
+    firstTitle: "Flora",
+    firstContent: (<p>The most common of erokami are the plants. Rooted in place at an oasis, they drink water and pay in fealty. Their fruit is delectable, but some use it as bait.</p>),
+    secondTitle: "Nomads",
+    secondContent: (<p>The nomads resemble humans with horns growing from their heads. They travel between oases, traveling in caravans, trading, and sometimes rading. They are silent, but speak with each other in sign.</p>),
+    thirdTitle: "Ambushers",
+    thirdContent: (<p>Below the sand or far above them, many different classes of erokami wait for unwary travelers. Pits in the ground, writhing tentacles, or soaring dragons, they all wait for you to come near enough before pouncing.</p>)
+  },
+  breaching: {
+    id: "desert-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Where the Pink Desert brushes the boundaries between worlds, pink sand finds its way through. People in these areas are both more lustful and more competitive, and dynamics of domination and submission become more common in their sexual interactions.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>The outpost of the Pink Sands is an oasis. The waters of the oasis drain through the bridge as the outpost is created, and erokami go with it, forming their community around it.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>A lovely reflecting pool reflects the world in slightly pinker hues. Whoever jumps in will come out the other side in a matching pool in the Pink Desert.</p>)
+  },
+}
+
+const aetherAscendance: Perk = {
+  id: "aether-ascendance",
+  title: "Ascendance",
+  cost: -2,
+  types: ['Infusion'],
+  content: (
+    <>
+    <p>Divine radiance suffuses your being, sustaining you without need for food and drink. Unlike an aengel, however, you can still eat and drink if you choose, and sustenance of that form can benefit you when radiance is scarce. One unit of divine radiance per day will sustain you fully.</p>
+    <p>Wings of radiant light sprout from your back. You can unfurl them or put them away at will, and they lift you with more force than wings of their size ought to, allowing you to fly even with a normal human weight.</p>
+    </>
+  )
+}
+const aetherCrusadersFire: Perk = {
+  id: "aether-crusaders-fire",
+  title: "Crusader's Fire",
+  cost: -1,
+  types: ['Infusion'],
+  content: (<p>The radiance of the Almighty burns all sinners. You can direct it and call it forth to smite your enemies in the form of a golden flame. You can shoot it forth in a blast, or coat a weapon with it. Even the aengelim are burnt by the wrath of the divine as it leaves your hands, and purified into a pillar of salt. You can hold 1 unit of divine radiance safely within your body per point spent in the Aether.</p>)
+}
+const aetherOrichalcum: Perk = {
+  id: "aether-orichalcum",
+  title: "Orichalcum",
+  cost: -2,
+  types: ['Material'],
+  content: (<p>Everything in the Aether is formed of the divine radiance of the Almighty, and shaped by the will of his servants. Your will, too, can shape radiance into physical form. Specifically, you form Orichalcum, a golden material that resists physical attempts to manipulate it but is easily shaped by your will. For every 1 unit of radiance, you can form as many measures of raw Orichalcum as you have points in the Aether; one measure can be formed into about a truckload of sturdy building material, or condensed and refined into armaments for about a dozen aengelic soldiers.</p>)
+}
+const aetherWrathfulEye: Perk = {
+  id: "aether-wrathful-eye",
+  title: "Wrathful Eye",
+  cost: -1,
+  prereqs: [aetherOrichalcum, aetherCrusadersFire],
+  content: (<p>Within your divine geometries is a nexus, an eye. It can see the enemy, and when it does, a great ray of holy flames erupt forth. Its fire is alike to your own, burning away physical matter and solidifying living souls into pillars of salt. The eye can have any appearance, allowing you to hide eyes in unexpected places, and you may obstruct their vision if needed. Each wrathful eye needs 1 radiance per day to remain open, and spends more when it fires, but you can also make more powerful ones by increasing the radiance used, and they may remain dormant as needed.</p>)
+}
+const aetherThrone: Perk = {
+  id: "aether-throne",
+  title: "Throne",
+  cost: -1,
+  prereqs: [aetherOrichalcum],
+  content: (<p>You can erect a great tower atop the clouds, fifty cubits per point in Aether, and formed of divine geometries. It establishes your domain over a substantial area, which in Aether allows it to draw in 5 units of radiance per day, as they crystallize among the clouds. At its peak is a shrine to you as Saint under the Almighty, and just below that is the throne room from which you can survey the domain. It can be expanded with additional rooms, and a few ishim appear to serve and maintain your throne.</p>)
+}
+const aetherFortress: Perk = {
+  id: "aether-fortress",
+  title: "Fortress",
+  cost: -2,
+  prereqs: [aetherThrone],
+  types: ['Material', 'Minion'],
+  content: (<p>Any tower can be enclosed in a great citadel, with high walls. It can incorporate any defenses you can construct, and it also shelters a small city. This city is populated by ishim, who appear perhaps from the souls of the righteous. They are entirely loyal and have no needs, and they can operate a cloud loom which spins clouds into a soft white material something like cloth or vellum, which aengelim wear as robes. A dozen ishim jointly count toward minion limits as one ordinary minion.</p>)
+}
+const aetherCathedral: Perk = {
+  id: "aether-cathedral",
+  title: "Cathedral",
+  cost: -1,
+  prereqs: [aetherThrone],
+  content: (<p>The Divine Radiance of the Almighty falls upon those who praise him, so long as they observe the proper forms. You can construct a Cathedral in your Throne, where your minions can pray for radiance. Each five praying aengelim provide 1 unit of radiance per day; the denizens of other worlds tend to be less efficient, and ten of them would be needed to replace one aengel. The effect of prayer is highly beneficial to health, and anyone sick or injured can be lain atop the altar, allowing them to be restored by the prayers at the cost of some radiance.</p>)
+}
+const aetherGarden: Perk = {
+  id: "aether-garden",
+  title: "Garden",
+  cost: -1,
+  prereqs: [aetherThrone],
+  content: (<p>By infusing wisps of cloud with radiance, you form a golden soil. An aengel's body, planted in such a garden, grows into a tree whose fruit grants a little of their skill and power with each bite. The golden garden can also grow any plant from any world, magical or mundane, without need for tending or watering; and there are many marvelous trees in the Aether whose fruit you could plant in your garden to share in their bounty.</p>)
+}
+const aetherIntercession: Perk = {
+  id: "aether-intercession",
+  title: "Intercession",
+  cost: -1,
+  prereqs: [aetherCathedral],
+  content: (<p>In your Cathedral, your minions can pray to you, requesting that you bestow onto them the grace of the Almighty. While you are not the Almighty yourself and cannot grant any divine radiance in return, you can hear these prayers in the back of your mind. Your mind also expands to receive them, so they don't distract you. You have no direct power to grant these prayers, but can act on them independently if you choose, or include them in your own prayers to pass them on to the Almighty.</p>)
+}
+const aetherDoorwayOfSpheres: Perk = {
+  id: "aether-doorway-of-spheres",
+  title: "Doorway of Spheres",
+  cost: -1,
+  prereqs: [aetherThrone],
+  types: ['Gateway'],
+  content: (<p>Even in the Aether, space may be limited. Fortunately, the will of the Almighty is omnipresent and one place is like another. Within your towers and buildings in the orichalcum of the sacred geometries, you can establish a doorway leading to any other so built in your domain. However, it requires 1 radiance per day to remain in effect.</p>)
+}
+const aetherTowers: Perk = {
+  id: "aether-towers",
+  title: "Towers",
+  cost: -1,
+  prereqs: [aetherDoorwayOfSpheres],
+  content: (<p>There is only one throne per domain, and its tower is the greatest, but you can build lesser watchposts to extend that domain. These towers rise half the height of your throne, and each has a doorway of spheres leading to your throne room. In total, it requires 2 units of radiance per day to maintain, but in the Aether its additional domain accrues about 4 units of radiance in that day. It can also transfer Radiance anywhere else in your domain, though it requires a Gateway to transfer across worlds.</p>)
+}
+const aetherAengelArch: Perk = {
+  id: "aether-aengel-arch",
+  title: "Aengel Arch",
+  cost: -1,
+  prereqs: [aetherThrone],
+  types: ['Minion'],
+  content: (<p>At the center of armories and prayer rooms stands a golden arch. This arch, when powered by 1 radiance per day, can elevate five ishim and sustain them. They are promoted to malachim, instantly becoming excellent soldiers with powerful wings and flaming swords. They can earn further promotions according to their accomplishments, growing in power. If any of the malachim fall, the arch can elevate additional ishim to replace them, but if the arch falls, the malachim must be bound to another arch within a day or they will revert to ishim. Malachim count normally toward minion limits.</p>)
+}
+const aetherOphanimForge: Perk = {
+  id: "aether-ophanim-forge",
+  title: "Ophanim Forge",
+  cost: -3,
+  prereqs: [aetherAengelArch, aetherWrathfulEye],
+  content: (<p>In the forge, a highly ranked malach is made anew. They are severed from their arch, then sublimated by divine machinery and re-bound to physical form by rings of orichalcum. Rings within rings orbit pure fire. This is an Ophan, a machine of war. It is no longer a person in any real sense, but still has cognition. It also moves without inertia and sears legions with its own wrathful eye. It must be sustained by 1 unit of divine radiance per day, or it will burn out and perish.</p>)
+}
+const aetherArk: Perk = {
+  id: "aether-ark",
+  title: "Ark",
+  cost: -2,
+  prereqs: [aetherOphanimForge, aetherTowers],
+  content: (<p>The greatest manifestation of the divine geometries is an entire tower, made mobile and powered by an Ophanim reforged once more. Other rooms and buildings can be built into it, making the ark a great edifice of war, both fortress and fleet. Such arks are often key to aengelic battle plans, for they allow transportation of untold firepower. To maintain the ark itself requires 2 units of divine radiance per day, and its facilities and weapons may incur additional costs.</p>)
+}
+const aetherReliquary: Perk = {
+  id: "aether-reliquary",
+  title: "Reliquary",
+  cost: -2,
+  prereqs: [aetherThrone],
+  types: ['Immortality'],
+  content: (<p>You build a hidden chamber at a particularly defensible point, covered in patterns based on and expanding from your tattoos. Should you perish, your spirit will return to this alternate home, and dwell within. You are imprisoned in solitude until your body reforms. The Reliquary takes 1 unit of divine radiance per day to remain active, and while you are in it it adds another 1 each day to the process of your rebirth. Your body is complete once 777 units of radiance are invested.</p>)
+}
+const aetherSeraph: Perk = {
+  id: "aether-seraph",
+  title: "Seraph",
+  cost: -3,
+  prereqs: [aetherAscendance, aetherReliquary],
+  types: ['Infusion'],
+  content: (<p>Your own body is also subject to reforging, but you remake it in a form that does not abandon the image of the divine. You die and form a new body, taller and stronger, with bones of orichalcum and wings of white cloud. Your mobility and accuracy greatly increase, in proportion to points spent in the Aether, and you have the right to enter the City of El, and to debate and vote with the Heavenly Choir. Though the Choir is officially for praising the Almighty, it is the most important den of politics in the Aether, and deals brokered here have great impact on the wars outside.</p>)
+}
+const worldAether = {
+  id: "base-worlds-aether",
+  title: "Aether",
+  tagline: "adapted from Cruxador's Conduit Rework",
+  description: (
+    <>
+    <p>In the Aether, an infinite expanse of clouds dotted by towers of orichalcum surround El, the city and empty throne of the Almighty. Bloodshed is forbidden in El, so the aengelic choir plays politics as armies of aengelim battle through the fortresses in the surrounding clouds, giving their lives for the Divine Radiance of the Almighty. Radiance sustains not only aengelic existence but also the buildings and war machines they use to secure it, so the crystalized form that occasionally drifts through the clouds evokes a sudden furor, while the lesser thrones which channel the absent Almighty's divine nature into far more Radiance are the target of extensive campaigns.</p>
+    <p>Anyone with a connection to Aether can pray to the Almighty to receive divine radiance. Two hours of prayer generate a single unit of radiance, enough to sustain a common aengel for a day.</p>
+    <p>Aengelim are the most notable population of the Aether, and meet to debate in the halls of El one day just to plummet to their deaths from their strongholds outside of it the next. They are fanatically loyal to the Almighty despite his absence, and believe that he will return imminently, so each one of them wishes to be at the foot of his throne when he returns. They exist as manifestations of divine radiance, and bereft of the Almighty's direct benediction, they can rely only on crystals formed of mortal prayer or the emanations from the thrones to sustain them.</p>
+    <p>There are many forms of aengel, from the humble ishim - lesser aengelim who delight in service, their wings and bodies inadequate to the stresses of battle - to the great Ophanim, so optimized for war that their bodies are no longer in the image of the Almighty. The middle ranks come in many forms, each tactically similar to the rest; though cherubim have animal heads and seraphim have more wings, these are most notable for the implications to their social caste, and since the disappearance of the Almighty, these differences have lost much of their practical importance.</p>
+    </>
+  ),
+  conduitDescription: (<p>Those who take perks in Aether develop shining golden tattoos depicting their virtues and aspects of their lives. At 5 points spent, you get a small thin halo, which broadens into a full golden sun disk by 20 points spent. Your skin also becomes supernaturally clear and perfect. Those influenced by Aether are titled Saint.</p>),
+  perks: [
+    aetherAscendance, aetherCrusadersFire, aetherOrichalcum, aetherWrathfulEye, aetherThrone, aetherFortress,
+    aetherCathedral, aetherGarden, aetherIntercession, aetherDoorwayOfSpheres, aetherTowers, aetherAengelArch,
+    aetherOphanimForge, aetherArk, aetherReliquary, aetherSeraph
+  ],
+  crown: {
+    id: "aether-crown",
+    title: "Crown: Lightbringer",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in the Aether are called Lightbringers. Their aengelim are fanatically loyal to them, easily coming up with theology that justifies and endorses the Conduit's actions. If the Lightbringer weighs in, the aengelim will take these words as divine revelation.</p>
+      <p>The buildings you build are taller and more efficient and can gather an additional radiance per day, and your <PerkLink perk={aetherTowers} /> are more efficient in other worlds, allowing them to pay their own upkeep.</p>
+      <p>You can contain seven times as much divine radiance within yourself.</p>
+      <p>Prayers made to a Lightbringer through <PerkLink perk={aetherIntercession} /> generate radiance just as they would if made to the Almighty directly.</p>
+      <p>You can see through your minions' eyes, as well as through your <PerkLink perk={aetherWrathfulEye} />s, when you are seated on your <PerkLink perk={aetherThrone} />.</p>
+      <p>When you make <PerkLink perk={aetherOrichalcum} />, you can refine it more precisely, allowing you to make panes of Orichalcum thin enough to see through and yet strong enough to weather damage just as well as solid brick. You also produce seven times as much of it.</p>
+      <p>With <PerkLink perk={aetherAengelArch} /> and <PerkLink perk={aetherSeraph} />, you can elevate your malachim to seraphim, who can accompany you to El.</p>
+      <p>The radiance consumption of your <PerkLink perk={aetherReliquary} /> can be increased, decreasing the time necessary for your new body to form. Furthermore, the deceased Lightbringer is not fully dead; you can engage in <PerkLink perk={aetherIntercession} /> and can issue proclamations, your voice booming forth from your tower.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "aether-dangers",
+    title: "Dangers",
+    firstTitle: "Falling",
+    firstContent: (<p>There is no ground in the Aether, and no railings. If you fall off of anything without having wings, you will fall forever until some aengel takes pity on you.</p>),
+    secondTitle: "Heresy",
+    secondContent: (<p>The aengelim are fanatical, and brook no disrespect of the Almighty. Though they loath heterodoxy, they are nonetheless schismatic in the Almighty's absence, and each will not hesitate to kill you over religious disagreements.</p>),
+    thirdTitle: "The Almighty",
+    thirdContent: (<p>Though gone, the choir does not consider that he could be dead. When he returns, what will he think of the things happening now? Will there be a reckoning? What if he never returns? Who, then, will sit the throne?</p>)
+  },
+  poi: {
+    id: "aether-poi",
+    title: "Trees",
+    firstTitle: "Life",
+    firstContent: (<p>The Tree of Life grows in the garden of the archangel Michael, a mighty warrior. Its fruit heals all injuries and diseases, including age.</p>),
+    secondTitle: "Zoan",
+    secondContent: (<p>The archangel Belial guards a tree which produces Zoan fruit, each with the form of an animal. He feeds this to his aengelim, elevating them into cherubim with animal forms and particularly unique abilities.</p>),
+    thirdTitle: "Discord",
+    thirdContent: (<p>The Apple of Discord, or of the Knowledge of Good and Evil, grows on a tree currently held by the archangel Maab. She shares them with enemies and allies alike, for these apples broaden the mind and allow a new perspective.</p>)
+  },
+  breaching: {
+    id: "aether-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>The bridges of the Aether are surrounded by zealotry. Religious phenomena manifest, according to the most common local religions, and the people feel inclined to be less tolerant of different beliefs even outside of a religious context, coming to blows more regularly.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>Towers in other worlds may not be able to gather divine radiance, but they provide structure for rooms and facilities to extend your domain over another world, and cathedrals in other worlds may be a great benefit to your minions there.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>A golden orichalcum doorway shows another world, splendors through its threshold. Though it requires Radiance to stay open, it only requires 1 from the Aether side, and allows Radiance to flow through into the other world.</p>)
+  }
+}
+
+const crucibleBondfire: Perk = {
+  id: "crucible-bondfire",
+  title: "Bondfire",
+  cost: -1,
+  types: ['Immortality'],
+  content: (<p>Within your heart burns an ember of Azoth. You can use it to enkindle the Bondfires that dot the Crucible. You may rest at these fires for a time, warming yourself and remembering good times in the past. When you die, you can choose to re-emerge from the last Bondfire that you rested at. The experience drains something imperceptible from you each time, leaving you just a bit more tired and grey. You can always give up, but so long as you don't, you can never truly die. The fire of Azoth also prevents you from aging naturally. While in Crucible, this always takes precedence over other forms of Immortality.</p>)
+}
+const crucibleAzothEngine: Perk = {
+  id: "crucible-azoth-engine",
+  title: "Azoth Engine",
+  cost: -1,
+  prereqs: [crucibleBondfire],
+  types: ['Infusion'],
+  content: (<p>Your own ember of Azoth grows, and it joins to those of others. Whenever you kill someone, you can take their Azoth; when you die, all your collected Azoth is scattered around your body, where it will remain until someone picks it up. The greater amounts of Azoth do shield you from the negative effects of death, however, and you can also use them for Azoth sorceries. The simplest form of this is to cast your embers out as a flaming projectile, burning your enemies with them, but you may find more sophisticated methods among the experts and ancient writings of the world.</p>)
+}
+const crucibleConflagration: Perk = {
+  id: "crucible-conflagration",
+  title: "Conflagration",
+  cost: -2,
+  prereqs: [crucibleAzothEngine],
+  content: (<p>You can ignite all your Azoth at once! All of your Azoth save for your own ember that safeguards your life bursts forth from your body, turning your surroundings into an inferno powered by your soul and will. You maintain control of the fire; you can direct it slightly and it does not burn you. Naturally, the area and intensity is dependent on the amount of Azoth that you have, but the duration increases with the amount of points spent in Crucible.</p>)
+}
+const crucibleForge: Perk = {
+  id: "crucible-forge",
+  title: "Forge",
+  cost: -1,
+  prereqs: [crucibleBondfire],
+  types: ['Material'],
+  content: (<p>By infusing your Azoth into tangible materials, you create a hybrid between solid matter and ephemeral flame. Items Forged in this way gain signficant durability, and with skill and sorcery you can add unique enhancements that make an item better at fulfilling its purpose. Each time you place a new enhancement, you must first burn enough Azoth to overcome what the item already holds, then infuse a new ember while it is malleable. This increasing cost is the only limit on stacking enhancements, and your efficiency at the burning increases with points spent in the Crucible.</p>)
+}
+const crucibleSelfReforging: Perk = {
+  id: "crucible-self-reforging",
+  title: "Self-Reforging",
+  cost: -2,
+  prereqs: [crucibleForge, crucibleAzothEngine],
+  types: ['Infusion'],
+  content: (<p>Good tools are essential, but with an internal forge you can invest it in yourself directly. The ways in which this happens are relatively minor and somewhat esoteric, investing directly into separate categories of enhancement that don't correspond directly to biology but instead build Azoth meridians. Boosting your vitality allows you to shrug off blows, your vigor keeps you from tiring. You can boost strength, dexterity, agility, endurance. The cost, in Azoth, increases each time, but the size of that increase becomes smaller the more points you spend in the Crucible.</p>)
+}
+const crucibleAthanor: Perk = {
+  id: "crucible-athanor",
+  title: "Athanor",
+  cost: -3,
+  prereqs: [crucibleSelfReforging],
+  types: ['Infusion'],
+  content: (<p>Stoking the Azoth within your body starts its flow through your meridians. Merely cycling it like this enhances your body in proportion to the amount of Azoth you have. Your body shrugs off blows, your muscles grow in strength, potentially growing to superhuman levels. The greatest power, though, is that you can ignite your Athanor, burning away Azoth to super-charge your enhancements. When you do so, you push everything even further beyond, your Athanor flames burning with smokin' sick style.</p>)
+}
+const crucibleFlask: Perk = {
+  id: "crucible-flask",
+  title: "Flask",
+  cost: -2,
+  prereqs: [crucibleForge],
+  content: (<p>Among the most valuable of items made in Crucible are the elixirs made from the incessant rain, Azoth, and time. The flask itself is a substantial project, requiring specific materials from Crucible, and to properly boil the rainwater with Azoth as the Flask fills takes hours, though it need not be supervised the whole time. The result is a healing beverage that will instantly restore your body, curing injuries with no apparent side effects.</p>)
+}
+const crucibleHomunculus: Perk = {
+  id: "crucible-homunculus",
+  title: "Homunculus",
+  cost: -2,
+  prereqs: [crucibleSelfReforging, crucibleFlask],
+  types: ['Minion'],
+  content: (<p>Azoth fire burns with life and might, and you have learned the method of making mighty life with it. Fill a much larger flask, an urn, with water, fire, and blood. After a week per ember invested, the urn hatches into your Homunculus. The weakest of them have the strength of ten men, and the more embers invested, the stronger they are. They may also receive your Azoth to use for sorcery. A Homunculus needs no sustenance save for Azoth, which they burn slowly over time in order to sustain their existence.</p>)
+}
+const crucibleHunt: Perk = {
+  id: "crucible-hunt",
+  title: "Hunt",
+  cost: -2,
+  content: (<p>The greatest way to improve life in the Crucible is kill those who make it dangerous. As long as you know their name, tracks, scent, or some other identification, you can Hunt anything. You know their direction and distance at all times. While Hunting, you do not tire, but you must not stray and you must be sporting, pursuing your quarry directly with your own abilities. You may only Hunt one thing at a time, and if you abandon your Hunt or resort to unsporting trickery, you can never Hunt the same creature again.</p>)
+}
+const crucibleAlwaysAPath: Perk = {
+  id: "crucible-always-a-path",
+  title: "Always a Path",
+  cost: -3,
+  prereqs: [crucibleHunt, crucibleAzothEngine],
+  content: (<p>Your goals are not limited to murder. The paths of Crucible are long and winding, and they frequently change when the light shines no longer upon them. But you hold within you the torch that shows the way. Your Azoth leads you toward your goal. If the goal is not immediately possible, it will instead lead to something which will allow you to make significant advances towards your goal, though the way to use this opportunity will not always be clear. It may lead you to great danger and hardship, but if you follow it to the end there will always be success eventually.</p>)
+}
+const crucibleRoundtableHold: Perk = {
+  id: "crucible-roundtable-hold",
+  title: "Roundtable Hold",
+  cost: -2,
+  prereqs: [crucibleAlwaysAPath],
+  types: ['Gateway'],
+  content: (<p>The central hold of the City is a special place, where heroes meet. It has but two doors, yet many doors open to it. In fact, any door in Crucible will open to the Roundtable Hold if you open them correctly, though that door will only return you to the place that you entered from. The other leads to the city. In the hold, you can rest safely, trade with other heroes, and feed the remains of the Others to the central Pyre. The Pyre warms you, and generates Azoth that can be freely shared among all who meet here.</p>)
+}
+const crucibleLodge: Perk = {
+  id: "crucible-lodge",
+  title: "Lodge",
+  cost: -1,
+  prereqs: [crucibleHunt,crucibleBondfire],
+  types: ['Outpost'],
+  content: (<p>Using the entire remains of a Great Other, you light a Hearthfire, a specialized Bondfire. After consuming the remains, it returns to a normal size but must be fed with bones infrequently, or it dims. Only you may reignite it, and it does not burn if you are dead. The room that it burns in is filled with light and warmth, and stays dry. Further, you may adorn it with trophies of anything you Hunt, and any kin of those deceased will shy away from the area, showing you respect and leaving you in peace.</p>)
+}
+const crucibleHeartAndSkin: Perk = {
+  id: "crucible-heart-and-skin",
+  title: "Heart and Skin",
+  cost: -2,
+  prereqs: [crucibleHunt],
+  content: (<p>Those that you hunt grant you not only their remains but their form. By drinking a bit of their blood directly from their heart and making a cloak of their hide under the cyan light of the Moon, you gain their form. Putting on the cloak is easy, as it readily closes around you, forming a new body. You retain your mind, but the instincts and impulses of the creature you inhabit may plague you. To remove it, you must cut the skin back open in the front and peel it off.</p>)
+}
+const crucibleCursedHeart: Perk = {
+  id: "crucible-cursed-heart",
+  title: "Cursed Heart",
+  cost: -1,
+  prereqs: [crucibleHeartAndSkin, crucibleHomunculus],
+  content: (<p>Build a fire from a creature's bones, burn the hide, and boil the heart in a cauldron of rainwater under the light of the Moon. When the water has boiled away, there will be a small, dark stone left in the pot. If fed to a Homunculus, the stone grants them a fraction of the creature's power and an echo of its form, and slows their rate of Azoth consumption to almost nothing. However, beware—if that Homunculus should ever become fully starved of Azoth, the Other whose heart they ate will burst forth in a terrible fury. Feeding multiple stones to a single Homunculus combines both the power and the danger.</p>)
+}
+const worldCrucible = {
+  id: "base-worlds-crucible",
+  title: "Crucible",
+  tagline: "adapted from Cruxador's Conduit Rework",
+  description: (
+    <>
+    <p>Rain falls endlessly from a dark sky, washing over the dark stone of vast ruined castles. Save for those rare times the moon shows her face, the only illumination comes from fire. Whether natural combustion or the stranger fires of Azoth, casting light in magenta and lavender across the black stone without consuming any fuel, fire's light never reaches far as one would like.</p>
+    <p>The ruins sprawl in an unintuitive jumble, without clear thoroughfares or unblocked roads. While many areas have an implicit purpose, it's hard to see how they ever would have fit together into a functioning society. They certainly don't now, though the locals have formed a "city" of sorts.</p>
+    <p>People on Crucible, real people with hopes and aspirations, are rare. All people in this world have a spark of Azoth burning within their chest, allowing them to reawaken at a Bondfire after death. Each death dims their spark though, and eventually everyone here is worn out to the degree that they Fade. The Faded are a hazard, but a minor one. They still return to life after being killed, though only when the moon comes out. It is but a half life, a twisted existence without cognition or social ability, yet no death is permanent here. They wait still, or wander aimlessly, not caring for themselves. Any with the true life of Azoth will draw their ire, and they will attack.</p>
+    <p>The true dangers in the Crucible are the Others. They are diverse and strange beings, monstrous and vast. Each was once a great and mighty being which has since Faded, or succumbed to the darkness of this world. Or perhaps they were always dark and powerful since the beginning of time. Some hints may be found in their leavings about the place, but most mysteries are long-forgotten, irrelevant. They are now simply great and terrible foes for you to overcome. Unlike the Faded, once destroyed they are gone forever, leaving behind remnants that can be forged into weapons, and only by their deaths can the world become a slightly brighter place, for however long it lasts.</p>
+    </>
+  ),
+  conduitDescription: (<p>Time and points spent in the Crucible have no obvious effect, at least none that could not be attributed to experiencing the world's hardships. Conduits of the Crucible are called Torchbearers, and they tend to be maudlin and fatalistic, but determined. At 20 points, the only overt change occurs, as a magenta flame of Azoth alights in the center of their heart.</p>),
+  perks: [
+    crucibleBondfire, crucibleAzothEngine, crucibleConflagration, crucibleForge, crucibleSelfReforging,
+    crucibleAthanor, crucibleFlask, crucibleHomunculus, crucibleAlwaysAPath, crucibleRoundtableHold, crucibleLodge,
+    crucibleRoundtableHold, crucibleHeartAndSkin, crucibleCursedHeart
+  ],
+  crown: {
+    id: "crucible-crown",
+    title: "Crown: Phoenix",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in the Crucible are the Phoenix, themselves bonfires of Azoth. When a Phoenix dies, their Azoth erupts from their body, scorching enemies and consuming nearby loose items. When they are reborn at a <PerkLink perk={crucibleBondfire} />, they retain not only their own equipment but also whatever their Azoth gathered this way.</p>
+      <p>A Phoenix's <PerkLink perk={crucibleAzothEngine} /> powers sorceries more efficiently. They can empower the sorcery with plenty of Azoth and then drink back in whatever Azoth wasn't consumed by actually burning something, making accuracy a pointless luxury.</p>
+      <p>With <PerkLink perk={crucibleAthanor} /> active, Azoth fire trails in the wake of a Phoenix, burning the souls of the enemy as a Phoenix leaps between enemies or all over a great Other.</p>
+      <p>The <PerkLink perk={crucibleHomunculus} /> of a Phoenix is nourished by the Phoenix's presence, basking in their light, and need not consume Azoth unless they are apart for more than a few days; the Phoenix's Lodge holds enough of their presence to be equally sustaining while the fire is lit.</p>
+      <p>When a Phoenix illuminates the way to their goal using <PerkLink perk={crucibleAlwaysAPath} />, they choose who can see it, guiding their allies to a shared goal while hiding their movements from any rivals.</p>
+      <p>A wise hunter does not war with their prey, and the instincts in their <PerkLink perk={crucibleHeartAndSkin} /> are a tool, not a hazard, allowing the Phoenix to use the form more readily.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "crucible-dangers",
+    title: "Dangers",
+    firstTitle: "Others",
+    firstContent: (<p>Competent warriors can soon deal with the Faded, at least in moderate numbers, but the Others are each unique and powerful, with bizarre or overwhelming methods of combat.</p>),
+    secondTitle: "The Moon",
+    secondContent: (<p>It can rarely be seen, but when the clouds part and the moon comes out, the defeated Faded reanimate, the Others grow in strength, and the wise take shelter. The moon's light twists and empowers the Others and drives the Faded to seek out new targets to kill.</p>),
+    thirdTitle: "Despair",
+    thirdContent: (<p>It may take a dozen or a thousand or a hundred deaths to make even a little progress. How much easier would it be to simply stop coming back?</p>)
+  },
+  poi: {
+    id: "crucible-poi",
+    title: "Orders",
+    firstTitle: "Candlekeepers",
+    firstContent: (<p>Beleaguered knights guard the city. They patrol and establish safe zones, trade sorcery and equipment for Azoth, and tend to the Bondfires.</p>),
+    secondTitle: "Lunar Knights",
+    secondContent: (<p>These knights feed on the wretched transformative power of the moon, becoming bestial but mighty every time Luna shows her face. Their grandmaster can call the moon forth at will.</p>),
+    thirdTitle: "Blood Dragons",
+    thirdContent: (<p>The reptilian mounts from which these knights take their name are no true dragons, for they lack wings, but they share the same sorcery as their riders, sending lances of precise, efficient, and potent Azoth from their eyes.</p>)
+  },
+  breaching: {
+    id: "crucible-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Any that remain in shadow too long lose motivation and enthusiasm more than otherwise, though fires abate this. Those who despair near bridges Fade, and those who Fade with strong regrets may distort and grow more powerful - though also more wretched.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>Lodges outside of Crucible have the only fires of Azoth in those worlds, but they do not bring the things that make Crucible dangerous save that the Moon, seen through a Lodge's windows, seems more sinister and the shadows cast by the Azoth flame seem longer and darker.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>A large ornate door makes up every Gateway, and they quickly become soot-darkened and weathered no matter their material or maintenance. Every Gateway to the Crucible leads to the Roundtable Hold.</p>)
+  }
+}
+
+const muAstralEye: Perk = {
+  id: "mu-astral-eye",
+  title: "Astral Eye",
+  cost: -1,
+  content: (
+    <>
+    <p>The light of stars high above shines throughout Mu, illuminating all, though dimly. By opening an eye that you don't have, you've discovered that it also shines on things that normal light does not, shattering illusions as well as revealing the invisible and insubstantial to your illuminated touch as though they were real objects.</p>
+    <p>You can also shine this light from your third eye, allowing you to see things hidden on other lands with equal clarity.</p>
+    </>
+  )
+}
+const muReservoir: Perk = {
+  id: "mu-reservoir",
+  title: "Reservoir",
+  cost: -1,
+  types: ['Infusion', 'Material'],
+  content: (<p>You can claim the raw colors that spiral through the seas above Mu, siphoning them into your own body. As the color runs through your body, you can feel it react to the emotions in others, showing you their auras and tugging slightly on your veins as you draw nearer. Likewise, you can use your colors to push and pull on the color of someone else's emotions, enflaming or dousing them in proportion to the color you have within you. While you can hold the color within yourself without devouring it, it becomes more and more visible, luminous beneath your skin.</p>)
+}
+const muIllusion: Perk = {
+  id: "mu-illusion",
+  title: "Illusion",
+  cost: -1,
+  prereqs: [muAstralEye, muReservoir],
+  content: (<p>You can use the light of your third eye to spin your colors into things, changing the perceptions of all that your light shines upon and making them see as you see. How readily you can change things depends on the color you expend to do so, and your points spent in Mu. Whoever interacts with the illusions you create will find them utterly insubstantial and realize the truth behind it. But so long as the astral light shines only dimly on your creations, it will fool most who are not shown its insubstantiality.</p>)
+}
+const muGolem: Perk = {
+  id: "mu-golem",
+  title: "Golem",
+  cost: -1,
+  prereqs: [muReservoir],
+  content: (<p>The temples and halls of Mu are filled with ancient statues, and you can empower statues of your own. Color is near to life, and by pumping a form of stone full of color, you create something animate. The stone can be worked in whatever shape your artifice devises, and the color keeps it animate until expended - typically over a month, though it bleeds out quickly if the golem is damaged. Every shade and tone of color matches an emotion, and this emotion characterizes the golem's behavior, though it respects your will to an extent.</p>)
+}
+const muSimulacrum: Perk = {
+  id: "mu-simulacrum",
+  title: "Simulacrum",
+  cost: -2,
+  prereqs: [muGolem],
+  types: ['Minion','Gateway'],
+  content: (<p>A specially made Golem with multiple colors built into it will eventually hatch. Simulacra are real people, for all that they are stone, with hopes and dreams. Their nature is determined by their creator, should he be skilled with colors, for those combinations paint the emotions that they will feel. Though they are of human intelligence, they are not of human morality.</p>)
+}
+const muIsland: Perk = {
+  id: "mu-island",
+  title: "Island",
+  cost: -2,
+  prereqs: [muGolem, muAstralEye],
+  types: ['Outpost'],
+  content: (<p>Sometimes spirals intersect, colors clashing and spitting out into stone. You can find these events and guide them, directing color to form landscapes that suit your aims, and rip them from the ocean floor into animate things drifting on the currents. Doing so requires both finding such a natural event, and spending a fair amount of time shepherding it, but any non-living material can be made in this way. The landscape you create subtly encourages the emotions associated with the colors you use.</p>)
+}
+const muSubaquatic: Perk = {
+  id: "mu-subaquatic",
+  title: "Subaquatic",
+  cost: -1,
+  types: ['Infusion'],
+  content: (<p>As you adapt to the aquatic environment, you no longer need to bring air with you. You grow internal gills that allow you to breathe water easily. Your skin becomes smooth and slick, and you can display patterns on it, using them as language to communicate and perhaps hiding natural changes in your appearance. You move more easily in colored light, the water propelling you.</p>)
+}
+const muBodySculpt: Perk = {
+  id: "mu-body-sculpt",
+  title: "Body Sculpt",
+  cost: -2,
+  prereqs: [muSubaquatic],
+  content: (<p>You can alter the forms of living creatures. It takes hours to make even something as simple as a tentacle, and not all beings can be changed equally. The simple structures of the beings of Mu and animals like them are changed easily, while animals composed of many more tissue types, as in other worlds, require incredible finesse. The more complex the creature and the greater the changes, the more time required and the greater chance that you make some lethal error. While you can use this power on yourself, great care would be advisable in doing so.</p>)
+}
+const muOnTheOrigin: Perk = {
+  id: "mu-on-the-origin",
+  title: "On the Origin",
+  cost: -1,
+  prereqs: [muBodySculpt],
+  content: (<p>Taking the sculpting of bodies to the greatest level, you can design entirely new species, capable of fertile reproduction. You may use components from multiple creatures to do this, though you must fuse them very very carefully if you are to succeed. Success, though, results in an entirely new species which breeds true, and if well designed for the purpose it can be a new feature of any ecosystem - or, indeed, a new weapon in some great scheme.</p>)
+}
+const muTranscendentForm: Perk = {
+  id: "mu-transcendent-form",
+  title: "Transcendent Form",
+  cost: -2,
+  prereqs: [muOnTheOrigin, muAstralEye],
+  content: (<p>By incorporating the light of the stars, you may forge bodies into something at once more and less than flesh. Like the light Astral, this material exists independent of physicality and may pass through solid objects, though doing so is uncomfortable. A being in an astral body can also allow other things to pass through it, though some willpower is required to keep such a form from being disrupted as would normally occur with full physicality. Like the stars from which it is made, such a creature does not age or die with the passage of time.</p>)
+}
+const muMindBlast: Perk = {
+  id: "mu-mind-blast",
+  title: "Mind Blast",
+  cost: -1,
+  content: (<p>You gain the ability to notice the minds of others and, with your own mind, to alter them. With a burst of will, you can damage the minds of your enemies, causing paralysis. For an initiate, this may be a temporary state of inability to act, but as you gain more perks in Mu it becomes more potent, permanently incapacitating or even killing your target if you go all out. On the other hand, the stronger the willpower of your target and the stronger their sense of self, the more difficult it is to break into their mind and have any effect at all.</p>)
+}
+const muMindSculpt: Perk = {
+  id: "mu-mind-sculpt",
+  title: "Mind Sculpt",
+  cost: -2,
+  prereqs: [muMindBlast, muReservoir],
+  content: (<p>Destroying is easier than creating, but you can do both. You can make far subtler changes than a Mind Blast, deleting key memories or thoughts and sticking minute whorls of color in just the right places. You can change temperament and mental state with an ease and speed that a psychologist would envy, though you are not limited to healing. A skilled Conduit can even create such complex things as psychological needs, but regardless of skill, the finesse and concentration required take a long time, and attempting it is both noticeable and unpleasant for the subject.</p>)
+}
+const muTelepathy: Perk = {
+  id: "mu-telepathy",
+  title: "Telepathy",
+  cost: -1,
+  prereqs: [muMindBlast],
+  content: (<p>You can touch a mind so gently that damage is all but non-existent, and all that mind feels is the brush of your thoughts. This can be used to communicate without words, and if you're sufficiently familiar with a particular mind, such as the minds of your minions, you can use this power regardless of physical distance.</p>)
+}
+const muNoosphere: Perk = {
+  id: "mu-noosphere",
+  title: "Noosphere",
+  cost: -1,
+  prereqs: [muTelepathy, muIllusion],
+  content: (<p>The perimeter of your mind is unbound. The emotions and dreams of others constantly brush up against your own, giving you a constant perception of their mindset. In wakening, this is easy to block out, should you so desire, but you will find that all who you connect to in this way share dreams when you sleep concurrently.</p>)
+}
+const muThatWhichDreams: Perk = {
+  id: "mu-that-which-dreams",
+  title: "That Which Dreams",
+  cost: -3,
+  prereqs: [muNoosphere, muTranscendentForm],
+  types: ['Immortality'],
+  content: (<p>Should your physical form be destroyed, your mind always has a refuge to fly to. The connections you have to others anchor your mind, and you are thus drawn into the mind and body of one of the people you are open to through the Noosphere. Full control of their body would require dismantling the mind that previously inhabited it, but if you get along well enough with your host you may find that partial control can also be comfortable.</p>)
+}
+const muTulpa: Perk = {
+  id: "mu-tulpa",
+  title: "Tulpa",
+  cost: -2,
+  prereqs: [muNoosphere, muSimulacrum],
+  types: ['Minion'],
+  content: (<p>Rather than merely pushing color into something that exists in reality, you can push it into a thing of dreams, creating a being that exists purely within someone's mind. It has no ability to act outside the mind that holds it, but can travel along mental connections to reach minds other than the one in which it was originally created. Such a being may act as a welcome friend or as a devastating torment, depending on how well it gets along with its host.</p>)
+}
+const muDualityOfMind: Perk = {
+  id: "mu-duality-of-mind",
+  title: "Duality of Mind",
+  cost: -1,
+  prereqs: [muTulpa, muTranscendentForm],
+  content: (<p>With careful sculpting, you can grant an astral body to a mental construct such as a Tulpa, allowing it to move independently through the physical world. In the reverse of an ordinary Transcendent Form, these astral tulpas are usually invisible and insubstantial and can only become visible or solid with effort. No matter how far an astral tulpa travels in the physical realm, they remain linked to their host's mind, and can return there instantly at will.</p>)
+}
+const worldMu = {
+  id: "base-worlds-mu",
+  title: "Mu",
+  tagline: "adapted from Cruxador's Conduit Rework",
+  description: (
+    <>
+    <p>The silty plains of Mu lie beneath an endless astral sea. Without shore or sky, the waters stretch eternally up toward the unreachable stars, whose distant white light filters down through infinite water just strongly enough to make even the deepest trench dim and murky rather than utterly black. Far above the ocean floor, spirals of color drift and swirl, shining their own inconstant light down on the buried roads and ancient cities scattered across the plains. These colors are emotion made manifest, and the true subtleties of their numinous pigments cannot be grasped by the mundane eye.</p>
+    <p>Though the cities of Mu are vast, their population is small. The natives call themselves dreamborn, and each prefers to maintain their own isolated garden in a neighbourhood far from their fellows, leaving the city to crumble in between. There they tend to plants and raise creatures as pets, often twisting them into wild and alien forms... and no few of them turn that discipline on themselves as well.</p>
+    <p>The only ones who master the control of body and form to a degree greater than the dreamborn are the fearsome artisans who swim lazily among the ruins, bending the minds of all that pass by. Their tentacles weave and wend through flesh and stone, touching all within and leaving no wound but leaving changes nonetheless.</p>
+    <p>The cities are also dotted by statues, not of the dreamborn but of far older things, their features long since worn away. Now and then, one will seem to shift.</p>
+    </>
+  ),
+  conduitDescription: (<p>The more perks you take in Mu, the more your color changes with your emotions. By 5 points, it is clearly distinct from normal human reactions like blushing. At 20 points, your pupils change shape, taking on the w shape of a cuttlefish's eyes. Those influenced by Mu are titled Sunken.</p>),
+  perks: [
+    muAstralEye, muReservoir, muIllusion, muGolem, muSimulacrum, muIsland, muSubaquatic, muBodySculpt, muOnTheOrigin,
+    muTranscendentForm, muMindBlast, muMindSculpt, muTelepathy, muNoosphere, muThatWhichDreams, muTulpa, muDualityOfMind
+  ],
+  crown: {
+    id: "mu-crown",
+    title: "Crown: Starseer",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in Mu are called Starseer, and are artists of flesh and stone, of light and sea, crafting all manner of things living and unreal.</p>
+      <p>Your <PerkLink perk={muAstralEye} /> is a true beacon, cutting through illusions and seeing through all deceit. Its gaze can also turn flesh to stone and back again, allowing you to keep detached parts of living creatures ready and waiting for use in <PerkLink perk={muBodySculpt} />ing.</p>
+      <p>The <PerkLink perk={muGolem} />s of a Starseer can replenish themselves, feeding on the emotions of others and on the colors of their creation.</p>
+      <p>Creations of <PerkLink perk={muSimulacrum} /> can be combined with each other or with biological creatures using <PerkLink perk={muBodySculpt} />, and can be made into true-breeding species with <PerkLink perk={muOnTheOrigin} />.</p>
+      <p>You can cause the color in your <PerkLink perk={muReservoir} /> to clash like the great spirals above, and use it to create a living <PerkLink perk={muIsland} /> without needing to find a natural event.</p>
+      <p>The <PerkLink perk={muTelepathy} /> of a Starseer crosses the boundary between worlds.</p>
+      <p>You can passively <PerkLink perk={muMindSculpt} /> through the <PerkLink perk={muNoosphere} />, influencing the minds around you.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "mu-dangers",
+    title: "Dangers",
+    firstTitle: "Underwater",
+    firstContent: (<p>The ocean is difficult to breathe in, though at least you can take more air. The pressure doesn't crush you, despite the depth, but it tires you quickly, and dulls your movements.</p>),
+    secondTitle: "Inconstance",
+    secondContent: (<p>Mu seems languid, unchanging in its ancientness, but even the keenest third eye cannot trace every path of cause and effect. Entire cities may blink in and out of existence, and an ancient moray the size of a train may appear where one wasn't yesterday.</p>),
+    thirdTitle: "Mindbreak",
+    thirdContent: (<p>Dreamborn may be eager to enthrall you and use you as new livestock. Artisans may change you on a whim.</p>)
+  },
+  poi: {
+    id: "mu-poi",
+    title: "Cities",
+    firstTitle: "The Forsaken",
+    firstContent: (<p>The ancient dreamborn capital is completely abandoned in its center. Thousands of dreamborn congregate outside of it, sometimes sheltering in the peripheral buildings, but none will draw near the temple.</p>),
+    secondTitle: "The Fallen",
+    secondContent: (<p>An entire city, covered in a dome of clear crystal. It is filled with air, and inhabited only by moss.</p>),
+    thirdTitle: "The Wavering",
+    thirdContent: (<p>Drifting above the sea-floor, an entire city rests atop a great jellyfish-like colony of siphonophores. It cycles between being visible and invisible on a complex but consistent rhythm.</p>)
+  },
+  breaching: {
+    id: "mu-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Small amounts of color leak through bridges to Mu, heightening emotions and making people less rational. Slimy creatures, amphibians and cephalopods seem to crop up more commonly, and often exhibit some form of mutation.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>The light of a single star shines through where an Outpost of Mu is built. They are typically made of cyclopean stone, and the taste of the sea is in the air.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>A Simulacrum is stretched across two worlds, some colors drawn through a bridge and others remaining on Mu, yet the two are combined nonetheless, the material forming their body present on both sides. This Simulacrum is bound in place, unable to move from where its feet remain planted, but it can open a great yawning orifice within itself and consume a traveler, spitting them out on the other side.</p>)
+  }
+}
+
+const kuiperVoidDweller: Perk = {
+  id: "kuiper-void-dweller",
+  title: "Void Dweller",
+  cost: -1,
+  types: ['Infusion'],
+  content: (<p>The void of space is a harsh and unforgiving medium, but to a Conduit of Kuiper it is a comfortable home. As unyielding as stone, your body suffers no loss of heat or moisture to the vacuum around you, and all radiation you absorb is processed harmlessly into usable energy; the only food you need now is unfiltered starlight. You no longer need to breathe, and although without aerobic respiration your muscles tire quickly, they don't atrophy.</p>)
+}
+const kuiperGraviticAngel: Perk = {
+  id: "kuiper-gravitic-angel",
+  title: "Gravitic Angel",
+  cost: -2,
+  content: (<p>Space has no ground to walk on, no water to swim in, only the slow dance of distant masses. As a Spacer, you transcend that dance. You can apply acceleration to yourself or anything you're touching with a maximum number of Gs equal to points spent in this world. As a side benefit, the physics of vectors and trajectory become inherently apparent. Orbital dynamics and zero-G movement come as easily to you as throwing a ball at a target comes to most people.</p>)
+}
+const kuiperSpatialSense: Perk = {
+  id: "kuiper-spatial-sense",
+  title: "Spatial Sense",
+  cost: -1,
+  types: ['Infusion'],
+  content: (<p>You feel the fabric of space-time around you, and you know what occupies it. The radius begins at a few meters but scales exponentially with points spent in Kuiper: three meters, then nine, then twenty-seven, all the way up to nearly a billion kilometers. In that area, you can detect both gravity and electromagnetism, allowing you to know the density of matter in the space and the flow of any light or electricity. With experience, you will have an almost perfectly accurate perception of what is there, as with sight, but unlike with sight you can always perceive all the way around you and know it all the way through inside and out.</p>)
+}
+const kuiperStonesThoughts: Perk = {
+  id: "kuiper-stones-thoughts",
+  title: "Stone's Thoughts",
+  cost: -1,
+  content: (<p>As easily as you can feel a ray of light and know its place in a pattern of colour, now you can feel an electrical impulse and know its place in a pattern of information. The complex biochemistry of an organic mind is far harder to read, but the clear, consistent structure of a computer or a sentient asteroid is an open book to you. And not only can you read, you can also write: within the range of your Spatial Sense you can introduce small, precise electromagnetic disturbances that let you communicate with mineral minds, or alter their thoughts.</p>)
+}
+const kuiperOrbit: Perk = {
+  id: "kuiper-orbit",
+  title: "Orbit",
+  cost: -1,
+  prereqs: [kuiperStonesThoughts],
+  types: ['Minion'],
+  content: (<p>Between slight alterations and clever diplomacy, the alien minds of the asteroids take a liking to you. You can edit their minds to respect or revere you. In any case, they also enjoy orbiting you, basking in the feeling of your senses touching them, and will follow you around if you allow them to. They'll defend you if needed, using their mental constructs and their solid stony bodies.</p>)
+}
+const kuiperInstrumentality: Perk = {
+  id: "kuiper-instrumentality",
+  title: "Instrumentality",
+  cost: -2,
+  prereqs: [kuiperStonesThoughts],
+  content: (<p>Like the asteroids, you have learned the art of tracing shapes into the world and impressing them on the fabric of reality until it creases in just the right spots. Any shape that you can hold in your mind, you can make real. While they are initially fragile and weightless, with time you can learn to impart mass, durability, and other physical properties. Your creations, once fully assembled, are permanent and cannot be altered further, but are as susceptible to mundane destruction as any other object.</p>)
+}
+const kuiperIThinkTherefore: Perk = {
+  id: "kuiper-i-think-therefore",
+  title: "I Think Therefore",
+  cost: -2,
+  prereqs: [kuiperInstrumentality],
+  types: ['Material'],
+  content: (<p>By meditating on a thoughtform for an hour or more, you can store it in your memory with perfect, permanent clarity. These stored blueprints can be recreated in precise detail at will, or used as a memory aid to store and recall information. Further, with intense effort, a stored thoughtform can be brought forth into reality, creating a permanent construct similar to Instrumentality with one important difference: your externalized thoughtforms are still connected to your mind, letting you track their location relative to you and know what forces are acting on them at any moment. However, an externalized thoughtform becomes susceptible to ordinary wear and tear, and you no longer have a perfect memory of its original form, only perfect knowledge of its current condition.</p>)
+}
+const kuiperThoughtship: Perk = {
+  id: "kuiper-thoughtship",
+  title: "Thoughtship",
+  cost: -3,
+  prereqs: [kuiperInstrumentality, kuiperGraviticAngel],
+  types: ['Outpost'],
+  content: (<p>Your mentalist ability now rivals the grandest of asteroids. You can create thoughtforms of hundreds of cubic feet in volume, and assemble them into complex constructs, defining conceptual hierarchies and conditional interactions including independent use of your gravitic acceleration power. This allows you to construct a self-accelerating ship that maintains a comfortable artificial gravity for its passengers. You also keep your perfect memory of a thoughtform's design even when externalizing it, and with a little effort you can repair damage to externalized thoughtforms by reverting them to that initial design.</p>)
+}
+const kuiperGhostInAStone: Perk = {
+  id: "kuiper-ghost-in-a-stone",
+  title: "Ghost in a Stone",
+  cost: -3,
+  prereqs: [kuiperOrbit, kuiperThoughtship],
+  types: ['Immortality'],
+  content: (<p>Either at a whim or upon your death, you can dissolve your body and free your mind. As your thoughts roam the void, scattered and fragile, they will begin to change. It would be wise to find yourself a temporary home amid the thoughts of a passing asteroid, or inscribed into the circuits of a computer, to keep your mind steady while you work on constructing a replacement body out of complex thoughtforms. Those who stay too long outside the familiar shell of a single solid brain may be altered beyond recognition by the time they return.</p>)
+}
+const kuiperWormhole: Perk = {
+  id: "kuiper-wormhole",
+  title: "Wormhole",
+  cost: -3,
+  prereqs: [kuiperSpatialSense],
+  types: ['Gateway'],
+  content: (<p>The vastness of space is interminably great, and traversing it quickly becomes interminably tedious. Fortunately, you can harness the warping of space in Kuiper to skip most of that. When you meditate in a specific place, feeling it out with your Spatial Sense, you can set it as a waypoint. The number of waypoints you set is limited only by your ability to remember them all, and with a moment's thought and will, you can connect them. A wormhole the size of your hand opens between any two waypoints in the same world, and you can stretch it larger if needed. Your Spatial Sense extends seamlessly through wormholes.</p>)
+}
+const kuiperControlledWarp: Perk = {
+  id: "kuiper-controlled-warp",
+  title: "Controlled Warp",
+  cost: -1,
+  prereqs: [kuiperWormhole],
+  content: (<p>You can open a special kind of Wormhole, one that leads nowhere and tracelessly swallows anything you put through it. Although it sucks objects gently towards it, it can't open any larger than a few inches in diameter, and can only swallow an object that fully passes through it. If you leave it open for long enough, it will reverse its effect and start emitting lumps of matter, usually one element at a time in a random order, until eventually it swaps back. These cycles are always perfectly regular, but their length is unique to each Warp.</p>)
+}
+const kuiperHammerOfGod: Perk = {
+  id: "kuiper-hammer-of-god",
+  title: "Hammer of God",
+  cost: -2,
+  prereqs: [kuiperWormhole, kuiperGraviticAngel],
+  content: (<p>With a small flex of the structure of space around you, you can reach out to anything within the range of your Spatial Sense and accelerate it just as you would accelerate yourself. This applies just as easily through wormholes.</p>)
+}
+const kuiperDeflector: Perk = {
+  id: "kuiper-deflector",
+  title: "Deflector",
+  cost: -3,
+  prereqs: [kuiperHammerOfGod],
+  content: (<p>By twisting space around your body into a coiling spherical shell, you shield yourself from impact. Projectiles spin harmlessly past you. Even melee blows have trouble reaching you, though a clever opponent with sufficient leverage can learn to compensate for the twist. However, this effect closes you off from the outside world, scrambling any power that you try to extend through it; to affect anything outside your shell, you must open up a hole, reach through a Wormhole, or take the Deflector down entirely.</p>)
+}
+const worldKuiper = {
+  id: "base-worlds-kuiper",
+  title: "Kuiper",
+  tagline: "adapted from Cruxador's Conduit Rework",
+  description: (
+    <>
+    <p>Kuiper is mostly open space, vast and unending. There are stars in the distance, but though their light reaches you, they are unfathomably far away. Closer, though, are smaller things. Wisps of gas form great clouds, most static unless disturbed and luminous in the light of distant stars, though some roil with dark thunder. Small asteroids abound, and there are even some so large that they are forced into spherical shape by their own gravity. But in most of Kuiper, the gravity is so low that it cannot readily be perceived, and has no real effect.</p>
+    <p>Every once in a while, space itself warps and tears, physical adjacency realigning and matter appearing or being obliterated.</p>
+    <p>Kuiper is predominantly uninhabited. Biological life is large, slow-moving, and rare. Space whales languidly scoop space dust from nebulas with gaping mouths, gorging themselves on planktonic space things, while seemingly ordinary crabs graze on scant mats of photosynthetic bacteria that grow on asteroids or whales. In a few forgotten caves and crevices of asteroids long abandoned, larger things hibernate.</p>
+    <p>The most notable lifeforms of Kuiper, though, are not biological. The drifting asteroids are laced with veins and circuitry of colorful minerals native to this world. Energy surging through these veins forms a mind. These minds are usually rudimentary but the largest and oldest asteroids have great intellect, totally alien yet totally profound. Asteroids at this scale have direct power over physics, accelerating themselves or creating constructs of force. They more often do so to illustrate obscure philosophical points than for any practical reason, but it is an impressive discipline nonetheless.</p>
+    </>
+  ),
+  conduitDescription: (<p>The Conduits of Kuiper are called Spacers. Though they seem relatively ordinary at a glance, there tends to be a strange stillness about them; by 10 points spent, most Spacers move only rarely, in precise, controlled bursts. More concretely but less visibly, their bones are increasingly laced with a lustrous rainbow bismuth-like mineral. At 15 points spent, their shadow holds the vastness of space, and stars shine through it regardless of any intervening matter.</p>),
+  perks: [
+    kuiperVoidDweller, kuiperGraviticAngel, kuiperSpatialSense, kuiperStonesThoughts, kuiperOrbit, kuiperInstrumentality,
+    kuiperIThinkTherefore, kuiperThoughtship, kuiperGhostInAStone, kuiperWormhole, kuiperControlledWarp,
+    kuiperHammerOfGod, kuiperDeflector
+  ],
+  crown: {
+    id: "kuiper-crown",
+    title: "Crown: Celestial",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in Kuiper are called Celestials. They preside over empty space as gods of physics within their local areas.</p>
+      <p>Celestials spread the benefits of <PerkLink perk={kuiperVoidDweller} /> to everyone near them, within a distance that increases as you spend more points in Kuiper. Although this happens passively, it can also be revoked in an instant.</p>
+      <p>Celestials with <PerkLink perk={kuiperIThinkTherefore} /> can store thoughtforms in the minds of their minions, and use those thoughtforms to anchor micro-<PerkLink perk={kuiperWormhole} />s that travel with the minion, allowing the Celestial to extend <PerkLink perk={kuiperSpatialSense} /> and other powers through them wherever they go. Micro-wormholes cannot transmit matter, only information.</p>
+      <p>Celestials can expand their <PerkLink perk={kuiperControlledWarp} /> wormholes, and are personally immune to their pull, though their minions and constructs are not. They can also learn to influence what the warp will produce.</p>
+      <p>Celestial <PerkLink perk={kuiperThoughtship} />s are things of great beauty and comfort, and their control over gravity constructs and <PerkLink perk={kuiperWormhole} />s is incredibly precise, allowing for the creation of otherwise impossible machines including those in perpetual motion. Further, you can layer gravitic effects to reach higher maximum accelerations, though the speed of light is not surpassable in this way.</p>
+      <p>A Celestial can keep their <PerkLink perk={kuiperDeflector} /> up permanently with no conscious effort, meaning that if sleeping or otherwise unconscious they remain shielded. Even a Celestial can't keep it up while dead.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "kuiper-dangers",
+    title: "Dangers",
+    firstTitle: "The Warp",
+    firstContent: (<p>Space in Kuiper bends and breaks. Too near a warp, and it may consume you. If your body itself warps, it may rend you.</p>),
+    secondTitle: "Physical Impact",
+    secondContent: (<p>Asteroids whizz about at untold speeds, and some are too tiny to see at distance. Though rare, it is always possible that you will find yourself suddenly perforated.</p>),
+    thirdTitle: "Techno-Organic Synthetic Organisms",
+    thirdContent: (<p>Perhaps remnants of some ancient Conduit, or perhaps with a more mysterious origin, strange beings which include both biological and mechanical components. They are mostly dormant, but explode into violence if disturbed.</p>)
+  },
+  poi: {
+    id: "kuiper-poi",
+    title: "Thoughts",
+    firstTitle: "Omni-tool",
+    firstContent: (<p>Like a gauntlet, made of tools, it is designed for human hands. Each one has myriad functions suited to different purposes.</p>),
+    secondTitle: "Freighter",
+    secondContent: (<p>A vast ship, wrecked by some unknown calamity, drifts aimless and sundered. Investigating its holds reveals less cargo than one might think, and most of what there is has little value, but there are some exceptions. It may also contain remnants of whatever destroyed it.</p>),
+    thirdTitle: "Forgotten Monument",
+    thirdContent: (<p>A space station, or a floating island perhaps. It is dedicated to someone's departed love, with pictures and videos of her, and many of her favorite things throughout.</p>)
+  },
+  breaching: {
+    id: "kuiper-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Most bridges to Kuiper appear in outer space. Those that appear in atmosphere are universally in wide open areas. They are marked by distortions of space, and occasionally the sudden appearance of small asteroids or space dust.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>An outpost of Kuiper is a vast and visually stunning construct of thought, all mechanics and physics slaved to the will of man. Within it, uncontrolled warp does not manifest.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>It is difficult to force a wormhole between worlds, but once it is accomplished, the wormhole is alike to any other, except that it is more stable. A large hole in reality leading into the airless void of Kuiper sits ominous and unchanging.</p>)
+  }
+}
 export const baseWorlds: readonly World[] = [
-  worldEarth, worldBevin, worldPrison, worldRim, worldYomi
+  worldEarth, worldBevin, worldPrison, worldRim, worldYomi, worldDesert, worldAether, worldCrucible, worldMu, worldKuiper,
 ]

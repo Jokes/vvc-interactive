@@ -1,7 +1,6 @@
 .type-icon {
   height: 1em;
   padding: 0 0.1em;
-  vertical-align: sub;
 }
 .type-infusion .type-icon {
   filter: drop-shadow(0 0 0.15em #a10018);
