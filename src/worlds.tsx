@@ -1018,7 +1018,7 @@ const desertFertility: Perk = {
   title: "Fertility",
   cost: -1,
   prereqs: [desertRefinedFlesh],
-  content: (<p>Your body's fertility is under your control. You can impregnate and be impregnated in equal measure, and you can "hold back" and prevent impregnation. Your pregnancies are especially easy and uncomplicated, and quicker as well. Your children are always born healthy, never burdened with genetic time bombs that might afflict them or their own children with serious illness later in life, and they inherit your infusions. They are also more likely to be loyal to you. </p>)
+  content: (<p>Your body's fertility is under your control. You can impregnate and be impregnated in equal measure, and you can "hold back" and prevent impregnation. Your pregnancies are especially easy and uncomplicated, and quicker as well. Your children are always born healthy, never burdened with genetic time bombs that might afflict them or their own children with serious illness later in life, and they inherit your infusions. They are also more likely to be loyal to you.</p>)
 }
 const desertBloodline: Perk = {
   id: "desert-bloodline",
@@ -1874,6 +1874,935 @@ const worldKuiper = {
     thirdContent: (<p>It is difficult to force a wormhole between worlds, but once it is accomplished, the wormhole is alike to any other, except that it is more stable. A large hole in reality leading into the airless void of Kuiper sits ominous and unchanging.</p>)
   }
 }
+
+const academyDetective: Perk = {
+  id: "academy-detective",
+  title: "Detective",
+  cost: -1,
+  content: (<p>Something doesn't seem quite right here. The Academy is full of little rumors and stories, and sometimes there's even bullying! As you resolve to get to the bottom of things, Lilies bring you their problems, which tend to be very low-stakes and fun, and even Gokigenyou itself, or perhaps some kind of fate, conspires to give you hints. You can mentally decide on a mystery that you are investigating, to focus this effect.</p>)
+}
+const academyInspect: Perk = {
+  id: "academy-inspect",
+  title: "Inspect",
+  cost: -2,
+  prereqs: [academyDetective],
+  content: (<p>You can look through a magnifying glass or any other lens to activate a detective's vision. Most things look colorless and blurred, but things relevant to the mystery you've selected will appear clearly, and the most important will even seem limned in a glistening light. When you get the lens right up close to the thing, you can see a panel of text with a description. It is mostly based on things you know or could observe about the item, but sometimes it will reveal key details.</p>)
+}
+const academyWardrobe: Perk = {
+  id: "academy-wardrobe",
+  title: "Wardrobe",
+  cost: -1,
+  content: (<p>A change of clothes always freshens you up completely: your clothes freshly cleaned and in good repair, your hair freshly styled, your body as clean as if you just finished drying off from a shower. You can change outfits more or less instantly, as long as you're not being actively observed, including into disguises. Any disguise always fools Lilies. An outfit is accessible enough to put on if it's in an unlocked container in the same room.</p>)
+}
+const academyHenshin: Perk = {
+  id: "academy-henshin",
+  title: "Henshin",
+  cost: -3,
+  prereqs: [academyDetective, academyWardrobe],
+  content: (<p>Bullies and other wrongdoers beware! You have phenomenal magical powers now! Specifically, you can do a magical transformation into your alter ego. While in your other form, your physical abilities are boosted. You can hit much harder, resist hard physical blows, and leap to great heights. The degree to which you are boosted depends on the amount that you are loved by whichever Lily who loves you most, but as long as she cares about you at least a little, the benefit is pretty substantial.</p>)
+}
+const academyPurificationBeam: Perk = {
+  id: "academy-purification-beam",
+  title: "Purification Beam",
+  cost: -2,
+  prereqs: [academyHenshin],
+  content: (<p>You can shoot purification beams! These are magical blasts formed from your love and conviction. Your purification beams burn away corruption, and can harm monstrous beings in other worlds, but they are completely harmless to Lilies and the pure of heart on other worlds. Like Henshin, the power depends on how loved you are, but it also fluctuates based on your own emotional state.</p>)
+}
+const academyEmptyHeart: Perk = {
+  id: "academy-empty-heart",
+  title: "Empty Heart",
+  cost: -1,
+  types: ['Minion'],
+  content: (<p>Everyone needs a special someone that cares about them. This Lily lacked that, until you came along. Without a partner, her empty heart would eventually fill with despair and she would fall to corruption. Instead, she is now completely devoted to you and willing to do anything for you - even die. Any injuries you receive are transferred to her unless you choose not to allow it. All she asks in exchange is a kiss, although she'll still love you even if you don't.</p>)
+}
+const academyWaifu: Perk = {
+  id: "academy-waifu",
+  title: "Waifu",
+  cost: -3,
+  prereqs: [academyEmptyHeart],
+  types: ['Immortality'],
+  content: (<p>Your companion's heart is no longer truly empty, but is filled with you. Your bond surpasses the limits of boundaries between worlds, and acts like a bridge that constantly connects you: you can jump to her and if you have Calling you can pull her to you. Your bond also surpasses the boundary between life and death and if either of you dies, the other can resurrect them by sacrificing a human, Lily, or other person. You can also take her injuries for her, just as she can take yours for you.</p>)
+}
+const academyHarem: Perk = {
+  id: "academy-harem",
+  title: "Harem",
+  cost: -2,
+  prereqs: [academyEmptyHeart],
+  content: (<p>Ordinary Lilies only bond to one other, forming perfect pairs, but you're different. You are special. You can bond to as many as you want, provided that you are willing to expend the time and effort to make a genuine connection with them. Each additional one requires social interaction more or less daily until the connection stabilizes, for at least a month and one major shared life event. If you transfer an injury, it only transfers to one Lily, usually the closest.</p>)
+}
+const academyPrincess: Perk = {
+  id: "academy-princess",
+  title: "Princess",
+  cost: -1,
+  content: (<p>You can command the specters. They will gladly do simple tasks for you. Just the attention inherent in requesting the act is reward enough for them. Their abilities are limited, as they cannot talk or write, and don't really have any specific skills or abilities. However, they're certainly sufficient to run errands like fetching your coat, buying you a drink, or murdering someone who annoyed you.</p>)
+}
+const academyShadowMagic: Perk = {
+  id: "academy-shadow-magic",
+  title: "Shadow Magic",
+  cost: -2,
+  prereqs: [academyPrincess],
+  types: ['Minion'],
+  content: (<p>Specters are barely people, just shadows of the ideas of people without real substance. You can discorporate them further, if you like, and hide your spectral minions in your shadow. They are ecstatic to have this opportunity and will be fanatically loyal. They also can use their new discorporate form to hide in other shadows, or to go through solid items, but they can still be just as solid as before if needed. They also gain skills in shadow ninjutsu.</p>)
+}
+const academyYokai: Perk = {
+  id: "academy-yokai",
+  title: "Yokai",
+  cost: -1,
+  prereqs: [academyPrincess],
+  content: (<p>Since they're barely human to begin with, it's easy to change a specter's physical form into something better suited to their purpose or their nature. It makes them much cuter, and better able to blend in. They still don't have eyes, but they can fake eye spots so it's not obvious. You can turn a specter into almost any animal, as long as it's not much bigger than a dog and not much smaller than a mouse. Their color will tend to be dim and drab.</p>)
+}
+const academyReign: Perk = {
+  id: "academy-reign",
+  title: "Reign",
+  cost: -1,
+  prereqs: [academyPrincess],
+  types: ['Outpost', 'Gateway'],
+  content: (<p>Not just the specters but the very world bends to your will. You can instruct the buildings to change, or the land around you. You never need to commute around the Academy because you can instruct hallways and paths to lead where you need to go. You can also have a private home or palace built just for you and your friends. You can also have parks, beaches, and other areas built, though the larger the space, the slower it is and the more strange secrets will find their way into the construction process.</p>)
+}
+const academyClub: Perk = {
+  id: "academy-club",
+  title: "Club",
+  cost: -1,
+  prereqs: [academyReign, academyDetective],
+  content: (<p>You build a club dedicated to a fun hobby. The exact hobby is up to you, and it doesn't matter much. The main point of the club is that you and your constellation of assorted Lilies can spend time there, with specters dedicating the resources of the Academy to aid you in doing what you want. Your club becomes a center of its own social scene, and you'll receive visits from Lilies and stranger things.</p>)
+}
+const academyVoyeur: Perk = {
+  id: "academy-voyeur",
+  title: "Voyeur",
+  cost: -2,
+  prereqs: [academyHenshin, academyShadowMagic],
+  content: (<p>Your shadow full of specters turns into a cloak. You transform into a ghostly form, and can pass unseen and incorporeal through walls. There's little you can do in this form besides watch, but perhaps that's all you do. You can change freely into your normal or Henshin forms from this one. You are much slower than normal, but can only be perceived through special means.</p>)
+}
+const academyGriefSeed: Perk = {
+  id: "academy-grief-seed",
+  title: "Grief Seed",
+  cost: -2,
+  prereqs: [academyShadowMagic, academyPurificationBeam],
+  types: ['Material'],
+  content: (<p>You have finally gained the ability to control the corruption that plagues the Gokigenyou Academy of Purity. You can draw it out and form a Grief Seed, a form of corruption so highly condensed that it crystallizes, rendering it safe to touch until it's activated by strong negative emotions. You can put Grief Seeds into Empty Hearts, which will cause them to transform into youma, dreadful monsters of powerful emotion, or you can just use them as a power source.</p>)
+}
+const worldAcademy = {
+  id: "base-worlds-academy",
+  title: "Academy",
+  tagline: "adapted from Cruxador's Conduit Rework",
+  description: (
+    <>
+    <p>The Gokigenyou Academy of Purity is a smaller world, as it is both finite and measurable. It is a single planet, covered mostly in school and commercial buildings interspersed with courtyards, parks, and quite a few beaches and hot springs. It is a pleasant place with mild weather in every season, full of light and clean air. In the shadows, despair and corruption creep in, but that's rarely seen by those who don't go looking.</p>
+    <p>It is inhabited by Lilies, who appear similar to young human females, but cuter. They live in dormitories or occasionally private homes, go to class, and work part time jobs in idyllic happiness. The largest and presumably oldest of them fill maternal roles, especially as teachers. Lilies do not seem to reproduce, but appear spontaneously like maggots in rotting meat. Nonetheless, they engage in social pair-bonding, though they rarely acknowledge these relationships explicitly.</p>
+    <p>All Lilies appear female, but occasionally male figures with blank eyeless faces linger in the background. Lilies don't seem to notice them but if they're pointed out, the Lilies will acknowledge these specters and then quickly move on. Lilies seem unable to easily differentiate between Conduits of the Academy and other Lilies, but may become hostile if you make the difference apparent by behaving in ways a Lily never would.</p>
+    </>
+  ),
+  conduitDescription: (<p>As you take more points in Gokigenyou Academy, your apparent age adjusts to fit the school and (if you weren't already) you become female at 5 points spent. Your hair and eyes become brightly colored, reflecting your personality. Those influenced by the Academy are called Yayas, unless they bond with an Empty Heart in which case they are called Yurikos.</p>),
+  perks: [
+    academyDetective, academyInspect, academyWardrobe, academyHenshin, academyPurificationBeam, academyEmptyHeart,
+    academyWaifu, academyHarem, academyPrincess, academyShadowMagic, academyYokai, academyReign, academyClub,
+    academyVoyeur, academyGriefSeed
+  ],
+  crown: {
+    id: "academy-crown",
+    title: "Crown: Professor",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in the Gokigenyou Academy of Purity are called Professors. They have unparalleled control over the lives of all Lilies, whether they exercise it subtly or overtly.</p>
+      <p><PerkLink perk={academyDetective} /> and <PerkLink perk={academyInspect} /> don't need a lens for a Professor, other than the lens in your eye.</p>
+      <p>For a Professor, <PerkLink perk={academyHenshin} />'s power level is boosted by all forms of adoration, and the sum of all Lilies who love you. The purest form of love still has the greatest effect.</p>
+      <p>A Professor with a <PerkLink perk={academyPurificationBeam} /> can refocus it into an intense ray of directed gamma radiation, allowing it to be effective against just about anything. An <PerkLink perk={academyEmptyHeart} /> bound to you can be consumed to fuel a blast many times more potent. A <PerkLink perk={academyGriefSeed} /> can also be used to create a Corruption Beam, with inverted effects.</p>
+      <p>If you are a <PerkLink perk={academyPrincess} />, Lilies respect your authority just as specters do, and you can use them in all the same ways. Even as <PerkLink perk={academyYokai} /> they retain their cuteness.</p>
+      <p><PerkLink perk={academyReign} /> can also be used on other worlds, and you can describe your own aesthetic, overriding the limitations of the Academy's typical decor.</p>
+      <p>In addition to heading a <PerkLink perk={academyClub} />, Professors can also teach classes, choosing the curriculum that many Lilies must learn. It won't occur to them to doubt what they are taught, but too harsh a challenge to their worldview might lead them to despair.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "academy-dangers",
+    title: "Dangers",
+    firstTitle: "Corruption",
+    firstContent: (<p>Negative feelings have physical weight in Gokigenyou Academy. When someone in this world succumbs to despair, it alters their physical form and impairs their judgment.</p>),
+    secondTitle: "Youma",
+    secondContent: (<p>Those who have succumbed entirely to corruption transform into powerful monsters. They are bestial and murderous, and can only be returned to their old forms by kicking their asses, and ideally then solving their problems.</p>),
+    thirdTitle: "Discipline",
+    thirdContent: (<p>Lilies who disrupt social order are taken to private locations and reprimanded, beaten, mutilated, or even killed. Lilies never resist discipline.</p>)
+  },
+  poi: {
+    id: "academy-poi",
+    title: "Mysteries",
+    firstTitle: "Ghost Story",
+    firstContent: (<p>They say there's a ghost in the unused supply closet after midnight! But ghosts aren't real, are they? And descriptions of this ghost say she's really pretty and looks sad.</p>),
+    secondTitle: "Lonely Nights",
+    secondContent: (<p>They say there's a senior student who can't get a date. No one wants to be with her... isn't that sad? But why do people sound so nervous when they talk about it?</p>),
+    thirdTitle: "Kissing Tree",
+    thirdContent: (<p>They say anyone who kisses under this one specific tree on the last day of summer will stay together forever. What's that up there in the branches?</p>)
+  },
+  breaching: {
+    id: "academy-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Bridges to the Academy often appear in isolated areas, where young people might go for privacy. Corruption seeps through here, filling the hearts of the despairing, and sometimes specters are seen. But it also helps young love.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>An outpost of the Gokigenyou Academy of Purity is nearly always a school building, a dormitory, or a bathhouse. It seems nicer and brighter than the surrounding area, and is populated by Lilies, specters, and stranger things just as the Academy itself.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>Gateways to Gokigenyou come most typically in two forms. Some are torii gates, surrounded by shrines, which young lovers may pass through. Others are more shadowy, taking on the details of the bridge from which they formed.</p>)
+  }
+}
+
+const rorchLogo: Perk = {
+  id: "rorch-logo",
+  title: "Logo",
+  cost: -1,
+  content: (<p>You develop a personal sigil, representing your property. You can display it on anything physical, to claim it. Things that you've claimed in this way are recognized as yours by residents of Rorch, and they might be willing to buy those things from you, for the right price. Your logo can't be applied to anything that has someone else's logo on it, unless you first acquire it from them. The natives of Rorch almost all bear either their own or their employer's logos.</p>)
+}
+const rorchSuits: Perk = {
+  id: "rorch-suits",
+  title: "Suits",
+  cost: -1,
+  prereqs: [rorchLogo],
+  types: ['Minion'],
+  content: (<p>Suits without an employer are always on the lookout for an opportunity. Now they see you as the opportunity they've been waiting for: an up-and-coming Suit, promoted above the rest and looking to expand your operation. They will ignore your unusual appearance, though you can enhance this effect by wearing a tie and blazer. The Suits you attract this way are physically weak and lack initiative, but once they accept your logo, they are slavishly devoted.</p>)
+}
+const rorchVoltaic: Perk = {
+  id: "rorch-voltaic",
+  title: "Voltaic",
+  cost: -2,
+  types: ['Infusion'],
+  content: (<p>While fire is prohibited in the Rorch, electricity is widespread, flowing through rails and wires everywhere in the city, apparently inexhaustible. The lightning can enter you without harming you, allowing you to store it and redirect it back out as needed, whether as destructive lightning or to power devices. When fully charged, excess electricity spills out. It makes your hair stand up and arcs between your fingertips, should you let it, but you can retain control over it if you consciously exert that control.</p>)
+}
+const rorchTechnoHead: Perk = {
+  id: "rorch-techno-head",
+  title: "Techno-Head",
+  cost: -2,
+  prereqs: [rorchVoltaic],
+  types: ['Infusion'],
+  content: (<p>You can tune the Voltaic energy in your body to hear radio signals, just like the locals do. There are plenty of ordinary radio stations covering news, weather, and music, but most importantly, you can now access the Manage-Net. Everything with your logo generates signals on a unique personal frequency that only you can hear, letting you track their location and status and even send brief commands at a distance. In Rorch, maps and reports appear automatically in your mind; anywhere else, you'll need to connect to an external display in order to see them.</p>)
+}
+const rorchPromotion: Perk = {
+  id: "rorch-promotion",
+  title: "Promotion",
+  cost: -1,
+  prereqs: [rorchTechnoHead, rorchSuits],
+  content: (<p>It turns out, Suits can level up. It takes Dubloons, and it would be rude for you to not do it in person, but once you do, your Suits have more initiative and intellectual fortitude, and are even a bit tougher. Promoted Suits get limited access to Manage-Net and can do things on your behalf, and have a little icon next to them on your Manage-Net interface. They can even apply your Logo on your behalf.</p>)
+}
+const rorchLocomotive: Perk = {
+  id: "rorch-locomotive",
+  title: "Locomotive",
+  cost: -2,
+  prereqs: [rorchLogo],
+  content: (<p>All transport in Rorch is either by foot or by train. You've found yourself a train and gotten it running, speeding along the rails in ease and comfort. While locomotives are hard to come by, train cars are ubiquitious and your locomotive can pull great numbers of them. It is electric, and powered by the rail at no cost to you.</p>)
+}
+const rorchBuccaneer: Perk = {
+  id: "rorch-buccaneer",
+  title: "Buccaneer",
+  cost: -1,
+  prereqs: [rorchLocomotive],
+  content: (<p>Your train can go off the rails, crossing the open seas. It can travel in any direction over the water, and you can direct it any which way. It doesn't sink, but leaves a cool wake. It also can't fly or go over land, but it can rejoin tracks anywhere. If you sail the backs of the seas, you will meet the Pirates, and they will recognize you as one of their own based on your trackless train.</p>)
+}
+const rorchParkour: Perk = {
+  id: "rorch-parkour",
+  title: "Parkour",
+  cost: -1,
+  content: (<p>Like the Runners, you can leap nimbly around buildings. With a bevy of minor mobility devices like skateboards, wingsuits, and grappling hooks, your speed exceeds some trains as you swing, zipline, grind, and flip through the city. What's more, you can do cool tricks, generating stone Bits. The longer and more impressive your combos, the more Bits spring from the ground once you finally land. If you land in the water, your combo and all Bits are lost.</p>)
+}
+const rorchDanceOff: Perk = {
+  id: "rorch-dance-off",
+  title: "Dance-off",
+  cost: -1,
+  content: (<p>Violence is risky, and in poor taste. Worse, it often attracts the Guard. Instead, Runners war and do shake-downs via dance battle. A challenger must wager something of similar value to the subject of the challenge; when the battle ends, the loser's logo will vanish from their item, replaced by the winner's. Victory is objective and automatic, and you have an excellent sense for what kind of moves will work best.</p>)
+}
+const rorchTurf: Perk = {
+  id: "rorch-turf",
+  title: "Turf",
+  cost: -1,
+  prereqs: [rorchLogo, rorchDanceOff],
+  content: (<p>Claiming ownership of buildings is difficult, and usually requires winning a challenge against the previous owner. Now, though, you have a landlord's crucial ability: you can spend Bits to repair and modify your buildings. Housing is free, and the Guard will come after anyone who demands rent from a resident, but maintenance fees and payment to access amenities are both permitted. Give your buildings some nice recreational facilities, and watch the Bits roll in.</p>)
+}
+const rorchStation: Perk = {
+  id: "rorch-station",
+  title: "Station",
+  cost: -2,
+  prereqs: [rorchLocomotive, rorchTurf],
+  types: ['Gateway', 'Outpost'],
+  content: (<p>Constructing a Station takes time, care, and hundreds of Dubloons, but once built, it forms the heart of a whole new district. From it, you can send out railway tracks across the sea to link to other Stations, inviting traffic and travel. Buildings spring up, following any urban planning policy you set, and Suits and Runners trickle in from afar to gawk, shop, and eventually settle. Before you know it, your district will be as lively and bustling as any.</p>)
+}
+const rorchInsurance: Perk = {
+  id: "rorch-insurance",
+  title: "Insurance",
+  cost: -3,
+  prereqs: [rorchLocomotive],
+  types: ['Immortality'],
+  content: (<p>Using a special distress beacon that goes off automatically when you die, you can summon a squad of highly competent Docs to track you down, bring you and any nearby Minions of yours back to your Locomotive, and patch you all up to full health. They charge a hefty price in Dubloons for both medical attention and armed rescue services, and they refuse to answer the beacon while you have unpaid bills outstanding. In Rorch itself, the Docs show up in seconds; offworld with a Station, in minutes; without a Station, hours, if they make it at all.</p>)
+}
+const rorchStreetSense: Perk = {
+  id: "rorch-street-sense",
+  title: "Street Sense",
+  cost: -1,
+  prereqs: [rorchDanceOff, rorchParkour],
+  content: (<p>The combos you land and challenges you win earn you respect among the Runners, but to truly be accepted as one of their own, you need this: the instinct for trade and trouble that lets Runners find the back-alley deals they're looking for and steer clear of the Guards who might stop them. Your Street Sense lets you find Night Sisters for hire or shop in the elusive Bazaar.</p>)
+}
+const rorchNightSisters: Perk = {
+  id: "rorch-night-sisters",
+  title: "Night Sisters",
+  cost: -2,
+  prereqs: [rorchSuits, rorchStreetSense],
+  types: ['Infusion'],
+  content: (<p>Your body transforms into a beautiful porcelain doll with sharp, slender fingers and deadly quiet joints, and you are inducted into the Night Sisters, an order of assassins whose secret ways may only be taught to their own kind. Even if your form changes, they will recognize you by your beauty, stealth, and grace.</p>)
+}
+const rorchBazaar: Perk = {
+  id: "rorch-bazaar",
+  title: "Bazaar",
+  cost: -2,
+  prereqs: [rorchStreetSense],
+  content: (<p>The Bazaar is a network of hidden rooms, pop-up stalls, and curio shops perched in hard-to-reach places. It's hard to find without an invite, but it sells almost anything money can buy, including, somehow, lost items from other worlds. Now you have one of the most coveted opportunities in Rorch: your own shop in the Bazaar, tucked away in some secret corner and ready to open for business. The stockroom will always be full of strange, interesting things, and any lost item of yours that fits on a shelf will be guaranteed to turn up there within a month.</p>)
+}
+const rorchWorkshop: Perk = {
+  id: "rorch-workshop",
+  title: "Workshop",
+  cost: -2,
+  prereqs: [rorchBazaar, rorchPromotion],
+  content: (<p>A specialized promotion for your Suits allows them to become Craftsmen, creating items for the shops and the Bazaar. They can use any materials you supply them, including those from other worlds. Although they can solve problems creatively, they lack creativity on a grander scale, and require you to direct them on what to create. They operate with precision and efficiency, making the most of whatever you give them according to your design.</p>)
+}
+const worldRorch = {
+  id: "base-worlds-rorch",
+  title: "Rorch",
+  tagline: "adapted from Cruxador's Conduit Rework",
+  description: (
+    <>
+    <p>From a vast but shallow sea, the venerable stone buildings of the mega-city of Rorch rise towards the sky. There is plenty of housing, plentiful fish can be readily speared in the canals, and all basic needs are met, yet money and commerce govern this land. The greatest of assets are traded for large Dubloons, appearing gold but impossible to duplicate, while common trinkets are traded for stone Bits. Canals wend between the buildings, as rails weave through and over them, stopping amidst monuments and their roof-top gardens, shading pedestrian bridges and statues.</p>
+    <p>The people of Rorch are synthetic, animate beings of stone or metal, but it doesn't seem to limit them any. Some amble along the stately boulevards, fat and clad in suits, while others run and leap between buildings, swinging from bridges and pursuing each other. They bear no collective name, but have unique forms corresponding to their class. Suits, the most common, go to work every day. They serve greater interests in the hopes of advancing to greater interests themselves. Some lucky few control so much wealth that the rest follow their every whim. Runners spray graffiti and challenge each other to dance battles over turf, wherein they collect dues from local Suits and provide dubious services. The colossal Guard tend to bumble about harmlessly, collecting bribes from Runners, but they leap to deadly action when their members are threatened or when one of a few ironclad rules - like the prohibition on combustion - are broken. Night Sisters stalk the night, offering their services to all factions as assassins and infiltrators. And outside the city, on the open sea, the Pirates wait for opportunities to waylay poorly defended Trains that cross the waters.</p>
+    </>
+  ),
+  conduitDescription: (<p>As you spend time and gain perks in Rorch, your joints become more mobile and your limbs more slender, yet they lose no strength. Clothing you wear subtly tailors itself to your body. Conduits of Rorch are called Associates.</p>),
+  perks: [
+    rorchLogo, rorchSuits, rorchVoltaic, rorchTechnoHead, rorchPromotion, rorchLocomotive, rorchBuccaneer, rorchParkour,
+    rorchDanceOff, rorchTurf, rorchStation, rorchInsurance, rorchStreetSense, rorchNightSisters, rorchBazaar,
+    rorchWorkshop
+  ],
+  crown: {
+    id: "rorch-crown",
+    title: "Crown: Investor",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in Rorch are called Investors, not only flush with wealth but also controlling its flow at all levels of society, their Logos alone commanding respect.</p>
+      <p>A <PerkLink perk={rorchVoltaic} /> Investor generates electricity within their bodies at a significant rate. Their lightning and thunder is enough to power a train single-handedly.</p>
+      <p>Through Manage-Net, an Investor with <PerkLink perk={rorchTechnoHead} /> can access virtual markets where high-level Suits sell shares in their latest ventures. These transactions can be made automatically for an easy profit, though some Investors prefer to learn the skill of picking the best investments.</p>
+      <p>An Investor's <PerkLink perk={rorchParkour} /> may rarely, with a particularly spectacular combo, create Dubloons as well as Bits.</p>
+      <p>The <PerkLink perk={rorchPromotion} /> of a Suit, to a skilled Investor, also comes with a specialization, turning the most suitable Suits into goons, managers, hawkers, or any sort of specialized role.</p>
+      <p>An Investor's <PerkLink perk={rorchWorkshop} /> takes from all places, and their workers can build things using the unique features of other worlds, even creating materials as long as the Investor has the perks to do so. The things from an Investor's Workshop are wonders in their own right. They even have the ability to manufacture quite large things, such as additional Locomotives.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "rorch-dangers",
+    title: "Dangers",
+    firstTitle: "Night Sisters",
+    firstContent: (<p>Make too many waves, and you'll find yourself sunk. While most are unwilling to turn to violence themselves, any who has the Dubloons, the connections, and enough hate for you can contact the Night Sisters, who have no such compunctions.</p>),
+    secondTitle: "Tsunami",
+    secondContent: (<p>Every now and then, a colossal wave sweeps an entire district away. The city doesn't care, it just regrows.</p>),
+    thirdTitle: "Fish",
+    thirdContent: (<p>Though the people of Rorch all seem artificial, there are plants and fish, and some of the fish are vast and dangerous. If you look edible enough, they'll leap up and have a taste.</p>)
+  },
+  poi: {
+    id: "rorch-poi",
+    title: "Districts",
+    firstTitle: "The Industrial District",
+    firstContent: (<p>Factories and warehouses are alive with sound at all times as Craftsmen ply their trade, making all manner of consumer goods to distribute all across Rorch.</p>),
+    secondTitle: "The Parks District",
+    secondContent: (<p>Every building here has a garden atop it, so many that they blend together into a forest of palms and banyans. It is raucous with birds and replete with fruit, fresh for the taking.</p>),
+    thirdTitle: "Mega-Commerce Turbo District",
+    thirdContent: (<p>The suits here have cleaner edges, and sharper angles. Everything is newer and louder, and everyone has been promoted. The chatter over the radio is incessant, commodities traded with unparalleled speed.</p>)
+  },
+  breaching: {
+    id: "rorch-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Bridges to Rorch tend to form in densely populated areas, and the signs of their presence are unusually visible, though individually brief. An unscheduled train might pull up to a local station, or a shop that wasn't there yesterday might squeeze its way into a dark alley, only to vanish again the day after. Suits or Runners who appear with these visitations may wander the wrong side of the bridge for a few days before finding their way home on the next train.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>(see below)</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>Gateway and Outpost in one, Rorch's stations require both perks. Rorch's trains travel seamlessly to other worlds; they travel through rails primarily built in Rorch, but pull into stations built entirely on the other side of the bridge. It is among the most comfortable of ways to travel between worlds, though you occasionally meet strange strangers in the passage. While a new district doesn't grow up quite as automatically as in Rorch, Rorch's natives do get off at the stop expecting to see more city, and if it's not there they'll try to build it.</p>)
+  }
+}
+
+const arborFieldwork: Perk = {
+  id: "arbor-fieldwork",
+  title: "Fieldwork",
+  cost: -1,
+  types: ['Infusion'],
+  content: (<p>Understanding the whispers of leaves and the sturdiness of roots, you become more muscular and capable than your frame or size would convey. Your stamina also increases, and you gain an innate knowledge of solar cycles and the conditions for gardening.</p>)
+}
+const arborAtTheRoot: Perk = {
+  id: "arbor-at-the-root",
+  title: "At the Root",
+  cost: -1,
+  content: (<p>By temporarily uprooting any plant, you are able to travel to any plant of a similar taxa. You grow tired and lose energy based on the distance you travel. Uprooting or transplanting trees or plants never risks killing the plants involved.</p>)
+}
+const arborRootways: Perk = {
+  id: "arbor-rootways",
+  title: "Rootways",
+  cost: -2,
+  prereqs: [arborAtTheRoot],
+  content: (<p>No longer are you limited to plants of a similar taxa. The further you travel, the further exhausted you become. At great distances, you may be rendered temporarily incapacitated. You can delay the onset of your exhaustion for up to three hours after you arrive, but cannot travel this way again during the delay.</p>)
+}
+const arborTheCertaintyOfDarkSoil: Perk = {
+  id: "arbor-the-certainty-of-dark-soil",
+  title: "The Certainty of Dark Soil",
+  cost: -3,
+  prereqs: [arborRootways],
+  types: ['Gateway'],
+  content: (<p>No longer are you fatigued through root-travel; the effects are lowered to roughly the level of mental and physical toil the user would suffer from a jump. (Those suffering 'Hard Jumps' find their travels still consuming some energy, time, and focus.)</p>)
+}
+const arborSolarPowered: Perk = {
+  id: "arbor-solar-powered",
+  title: "Solar Powered",
+  cost: -2,
+  types: ['Infusion'],
+  content: (<p>All your life needs can be supplied via sunlight, or more accurately, starlight. The greater the variety and presence of the light around you, the more quickly your needs are fulfilled. Furthermore, your shape requires no upkeep. Aesthetically, you will gradually reach your desired form.</p>)
+}
+const arborAsBrightAsStarlight: Perk = {
+  id: "arbor-as-bright-as-starlight",
+  title: "As Bright As Starlight",
+  cost: -3,
+  prereqs: [arborSolarPowered],
+  types: ['Infusion'],
+  content: (<p>Heat, overwhelming humidity, and radiation no longer affect you negatively. Each increases your natural rate of healing dependent on the amount of each present.</p>)
+}
+const arborWordlessConversations: Perk = {
+  id: "arbor-wordless-conversations",
+  title: "Wordless Conversations",
+  cost: -1,
+  content: (<p>You are able to understand the thoughts and conversations of 'mindless' plants and trees. They whisper secrets that may be useful, but often contain simple reflections, as novice diarists might note; such as the colour of the sky, a bird sighting, or the taste of rich sunlight.</p>)
+}
+const arborRustlingLeaves: Perk = {
+  id: "arbor-rustling-leaves",
+  title: "Rustling Leaves",
+  cost: -1,
+  prereqs: [arborWordlessConversations],
+  content: (<p>You are now capable of talking with any of the permanent residents of Arbor. Many have lived for countless lifetimes, and may have great wisdom to share. Their memories are deep, and all are in good spirits. But navigating through conversations, always held in relentless good cheer, takes patience - and can often unnerve the unready.</p>)
+}
+const arborLoudWords: Perk = {
+  id: "arbor-loud-words",
+  title: "Loud Words",
+  cost: -2,
+  prereqs: [arborRustlingLeaves],
+  content: (<p>It is possible to incite the naturally joyous hearts of the residents, or their more natural peers, to anger. Leaves, fallen plant matter, twigs, or any other form of natural plant materiel can be coerced into violently exploding, sending fragments in every direction. This creates a sound proportionate to the materiel consumed; and may be used as an interjection, a weapon, or a tool to throw off others - the forests of Arbor being filled with ghostly sounds...</p>)
+}
+const arborSmotheringLoam: Perk = {
+  id: "arbor-smothering-loam",
+  title: "Smothering Loam",
+  cost: -1,
+  types: ['Material'],
+  content: (<p>This rich, dark soil is coercive. When used as soil, it convinces plants to grow better and more fruitfully. When worked into other materials, they become subtly more resistant to change - positive, or negative. Clay or glass admixed from Smothering Loam gives off an unnatural and languorous feel.</p>)
+}
+const arborWinebark: Perk = {
+  id: "arbor-winebark",
+  title: "Winebark",
+  cost: -2,
+  prereqs: [arborSmotheringLoam, arborRustlingLeaves],
+  types: ['Material'],
+  content: (<p>Named for the deep red hue, the trees of Arbor donate it freely and joyously when asked. Winebark is flexible as skin, sturdy as iron, and only hardens into place after it is coaxed with promises and loving whispers. It can be harvested in great quantity, easily, but those not adapted to Arbor find it deeply disquieting.</p>)
+}
+const arborLaughingSentinel: Perk = {
+  id: "arbor-laughing-sentinel",
+  title: "Laughing Sentinel",
+  cost: -1,
+  types: ['Minion'],
+  content: (<p>A single cultivated flower that adapts naturally to any world it's planted in, even those that do not support plant-life. Despite lacking any sensory organs, it is capable of recording and transmitting any information within roughly twenty metres to the Conduit. It is easily destroyed, fades naturally over twenty-four hours, and makes a haunting rustling laugh that draws hostile attention. Only one can be active at a time. Creating a Laughing Sentinel requires a seed and the soil to grow it; when a new Sentinel is created, the old one crumbles, its seed and soil returning immediately to its creator.</p>)
+}
+const arborForestOfLaughter: Perk = {
+  id: "arbor-forest-of-laughter",
+  title: "Forest of Laughter",
+  cost: -1,
+  prereqs: [arborLaughingSentinel],
+  types: ['Minion'],
+  content: (<p>The Conduit may possess up to three Sentinels, which last for three days, and may observe in a sixty-metre area. When a new Sentinel is created with three already in place, the oldest one is always refunded first.</p>)
+}
+const arborBonesBeneathRoots: Perk = {
+  id: "arbor-bones-beneath-roots",
+  title: "Bones Beneath Roots",
+  cost: -4,
+  types: ['Immortality', 'Outpost'],
+  content: (<p>The forest of Arbor will form a new body for you out of mulch and forgotten bones. The process is gradual, but painless... In your dreamlike, meditative state, you will hear whispers beseeching you to set down roots, and become a permanent resident of Arbor.</p>)
+}
+const worldArbor = {
+  id: "base-worlds-arbor",
+  title: "Arbor",
+  tagline: "adapted from amomentarypangregret's fanworld for Cruxador's Conduit Rework",
+  description: (
+    <>
+    <p>
+      Arbor is a world of ever-expanding autumnal foliage.<br />
+      Even though the colours don't perfectly mirror any one world, all colours can be found within.<br />
+      The sky, horizon, and stars all appear to be drawn in equally vibrant tones -<br />
+      Literally drawn, as if by a childish hand, on faded white paper. 
+    </p>
+    <p>
+      Given the rural idylls, it is only natural for many Conduits to find the world pleasing.<br />
+      Wherever the visitor goes, Arbor is flush with plant-life.<br />
+      Crisscrossing streams and deltas, caverns bearing brilliant lichens, majestic peaks.
+
+    </p>
+    <p>
+      Over great seas of fallen leaves, actual seas of water and other fluids intersect - seemingly at random.<br />
+      Methane and water, ammonia and cold lava, mulched apple wine and cherry-red blood oceans all exist.<br />
+      None seems to harm the plantlife adapted to them.
+    </p>
+    <p>However... There is no apparent fauna anywhere on Arbor.</p>
+    <p>
+      Those who stay for some time realise that certain trees bear tones, hues, even thoughts.<br />
+      Each of them faint, barely present, like the gradually fading beat of a dying heart.<br />
+      And these thoughts and the colours of leaves often correspond to other realms and places -<br />
+      Specifically, those that stayed within for any great length of time.
+    </p>
+    <p>
+      No immediate danger presents itself on Arbor.<br />
+      Rather - terrifying to some, and freeing to others - the environment itself is the danger.<br />
+      Promising peace and security without any greater thoughts, at all.<br />
+      Final and permanent rest, existing without harm, surrounded by friends and lovers -<br />
+      In vibrant scenery.
+    </p>
+    </>
+  ),
+  conduitDescription: (
+    <p>
+      Those who spend time in Arbor appear to move more slowly, and with a lesser range of motion.<br />
+      Primary movements are slow and laboured, grand motions like attacks appear telegraphed.<br />
+      It is a purely visual, sensory effect, however, unless the visitor becomes a permanent part of Arbor.<br />
+      Long-term residents of Arbor are known as Groundskeepers.
+    </p>
+  ),
+  perks: [
+    arborFieldwork, arborAtTheRoot, arborRootways, arborTheCertaintyOfDarkSoil, arborSolarPowered, 
+    arborAsBrightAsStarlight, arborWordlessConversations, arborRustlingLeaves, arborLoudWords, arborSmotheringLoam,
+    arborWinebark, arborLaughingSentinel, arborForestOfLaughter, arborBonesBeneathRoots
+  ],
+  crown: {
+    id: "arbor-crown",
+    title: "Crown: Phytarch",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in Arbor are Phytarchs, who are expected to devote endless time pampering and looking after the inhabitants of Arbor - in return for greatly increased capabilities within the world.</p>
+      <p>Phytarchs are capable of knowing the location of any given plant or former entity within Arbor, at any given time. So long as the entity exists, they can intuit the location and travel there instantly via <PerkLink perk={arborRootways} />. There is a slight time expenditure locating those increasingly far from the Phytarch.</p>
+      <p>Due to their role as protectors of those who forsook their prior lives, all the plants of Arbor serve the Phytarch and can be commanded as they please. They obey joyously, with no greater expectation. They are far too happy to know fear of death.</p>
+      <p>With <PerkLink perk={arborBonesBeneathRoots} />, the forest of Arbor assembles many bodies for a Phytarch, each one forming and then decaying at its own pace, so that there is always a new one ready to rise as soon as the Phytarch dies. Some Phytarchs may even choose to rise ahead of schedule, and operate multiple bodies at once.</p>
+      <p><PerkLink perk={arborSmotheringLoam} /> now greedily entombs enemies of the Phytarch, and protects those whom they adore - capable of forming itself as crude armour over those commanded.</p>
+      <p><PerkLink perk={arborWinebark} /> is flusher and more resilient, capable of serving as a replacement for other complex alloys, though it must be cultivated specifically for any given service.</p>
+      <p>The quiet plants are less scatterbrained in their <PerkLink perk={arborWordlessConversations} />, and the former entities dispense their secrets freely through <PerkLink perk={arborRustlingLeaves} /> without conversations or tasks required.</p>
+      <p>Both the physical ability and stamina of the Phytarch are far beyond their given appearance, and when travelling via <PerkLink perk={arborRootways} />, they may choose to make an entrance in an explosion of sharpened plant matter and bright petals - as well, potentially, as blinding or irradiating light. </p>
+      </>
+    )
+  },
+  dangers: {
+    id: "arbor-dangers",
+    title: "Dangers",
+    firstTitle: "Starvation",
+    firstContent: (<p>Though it may seem a land of plenty, without proper adaptation, none of the materials found in Arbor are safe for the consumption of most Conduits. Conduits may struggle, subsisting entirely off of trace nutrients in water, unless properly prepared.</p>),
+    secondTitle: "Judgment",
+    secondContent: (<p>Those who spend great amounts of time in Arbor without adapting to the terrain claim to have felt a great sense of lingering dread. Tasks that should be easy, weren't. Terrain that looked navigable crumbled beneath their feet. Similarly, those that show deference to and protect the residents of Arbor have an easier time traversing it.</p>),
+    thirdTitle: "Whispers",
+    thirdContent: (<p>Driving all those who hear them to sanity, luring the visitor into a promise of blissful existence, functionally devoid of all fears or worldly wont. Many who hear it cannot square the desires forming within them with who they are, and lash out at themselves or others. And the leaves and boughs of plants whisper, and what another wonderful performance it is.</p>)
+  },
+  poi: {
+    id: "arbor-poi",
+    title: "Landmarks",
+    firstTitle: "The Highest Point",
+    firstContent: (<p>The Highest Point is ever-changing. It is a pair of mountains, one slightly larger than the other. Although snow falls against the two, the snow is always warm to the touch. Should the visitor reach the top of whichever peak is highest, they will behold the crudely done series of lines that are the sun, radiant in whatever colour the sky is, today.</p>),
+    secondTitle: "The Farthest Sea",
+    secondContent: (<p>The Farthest Sea is a great ocean of water surrounded by other substances; so named for its distance from land. It is notable because each and every other sea it connects to is a different substance; from molten liquid slag glass to pressurised vegetable oils. As the laws of Arbor permit, none of these contaminate the other, creating for bizarre physical displays. It is also the only guaranteed source of fresh water within Arbor.</p>),
+    thirdTitle: "The Marble Prison",
+    thirdContent: (<p>The Prison of the First Phytarch is a large, unnatural marble structure that may be observed through broken dirt in some caverns. It appears and disappears, existing but never truly existing. Any who have treated Arbor well may see it, and ask the corpse of the first Phytarch for her whispers of knowledge. Her voice is near-inaudible, but she has seen much.</p>)
+  },
+  breaching: {
+    id: "arbor-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (
+      <p>
+        Bridges to and from Arbor carry a hint of humid, nostalgic summer heat to them.<br />
+        It clings to the skin, evokes sweat and the memory of a lover's kiss -<br />
+        While also leaving the traveller confused and faintly ill-at-ease in their own skin.<br />
+        Navigational mediums from compasses to electronics do not work near bridges to and from Arbor.
+      </p>
+    ),
+    secondTitle: "Outposts",
+    secondContent: (<p>Outposts do not carry the grave-whispers of plant life, but are an excellent source of Smothering Loam - and other, more conventional soils and substrates. Plantlife is more likely to hybridise or form new, unexpected flora; entirely outside of the bounds of what 'could' or 'should' be. Rooms touched by Outposts will always have a faint floral scent and an ambient starlight 'filter' over them, in the colour desired.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>A barren tree in Arbor whose twining roots connect to an open pit in the other world, forming a passage just large enough for a person to squeeze through. Passing through in either direction will always see the traveller climb past those roots in a shower of fresh gravesoil, no matter how many times the same roots have been shaken. If the pit is filled in, the roots will dig it clear again.</p>)
+  }
+}
+
+const brazenGlitteringGarden: Perk = {
+  id: "brazen-glittering-garden",
+  title: "Glittering Garden",
+  cost: -1,
+  types: ['Material'],
+  content: (<p>You gain a knack for the cultivation of metal plants, particularly the shrubs and wildflowers. The soil they grow in is dry sand, but somehow, droplets of oily nectar well up inside each flower. It is foul-tasting and mildly toxic. Still, they're very pretty.</p>)
+}
+const brazenHiveFriend: Perk = {
+  id: "brazen-hive-friend",
+  title: "Hive-friend",
+  cost: -2,
+  prereqs: [brazenGlitteringGarden],
+  types: ['Minion'],
+  content: (<p>It is possible, with time and patience, to befriend a hive; you, however, can take a more direct approach. Nearly any hive you speak with will be eager to trade the companionship of adventurous sisters for your permission to harvest nectar from your Glittering Garden, whose flowers now shine brighter than ever. You also gain an intuitive understanding of the Hivesisters' language, though if your body is humanoid you speak it with a wingless two-armed accent that has your new friends buzzing their wings in laughter.</p>)
+}
+const brazenJeweledHoney: Perk = {
+  id: "brazen-jeweled-honey",
+  title: "Jeweled Honey",
+  cost: -2,
+  prereqs: [brazenHiveFriend],
+  types: ['Material', 'Infusion'],
+  content: (<p>Your Glittering Garden grows ever more vibrant, and your allied Hives are at last willing to trade you some of their most precious resource: the honey they make from the flowers' poisonous nectar. Despite its origins, the honey is rich, sweet, and nourishing. A few drops are the equivalent of a meal; a spoonful will keep you going all day. You also find, the more honey you eat, that your need for food and water decreases further. Your body becomes hardier, your senses sharper.</p>)
+}
+const brazenHiveMother: Perk = {
+  id: "brazen-hive-mother",
+  title: "Hive-mother",
+  cost: -3,
+  prereqs: [brazenJeweledHoney],
+  types: ['Material', 'Outpost'],
+  content: (<p>With your Hivesister friends and a small store of honey, you set out to build your own hive. They teach you how to harvest nectar from the flowers, mixed with their glittering pollen, and how to process it into honey and wax. They are surprised you can learn; they thought it impossible for soft folk. From bright, strong wax that hardens into brass, you build your new home together.</p>)
+}
+const brazenIronOrchard: Perk = {
+  id: "brazen-iron-orchard",
+  title: "Iron Orchard",
+  cost: -2,
+  types: ['Material'],
+  content: (<p>It takes years to grow an iron oak in the coarse black sand of Brazen's forests, but for you, the saplings sprout a little faster. Their rust-red sap smells uncomfortably like blood, but more importantly, the metal of their trunks and leaves is both beautiful and useful. Just as the trees are willing to grow for you, the iron you harvest is willing to bend: you can forge it without fire, using only your hands and your heart.</p>)
+}
+const brazenCrystalFruit: Perk = {
+  id: "brazen-crystal-fruit",
+  title: "Crystal Fruit",
+  cost: -2,
+  prereqs: [brazenIronOrchard],
+  types: ['Material', 'Infusion'],
+  content: (<p>Having mastered the iron oaks, you can move on to cultivating rarer trees, and fruit-bearing shrubs in your Glittering Garden if you have one. Every fruit is a gemstone, some smooth, some glittering with tiny facets. Your teeth are too soft to eat them, but if you lap at them slowly like a hard candy, you find your bones getting tougher and your muscles stronger. Soon your glittering molars can crunch through rock with ease, and the gem-fruit taste sweeter and sweeter.</p>)
+}
+const brazenGearwork: Perk = {
+  id: "brazen-gearwork",
+  title: "Gearwork",
+  cost: -1,
+  prereqs: [brazenHiveMother],
+  content: (<p>Crafting gears and springs from brass wax, you begin to build your first mechanisms. You have a supernatural intuition for clockwork design, and a supernatural ability to coax more efficiency from your wind-up toys than mundane brass could ever give you.</p>)
+}
+const brazenBrassArch: Perk = {
+  id: "brazen-brass-arch",
+  title: "Brass Arch",
+  cost: -2,
+  prereqs: [brazenGearwork, brazenCrystalFruit],
+  types: ['Gateway'],
+  content: (<p>A mechanism of enormous complexity concealed within a gem-studded arch of gleaming brass creates half a portal; the other half must be built in another location, and precisely identical down to harvesting all the gems from the same plants. These are important for expanding a hive, as the Hivesisters love to forage distant fields but hate to step outside even for a moment to transfer between buildings. Once constructed, they are self-repairing, though sufficient damage can still overcome them.</p>)
+}
+const brazenHiveSibling: Perk = {
+  id: "brazen-hive-sibling",
+  title: "Hive-sibling",
+  cost: -2,
+  prereqs: [brazenBrassArch],
+  types: ['Immortality'],
+  content: (<p>You can construct new bodies for yourself from brass wax and gem-fruit. Each body must have a ruby apple heart. Although it is possible to construct a humanoid body, the form that comes most naturally to your design intuition is a Hivesister's, with six slender limbs and four lacy wings. You can sustain as many bodies at a time as you have points spent in Brazen, and each one is physically independent but mentally linked to the rest, sharing thoughts and memories at will. If one body dies, its unshared memories are seamlessly integrated into the collective.</p>)
+}
+const brazenSandSifter: Perk = {
+  id: "brazen-sand-sifter",
+  title: "Sand Sifter",
+  cost: -1,
+  types: ['Material'],
+  content: (<p>There are three types of sand in Brazen: the coarse black sand where the trees grow, the finer red sand where the flowers grow, and the dust-fine white sand where nothing grows at all. With careful study and your connection to the world, you have learned how to find the places where these sands are generated and harvest them directly from the source without disturbing Brazen's metallic ecology.</p>)
+}
+const brazenGlassmaker: Perk = {
+  id: "brazen-glassmaker",
+  title: "Glassmaker",
+  cost: -1,
+  prereqs: [brazenSandSifter],
+  content: (<p>By squeezing a handful of sand just so, you can fuse it into a lump of glass. In the first few hours after its creation, it is soft enough to be shaped further without heat or cutting tools. Black sand makes opaque black glass; red sand makes cloudy red glass; white sand makes perfectly clear glass. Once it hardens, the glass is similar in most respects to mundane glass. If broken, however, rather than shattering, it crumbles apart into the sand it was made from.</p>)
+}
+const brazenMoonbottle: Perk = {
+  id: "brazen-moonbottle",
+  title: "Moonbottle",
+  cost: -2,
+  prereqs: [brazenGlassmaker],
+  types: ['Material', 'Infusion'],
+  content: (<p>Stretched and pulled like taffy over many repetitions, clear glass becomes as white as the sand that made it; red glass becomes a pale, creamy pink, and black glass becomes silver-grey. Craft a bottle from an even mix of the three. Hold it up for hours under the light of the crystal sun or silver moon, then stopper it quickly before the other one can rise. The bottled light must be drunk in darkness to have the proper effect: sunlight fills the body with the essence of growth and healing, so it recovers better and faster from injury, while moonlight imbues the mind with the essence of clarity and calm, so it recovers better and faster from emotional disturbance. Each effect overrides and replaces the other—but for you, they enhance and support each other instead, balanced in perfect harmony.</p>)
+}
+const brazenLenscrafter: Perk = {
+  id: "brazen-lenscrafter",
+  title: "Lenscrafter",
+  cost: -1,
+  prereqs: [brazenGlassmaker],
+  content: (<p>Your touch is now refined enough to create smoothly curved lenses, and you have an intuition for how to design them for a desired magnification. Properly bound in metal frames, they can also have more esoteric effects. A lens of clear glass provides surpassingly clear vision; a lens of red glass provides insight into the truth of things; a lens of black glass provides vision only in pitch darkness. Mixing the sands may dilute or warp these effects.</p>)
+}
+const brazenGemGlass: Perk = {
+  id: "brazen-gem-glass",
+  title: "Gem-glass",
+  cost: -1,
+  prereqs: [brazenLenscrafter],
+  content: (<p>By grinding gem-fruit to powder and mixing that powder with sand, you can create coloured glass. Each type of fruit has its own unique effect on a lens, though some are more useful than others; a lens coloured with emerald apples makes objects of interest spring into focus while those not relevant to the task at hand blur and fade, and a lens coloured with citrine lemons makes all colours appear more vivid. For best results, use white sand as the bulk of the glass; other colours can interfere with a gem's effects.</p>)
+}
+const brazenRainbowWings: Perk = {
+  id: "brazen-rainbow-wings",
+  title: "Rainbow Wings",
+  cost: -1,
+  prereqs: [brazenGemGlass, brazenHiveSibling],
+  types: ['Infusion'],
+  content: (<p>A Hivesister's wings are a lacy, delicate framework of brass with no solid membrane filling its cells. Now, when designing your new bodies, you can fill those cells with coloured glass. When using such a body, you can swap between the associated lens effects at will, without the colour filter that would result from holding a physical lens in front of your eyes. This applies to any body you construct with stained-glass-like wings framed in brass, regardless of other details of the body.</p>)
+}
+const brazenWingSister: Perk = {
+  id: "brazen-wing-sister",
+  title: "Wing-sister",
+  cost: -1,
+  prereqs: [brazenRainbowWings],
+  content: (<p>With an exquisitely delicate touch, you can add glass panes to the wings of other Hivesisters, granting them the same benefits you get from Rainbow Wings. Having learned to do this, you are also able to repair their bodies in other respects, and perform surgery to extract wasp eggs when necessary. This also allows you to tinker with your existing bodies without reconstructing them from scratch.</p>)
+}
+const worldBrazen = {
+  id: "base-worlds-brazen",
+  title: "Brazen",
+  tagline: "a Vinifera Variant original",
+  description: (
+    <>
+    <p>Forests of iron trees and fields of copper wildflowers grow beneath a great brass dome, where a shining crystal sun ticks along its track from horizon to horizon and a moon of polished silver follows its course during the night. No matter how far you travel, the dome never seems any closer or farther; it's always far enough away to evoke the grandeur of an unbounded sky, and yet close enough to feel faintly oppressive in comparison. Glimmering pinholes, illuminated only at night, provide a light reminiscent of stars.</p>
+    <p>The natives of Brazen are the Hivesisters, clockwork bees that range in size from smaller than a pea to larger than an elephant. The majority of them are approximately the size of a human child. Completely silent except for the ticking and clicking of their brass gears and carapaces, they communicate in a visual language of sign, gesture, and dance, or by writing.</p>
+    </>
+  ),
+  conduitDescription: (<p>Those influenced by Brazen are called Lapidaries. Their eyes pick up a faceted look akin to cut gems, and their skin becomes unnaturally smooth, with a polished metallic shine.</p>),
+  perks: [
+    brazenGlitteringGarden, brazenHiveFriend, brazenJeweledHoney, brazenHiveMother, brazenIronOrchard,
+    brazenCrystalFruit, brazenGearwork, brazenBrassArch, brazenHiveSibling, brazenSandSifter, brazenGlassmaker,
+    brazenMoonbottle, brazenLenscrafter, brazenGemGlass, brazenRainbowWings, brazenWingSister
+  ],
+  crown: {
+    id: "brazen-crown",
+    title: "Crown: Horologist",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in Brazen are called Horologists, masters of gearcraft and metalwork.</p>
+      <p><PerkLink perk={brazenIronOrchard} />, <PerkLink perk={brazenCrystalFruit} />, and <PerkLink perk={brazenGlitteringGarden} /> can be grown together in mixed sand rather than requiring separate patches of sand for flowers/shrubs and trees, opening up new landscaping possibilities.</p>
+      <p><PerkLink perk={brazenJeweledHoney} /> produced near a <PerkLink perk={brazenCrystalFruit} /> orchard (or a gem-fruit Garden patch) can be separated into specific flavours made from the nectar of specific gem-fruit flowers. Each flavour has both a unique taste and a unique subtle benefit.</p>
+      <p>Any <PerkLink perk={brazenGearwork} /> can be made self-powering using <PerkLink perk={brazenCrystalFruit} /> as an energy source. The more complex it is, the more likely to take on a life of its own.</p>
+      <p>The body construction techniques of <PerkLink perk={brazenHiveSibling} /> can be turned outward to create new Hivesisters, who (in addition to being Minions) count as the Horologist's biological daughters for any metaphysical purpose. Two Hivesisters made with gem-fruit hearts from the same tree will be connected to each other in the manner of Hive-siblings. A Hivesister's heart may be any gem-fruit that is not a ruby apple.</p>
+      <p>Light collected with <PerkLink perk={brazenMoonbottle} /> can be poured into gem-fruit to create coloured light sources—or colourless, if you manage to grow a rare diamond peach or pear. <PerkLink perk={brazenGemGlass} /> can also hold light in this way, though glass without gem dust cannot. Light poured into <PerkLink perk={brazenRainbowWings} /> is controllable with mental focus.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "brazen-dangers",
+    title: "Dangers",
+    firstTitle: "Starvation",
+    firstContent: (<p>Besides the well-guarded honey of the brazen hives, very little here is edible in a traditional sense. No matter how pretty an amethyst grape or garnet cherry may be, it's not much to live on.</p>),
+    secondTitle: "Conflict",
+    secondContent: (<p>Neighbouring hives tend to exist in a state of uneasy truce, and when that truce is broken, it's best to get out of the way.</p>),
+    thirdTitle: "Wasps",
+    thirdContent: (<p>Terrible shining parasites, injecting their eggs into any Hivesister they can catch and dooming her to a painful death. Though a soft organic body will provide little protection or nourishment to these insects' young, they don't seem to know that.</p>)
+  },
+  poi: {
+    id: "brazen-poi",
+    title: "Mechanisms",
+    firstTitle: "The Tree",
+    firstContent: (<p>An old iron oak, its bark rusting at the edges. The seams are almost impossible to find. At the twist of a branch, it peels apart, revealing a narrow stair spiraling down into darkness. Who built it, and why? What secrets does it hide?</p>),
+    secondTitle: "The Fountain",
+    secondContent: (<p>Brazen's only source of water is a scattering of identical fountains shaped like brass flowers. They sprout from the sand at the approach of a thirsty traveler, pour water until the traveler steps away, then fold themselves up and vanish without a trace. Is it true that there is only one Fountain? How does it know where to bloom?</p>),
+    thirdTitle: "The Sky",
+    thirdContent: (<p>The track of the sun and moon tilts back and forth in mimicry of seasons. The pinhole stars shift position each night. A marvel of engineering, forever out of reach. Was it built? Did it grow? Has it always been there?</p>)
+  },
+  breaching: {
+    id: "brazen-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>A bridge to Brazen never appears under an open sky, and the unfiltered light of a sun, moon, or star can destroy one. Tiny metallic weeds sometimes begin to grow in shadowy cracks nearby, though without the light of the crystal sun they quickly wither. In quiet moments, a distant, steady ticking can be heard.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>A brass hive built in a foreign world will begin to alter its surroundings, spreading the black sand of forests and the red sand of fields across the ground. Within its area of influence, metal plants are able to grow even without a crystal sun overhead.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>A Brass Arch connecting two worlds is a splendid sight, but fragile. Under the light and weather of an alien sky, the far side may degrade faster than it can repair itself, and break within a few years. Keeping the Arch indoors solves this problem.</p>)
+  }
+}
+
+const carnationAcquaintance: Perk = {
+  id: "carnation-acquaintance",
+  title: "Acquaintance",
+  cost: -1,
+  types: ['Infusion'],
+  content: (<p>A visitor to Carnation who sits still in one place for too long will find that nerve fibers have crept silently under their skin, infiltrating their body and connecting them to the greater organism of Carnation. For some, that is where their story ends. You, as a Conduit, can survive or even bypass this process. Through union with the body of Carnation, you gain rapid healing and a nearly invulnerable immune system, your body tracelessly devouring any parasite or microbe that dares to enter uninvited. Your digestion is also streamlined, meaning you require very little food and produce no waste. There is no outwardly visible change, but Carnation now recognizes you as one of its own, and you no longer need fear its curious tendrils.</p>)
+}
+const carnationHardiness: Perk = {
+  id: "carnation-hardiness",
+  title: "Hardiness",
+  cost: -2,
+  prereqs: [carnationAcquaintance],
+  types: ['Infusion'],
+  content: (<p>The flesh of Carnation is infinitely adaptable, and now so are you. Every part of your body is capable of regrowing the rest, given time and nutrients. However, only your brain contains your personality and memories; a severed hand will regrow only a mindless copy of you, without consciousness or will. Still, it's useful if you make a habit of getting beheaded. Repeatedly regrowing your body parts will leave them looking more and more like the red-tinged flesh of Carnation over time, and may introduce other errors.</p>)
+}
+const carnationMemoryOfFlesh: Perk = {
+  id: "carnation-memory-of-flesh",
+  title: "Memory of Flesh",
+  cost: -2,
+  prereqs: [carnationAcquaintance],
+  types: ['Immortality'],
+  content: (<p>You are known, and remembered. If you ever go longer than a century without touching the flesh of Carnation, it will grow a new copy of you as you were the last time you touched it, and if there is no other copy of you alive at the time, this new you will take up your Conduit powers.</p>)
+}
+const carnationReshaping: Perk = {
+  id: "carnation-reshaping",
+  title: "Reshaping",
+  cost: -2,
+  prereqs: [carnationHardiness, carnationMemoryOfFlesh],
+  types: ['Infusion'],
+  content: (<p>You are able to store records within your cells of exactly what your body is meant to look like, and control its growth to conform to that image, or (with effort) steer your growth down some particular path. By regrowing your body parts deliberately, you can change how you look. This also lets you regrow parts of your brain if it is damaged, but you have much less practice at that sort of thing than Carnation does, and are accordingly more likely to get it wrong.</p>)
+}
+const carnationNerveTendrils: Perk = {
+  id: "carnation-nerve-tendrils",
+  title: "Nerve Tendrils",
+  cost: -1,
+  prereqs: [carnationAcquaintance],
+  types: ['Infusion'],
+  content: (<p>One of the hallmarks of Carnation, these tendrils are a multimodal sensory apparatus that can grow rapidly in any direction, to a maximum range of as many meters as you have points spent in Carnation. At this level, they cannot infiltrate other flesh, though they can connect to ambient tendrils in Carnation. They can see, hear, feel, smell, and taste from any part of their surface. Processing the extra sensory information can be intense, but you will eventually get used to it. A tendril that is no longer needed can be painlessly detached, where it will most likely decay or be reclaimed by Carnation. Tendrils cannot move on their own except by growing.</p>)
+}
+const carnationRefinedTendrils: Perk = {
+  id: "carnation-refined-tendrils",
+  title: "Refined Tendrils",
+  cost: -1,
+  prereqs: [carnationNerveTendrils],
+  types: ['Infusion'],
+  content: (<p>The senses of your nerve tendrils are considerably sharper, and they are capable of connecting to and infiltrating any flesh they touch; indeed, unless you put in the effort to stop them, they will do it automatically. When connected, you partially share the senses of whatever creature you infiltrate, and can learn many things about their biological structure in the parts reached by your tendrils. Additionally, your tendrils gain sustenance by sensing things, especially things that are new or unfamiliar.</p>)
+}
+const carnationTravelingTendrils: Perk = {
+  id: "carnation-traveling-tendrils",
+  title: "Traveling Tendrils",
+  cost: -2,
+  prereqs: [carnationHardiness, carnationRefinedTendrils],
+  types: ['Minion'],
+  content: (<p>Your Tendrils, when detached, become independently mobile, intertwined with muscle fibers. They may grow other organs to assist them in their journey, or subsist on the sustenance of sensation alone. Regardless, you are aware of their sensorium at all times as though they were still attached, and can communicate with them in silent mental impressions to receive reports or issue commands. Although they do not have full minds or personalities, they are based on the template of your mind and body, and the more they grow, the more like you they become.</p>)
+}
+const carnationTurningRed: Perk = {
+  id: "carnation-turning-red",
+  title: "Turning Red",
+  cost: -1,
+  prereqs: [carnationAcquaintance],
+  types: ['Infusion'],
+  content: (<p>Your blood is fully converted into the blood of Carnation. When flowing in large concentrations, it is thicker and darker in colour; as it thins out to navigate tiny capillaries, it brightens into a vivid crimson, bringing a slight flush to the skin. It is many times more efficient at transporting oxygen and nutrients than human blood; a single drop of Carnation blood has a capacity equivalent to the entire human circulatory system. It is also self-filtering, able to reprocess any waste or toxins into useful energy and biomass.</p>)
+}
+const carnationPorosity: Perk = {
+  id: "carnation-porosity",
+  title: "Porosity",
+  cost: -2,
+  prereqs: [carnationTurningRed],
+  types: ['Infusion'],
+  content: (<p>The efficiency of your blood increases even further. Your stomach is replaced with a blood sac, and instead of bile and stomach acid you now have only blood. By touching a morsel of food with any part of your body, you can extrude blood through your pores to consume it; the blood will retreat back into your body when its meal is complete. If you have Nerve Tendrils, you can taste your meal by mingling nerve fibers with the blood; otherwise, you will feel only a comforting satiation.</p>)
+}
+const carnationBonemarch: Perk = {
+  id: "carnation-bonemarch",
+  title: "Bonemarch",
+  cost: -2,
+  prereqs: [carnationAcquaintance],
+  types: ['Infusion'],
+  content: (<p>Your bones harden, becoming unbreakable by any mundane force. At will, you can quickly grow spikes of bone from any part of your skeleton, then retract them when they are no longer needed. You can also grow a shell of bone around the outer surfaces of your body to protect yourself, but this process takes half a minute to complete, and several minutes to undo afterward.</p>)
+}
+const carnationStableShell: Perk = {
+  id: "carnation-stable-shell",
+  title: "Stable Shell",
+  cost: -2,
+  prereqs: [carnationBonemarch],
+  types: ['Infusion'],
+  content: (<p>You can grow a segmented bone shell that allows for some limited movement while protecting the softer parts of your body from harm. If you have Reshaping, you can refine the design of your bone shell to facilitate considerable agility. You can still shed or retract this shell at will, but it will take a few minutes to fully detach from your body.</p>)
+}
+const carnationTentacleHair: Perk = {
+  id: "carnation-tentacle-hair",
+  title: "Tentacle Hair",
+  cost: -1,
+  prereqs: [carnationAcquaintance],
+  types: ['Infusion'],
+  content: (<p>Any hair growing on your body is removed, and sufficiently dense patches of hair are replaced by clusters of sleek blood vessels with cores of nerve fiber. By default this applies to the hair on the head, groin, and armpits of a human body; with Reshaping, you can alter the distribution of your Tentacle Hair however you like. Your Tentacle Hair can sense similarly to a Nerve Tendril but more dimly, and digest similarly to Porosity but more slowly, without directly extending blood or nerves through its surface. If you have those perks, your Tentacle Hair's efficiency increases to match. Tentacle Hair is fully prehensile, and each pencil-thick strand has similar lifting capacity to a human arm.</p>)
+}
+const carnationTrueConnection: Perk = {
+  id: "carnation-true-connection",
+  title: "True Connection",
+  cost: -2,
+  prereqs: [carnationReshaping, carnationRefinedTendrils, carnationTentacleHair],
+  types: ['Infusion'],
+  content: (<p>Tentacle Hair cannot normally infiltrate a body. Now it is your most powerful tool for doing so. Touch your Tentacle Hair to the surface of any living thing, and extend fine, threadlike nerve tendrils into their form. Your sense-sharing will be vastly superior to what Refined Tendrils can offer, and with enough patience you can even dimly sense their thoughts. As for their biological structure, it is an open book to you, and you can alter it as easily as you read it.</p>)
+}
+const carnationGreaterGrowth: Perk = {
+  id: "carnation-greater-growth",
+  title: "Greater Growth",
+  cost: -2,
+  prereqs: [carnationReshaping, carnationTravelingTendrils, carnationTurningRed, carnationBonemarch],
+  types: ['Outpost', 'Minion'],
+  content: (<p>You have gained a tiny fraction of Carnation's true power. With it, you can design and grow arbitrary structures of flesh, then detach them from your body, where they will continue to function independently. Each structure you create in this way counts as a Minion, whether or not you are also using it as an Outpost. They retain the same connection to you as a Traveling Tendril.</p>)
+}
+const carnationOrificeGate: Perk = {
+  id: "carnation-orifice-gate",
+  title: "Orifice Gate",
+  cost: -2,
+  prereqs: [carnationGreaterGrowth],
+  types: ['Gateway'],
+  content: (<p>You learn the secrets of Carnation's orifice gates, which can transport travelers rapidly from one place to another along mucus-lined suction tubes that cover greater distances than should be possible. You can include these tubes in your Greater Growths. The exact appearance of the orifice is up to you, but the tube must be stretchy and slick to close around a traveler and pull them to their destination.</p>)
+}
+const worldCarnation = {
+  id: "base-worlds-carnation",
+  title: "Carnation",
+  tagline: "inspired by Qlippoth, an early Conduit fanworld",
+  description: (
+    <>
+    <p>The world of Carnation is at once ecosystem and organism. Streaks and swirls of bioluminescence light its twisting, fleshy passages; open spaces are rare, and often enclosed by walls of bone. The air is often humid, and circulated through pores in the walls that make an eerie whistling sound as Carnation breathes.</p>
+    <p>It has no native independent life; Carnation is Carnation, a unified whole.</p>
+    </>
+  ),
+  conduitDescription: (<p>Those influenced by Carnation are called Incarnates. They tend to become calmer, more curious, and more inclined to seek out and enjoy new experiences. They are also much less bothered by the visceral impact of biology in all its forms, though whether that is an overt influence of the world or a psychological necessity of living in it is hard to say.</p>),
+  perks: [
+    carnationAcquaintance, carnationHardiness, carnationMemoryOfFlesh, carnationReshaping, carnationNerveTendrils,
+    carnationRefinedTendrils, carnationTravelingTendrils, carnationTurningRed, carnationPorosity, carnationBonemarch,
+    carnationStableShell, carnationTentacleHair, carnationTrueConnection, carnationGreaterGrowth, carnationOrificeGate
+  ],
+  crown: {
+    id: "carnation-crown",
+    title: "Crown: Bloodsinger",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those crowned in Carnation are called Bloodsingers, and they have a deep connection to the mind and body of the world.</p>
+      <p>A Bloodsinger can ask Carnation to change its schedule for <PerkLink perk={carnationMemoryOfFlesh} />. The time between clones may not be shorter than a day or longer than a thousand years.</p>
+      <p>A Bloodsinger's <PerkLink perk={carnationReshaping} /> has much finer control and can reshape body parts in place without needing to discard the old one. Brains are still tricky, but the skill is easier to learn.</p>
+      <p><PerkLink perk={carnationTravelingTendrils} /> will take on the properties of <PerkLink perk={carnationTentacleHair} /> if you have both perks.</p>
+      <p><PerkLink perk={carnationPorosity} /> grants telekinetic control over your own blood within a range of a hundred meters.</p>
+      <p><PerkLink perk={carnationStableShell} /> grants telekinetic control over your own bones within a range of a hundred meters.</p>
+      <p>The fine nerve filaments created by <PerkLink perk={carnationTrueConnection} /> can be used to maintain a <PerkLink perk={carnationTravelingTendrils} />-like mental link if you have both perks.</p>
+      <p>You gain an indelible memory for biological patterns you encounter, whether they are created by your powers or explored by your senses.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "carnation-dangers",
+    title: "Dangers",
+    firstTitle: "Digestion",
+    firstContent: (<p>Those who remain in Carnation while foreign to its body risk being subsumed into the whole, analyzed for their biological structure and picked apart for their component nutrients. A Conduit with a connection to the world will most likely be able to gain Acquaintance before losing too much of themselves; a non-Conduit has no such protection.</p>),
+    secondTitle: "Cancer",
+    secondContent: (<p>Though rare, the cancers of Carnation are very hazardous. Some rampage mindlessly through the tunnels, devouring everything in their path until Carnation can capture and subsume them; others lie in wait, disguised as just another organ, patiently consuming all that they touch.</p>),
+    thirdTitle: "Suffocation",
+    thirdContent: (<p>Most of Carnation's tunnels are filled with ordinary air, refreshed and circulated by its respiratory system. In some places, however, the balance of gases is reversed, and an unwary traveler might find themselves unable to breathe. Particularly long orifice gates can also be a problem.</p>)
+  },
+  poi: {
+    id: "carnation-poi",
+    title: "POI",
+    firstTitle: "Brains",
+    firstContent: (<p>Here and there, buried in the walls or covered by domes of skin, a pulsing mass of brain tissue rests at the center of a vast knot of nerve tendrils. The thoughts of Carnation are fragmented and hard to understand, even for those who can perceive them.</p>),
+    secondTitle: "Lungs",
+    secondContent: (<p>Twisting spirals of spongy tissue expand and contract, covered with bright red veins. They seem delicate at first glance, but turn out to be much tougher than they look.</p>),
+    thirdTitle: "Hearts",
+    thirdContent: (<p>Their steady drumbeat can be heard for miles. Up close, it's loud enough to be more felt than heard, a titanic thumping that resonates through the body. Each heart is the size of a cow, and veiled in a thin layer of skin so pale that the heart's vivid red shows through it almost unimpeded. They are most often seen alone, but sometimes a cluster of two or three can be found near a particularly large concentration of lungs.</p>)
+  },
+  breaching: {
+    id: "carnation-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>At a bridge to Carnation, spilled blood lingers bright and fresh indefinitely. Senses sharpen, and vitality increases. The world feels more fresh and interesting.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>The design of an Outpost is up to its creator, but it is always a living organism at least the size of a small hut, rooted in place by firmly anchored tendrils. Often, but not always, an Outpost's master suppresses its instinctive assimilation of whatever it touches; a masterless Outpost is as eager to consume visitors as Carnation itself.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>An orifice gate will swallow anyone who steps through it, pulling them to its other side. They are fast enough that suffocation is usually not a concern.</p>)
+  }
+}
 export const baseWorlds: readonly World[] = [
-  worldEarth, worldBevin, worldPrison, worldRim, worldYomi, worldDesert, worldAether, worldCrucible, worldMu, worldKuiper,
+  worldEarth, worldBevin, worldPrison, worldRim, worldYomi, worldDesert, worldAether, worldCrucible, worldMu, 
+  worldKuiper, worldAcademy, worldRorch, worldArbor, worldBrazen
 ]
