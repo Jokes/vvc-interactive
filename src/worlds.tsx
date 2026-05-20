@@ -2783,7 +2783,7 @@ const worldCarnation = {
   },
   poi: {
     id: "carnation-poi",
-    title: "POI",
+    title: "Organs",
     firstTitle: "Brains",
     firstContent: (<p>Here and there, buried in the walls or covered by domes of skin, a pulsing mass of brain tissue rests at the center of a vast knot of nerve tendrils. The thoughts of Carnation are fragmented and hard to understand, even for those who can perceive them.</p>),
     secondTitle: "Lungs",
@@ -2802,7 +2802,182 @@ const worldCarnation = {
     thirdContent: (<p>An orifice gate will swallow anyone who steps through it, pulling them to its other side. They are fast enough that suffocation is usually not a concern.</p>)
   }
 }
+
+const asphodelSustenance: Perk = {
+  id: "asphodel-sustenance",
+  title: "Sustenance",
+  cost: -1,
+  types: ['Infusion'],
+  content: (<p>The agathodaemons never compete over food and water. Your need for these fades, but not your appreciation, such that you can be satisfied by a few sips of water and a handful of seeds.</p>)
+}
+const asphodelMultifacetedSoul: Perk = {
+  id: "asphodel-multifaceted-soul",
+  title: "Multifaceted Soul",
+  cost: -2,
+  prereqs: [asphodelSustenance],
+  types: ['Infusion'],
+  content: (<p>You may take on aspects of an animal that accords with your current nature and state, taking on the wings of a swallow should you feel wanderlust, or the teeth of a beaver if you long for shelter.</p>)
+}
+const asphodelTransformation: Perk = {
+  id: "asphodel-transformation",
+  title: "Transformation",
+  cost: -3,
+  prereqs: [asphodelMultifacetedSoul],
+  types: ['Infusion'],
+  content: (<p>You may fully take on the form of an animal that feels appropriate for you. These forms are always in good health, and should you be injured, with some meditation you can take on a fully healed animal form. So long as your human form remains alive, you may also perform a similar meditation to return to it.</p>)
+}
+const asphodelWingedSoul: Perk = {
+  id: "asphodel-winged-soul",
+  title: "Winged Soul",
+  cost: -4,
+  prereqs: [asphodelTransformation],
+  types: ['Immortality'],
+  content: (<p>When you would receive fatal wounds, you instead take on the form of an animal smaller and more mobile than your prior shape. Should you repeatedly receive such wounds without meditating upon a larger form, your soul will eventually become fully unburdened and return to Asphodel, where a volunteer will help you gain the form of a baby animal and care for you during your recovery.</p>)
+}
+const asphodelHeartspeech: Perk = {
+  id: "asphodel-heartspeech",
+  title: "Heartspeech",
+  cost: -1,
+  content: (<p>You can always communicate your feelings, needs, and broad intentions, and can understand the same from others regardless of language barriers. Heartspeech is very difficult to use for working on complex plans.</p>)
+}
+const asphodelPlainspeech: Perk = {
+  id: "asphodel-plainspeech",
+  title: "Plainspeech",
+  cost: -2,
+  content: (<p>You can understand and be understood by speakers of any language.</p>)
+}
+const asphodelTruespeech: Perk = {
+  id: "asphodel-truespeech",
+  title: "Truespeech",
+  cost: -2,
+  content: (<p>When you speak honestly, the truth of your intentions and beliefs is clear to your listeners.</p>)
+}
+const asphodelSustainingEmbrace: Perk = {
+  id: "asphodel-sustaining-embrace",
+  title: "Sustaining Embrace",
+  cost: -1,
+  content: (<p>A person cannot die so long as you are holding them. Additionally, your touch causes pain to lessen.</p>)
+}
+const asphodelPsychopompsGrip: Perk = {
+  id: "asphodel-psychopomps-grip",
+  title: "Psychopomp's Grip",
+  cost: -2,
+  prereqs: [asphodelSustainingEmbrace],
+  content: (<p>You can transport the souls of the dead between worlds, no matter how intangible they normally are, so long as you carry them.</p>)
+}
+const asphodelOrpheanMelody: Perk = {
+  id: "asphodel-orphean-melody",
+  title: "Orphean Melody",
+  cost: -1,
+  prereqs: [asphodelPsychopompsGrip],
+  content: (<p>You may lead the souls of the dead between worlds with your music. This is disrupted if the performer looks back, but the dead may encounter obstacles in their travels, so it is best performed with a team. (Agathodaemons will readily help you bring souls to Asphodel.)</p>)
+}
+const asphodelGlade: Perk = {
+  id: "asphodel-glade",
+  title: "Glade",
+  cost: -1,
+  content: (<p>A plot of land in Asphodel has decided to be yours. It will arrange itself primarily according to your sense of beauty and comfort. If brought seeds of foreign plants, it may grow them, should you find these plants beautiful and comforting and should they not pose a danger to other souls.</p>)
+}
+const asphodelTender: Perk = {
+  id: "asphodel-tender",
+  title: "Tender",
+  cost: -1,
+  prereqs: [asphodelGlade],
+  types: ['Outpost'],
+  content: (<p>You have learned how to shape Glades besides your own, for purposes other than your comfort.</p>)
+}
+const asphodelPathOfFlowers: Perk = {
+  id: "asphodel-path-of-flowers",
+  title: "Path of Flowers",
+  cost: -1,
+  prereqs: [asphodelOrpheanMelody, asphodelGlade],
+  types: ['Gateway'],
+  content: (<p>Flowers spring up in your footsteps. These are typically quick to fade, but walking the same path several times can create a lasting trail. These trails can be followed even across the border of Asphodel.</p>)
+}
+const asphodelGentleTouch: Perk = {
+  id: "asphodel-gentle-touch",
+  title: "Gentle Touch",
+  cost: -1,
+  content: (<p>You may send a cooperating person into a deep and peaceful slumber with a simple touch.</p>)
+}
+const asphodelMercifulTouch: Perk = {
+  id: "asphodel-merciful-touch",
+  title: "Merciful Touch",
+  cost: -1,
+  prereqs: [asphodelGentleTouch],
+  content: (<p>You may use attacks you make against another being capable of sleep to painlessly drive them towards a deep and peaceful slumber without risk of injury or death.</p>)
+}
+const asphodelAmnesticTouch: Perk = {
+  id: "asphodel-amnestic-touch",
+  title: "Amnestic Touch",
+  cost: -1,
+  prereqs: [asphodelGentleTouch],
+  content: (<p>You can, with a touch, cause a person to lose memories they find painful.</p>)
+}
+const worldAsphodel = {
+  id: "base-worlds-asphodel",
+  title: "Asphodel",
+  tagline: "by ilzolende, inspired by Pathfinder and Planescape",
+  description: (
+    <>
+    <p>The lands of Asphodel stretch seemingly without bound, lit by a gentle sun each day and bright stars each night. The flora of Asphodel do not compete with each other, seemingly forming into gardens and manicured forests of their own accord. The weather in Asphodel is always clear, with the primary sources of water being rivers fed by mysterious springs and sourceless mist appearing on plants slightly before dawn.</p>
+    <p>Agathodaemons are the most notable population of Asphodel, and take the forms of animals, occasionally with anthropomorphic characteristics. They show compassion towards all, but that compassion often takes the form of encouraging visitors to stay and recuperate, refusing to help visitors they deem insufficiently recovered find bridges. Some agathodaemons work alone or in teams towards strange projects, though they typically refuse assistance with these from anyone they deem insufficiently recovered.</p>
+    </>
+  ),
+  conduitDescription: (<p>Those influenced by Asphodel are called the Blessed. As you spend time and gain perks in Asphodel, your frustrations and resentments become more distant to you, and you become more aware of the harms which others have experienced. Your body takes on aspects of an animal appropriate to your nature. At 20 points spent, you begin to lose memories, starting with traumatic events.</p>),
+  perks: [
+    asphodelSustenance, asphodelMultifacetedSoul, asphodelTransformation, asphodelWingedSoul, asphodelHeartspeech,
+    asphodelPlainspeech, asphodelTruespeech, asphodelSustainingEmbrace, asphodelPsychopompsGrip,
+    asphodelOrpheanMelody, asphodelGlade, asphodelTender, asphodelPathOfFlowers, asphodelGentleTouch,
+    asphodelMercifulTouch, asphodelAmnesticTouch
+  ],
+  crown: {
+    id: "asphodel-crown",
+    title: "Crown: Tranquil",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in Asphodel are called Tranquil, and their desires shape forests. A Tranquil in Asphodel appears supernaturally lucky, and will never be unable to find fulfillment there.</p>
+      <p>Tranquil spread the benefits of <PerkLink perk={asphodelSustenance} /> and <PerkLink perk={asphodelHeartspeech} /> to all around them, can lessen pain around them, and can use <PerkLink perk={asphodelOrpheanMelody} /> to lead a broader range of spirits.</p>
+      <p>Tranquil can take on humanoid forms, regardless of the status of their original body.</p>
+      <p>A Tranquil with <PerkLink perk={asphodelTender} /> can subvert their bond with Asphodel to dig through its normally resistant soil, revealing a panoply of broken and rusted arms and tools whose metals have strange relations to pain.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "asphodel-dangers",
+    title: "Dangers",
+    firstTitle: "Forgetfulness",
+    firstContent: (<p>Asphodel is comforting. Why hold onto painful things like memories and grudges and concerns and your body?</p>),
+    secondTitle: "Repossession Agents",
+    secondContent: (<p>Asphodel hosts many souls which others claim as theirs. These others raid Asphodel to reclaim such souls, often along with interest.</p>),
+    thirdTitle: "Unrepentant Souls",
+    thirdContent: (<p>Some people are taking a while to heal and may attack you if you go near them.</p>)
+  },
+  poi: {
+    id: "asphodel-poi",
+    title: "Rivers",
+    firstTitle: "Pyriphlegethon",
+    firstContent: (<p>The sun sets in and rises from the Pyriphlegethon, infusing its waters with a constant light and warmth.</p>),
+    secondTitle: "River of Dreams",
+    secondContent: (<p>Water drawn from the River of Dreams conveys visions of the good when drunk. These visions are targeted to the one who drew the water, and others who drink from water you drew will see the same visions you do.</p>),
+    thirdTitle: "Kerlaugar",
+    thirdContent: (<p>The Kerlaugar foams with a soapy substance and can be easily used for bathing and laundry. Rumors exist of its usability for cleaning less material things.</p>)
+  },
+  breaching: {
+    id: "asphodel-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Bridges to Asphodel often appear over closed landfills. Winds bring a sense of calm and the scents of strange flowers. Animals near bridges are less likely to feed and reproduce.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>Outposts of Asphodel are glades, typically with perimeters of sturdy evergreens and thick carpets of tough grass. Agathodaemons wander freely, but those who wander to Outposts tend to be more watchful than others.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>Paths of flowers leading to Asphodel do not wilt when trampled, losing only color. They have a tendency to climb slopes or pass through tunnels.</p>)
+  }
+}
+
 export const baseWorlds: readonly World[] = [
   worldEarth, worldBevin, worldPrison, worldRim, worldYomi, worldDesert, worldAether, worldCrucible, worldMu, 
-  worldKuiper, worldAcademy, worldRorch, worldArbor, worldBrazen
+  worldKuiper, worldAcademy, worldRorch, worldArbor, worldBrazen, worldCarnation, worldAsphodel
 ]
