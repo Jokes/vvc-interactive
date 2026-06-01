@@ -2977,7 +2977,920 @@ const worldAsphodel = {
   }
 }
 
+const tellurianCompass: Perk = {
+  id: "tellurian-compass",
+  title: "Compass",
+  cost: -1,
+  types: ['Infusion'],
+  content: (<p>Tellurian has a complex array of magnetic fields, some of which change over time, so a simple compass is rarely useful as a navigational tool. However, you are well-attuned to these magnetic fields, and your sense of direction and distance becomes as distinct as your sense of balance. With a moment's focus, you can sense electrical activity within a few yards; with a few minutes of meditation, you can extend that sense outward for miles around. If you have a sample of a mineral, you can compare its unique signature to what you sense in your environment and detect large concentrations of it within range.</p>)
+}
+const tellurianAkashic: Perk = {
+  id: "tellurian-akashic",
+  title: "Akashic",
+  cost: -1,
+  prereqs: [tellurianCompass],
+  types: ['Infusion'],
+  content: (<p>You gain a deeper connection to and understanding of the Telluric energy fields. You may enter a deep focus and tap into the memory of the World Soul, allowing you to see past events; it's generally easy to see a few minutes into the past of your current location, but the farther away you look in both time and space, the harder and more turbulent the process becomes. Looking back a day or more can be as draining as running a marathon, and the memories can spin out of control and begin showing scattered fragments related more by free association than by proximity in time or space.</p>)
+}
+const tellurianLift: Perk = {
+  id: "tellurian-lift",
+  title: "Lift",
+  cost: -1,
+  types: ['Gateway'],
+  content: (<p>You can levitate up or down at will, and walk on thin air as though it were a solid surface. Your maximum speed is 10 ft/s per point spent in Tellurian, and the maximum carrying capacity of your levitation and airwalking is 100lbs per point spent in Tellurian. You can spend three days enchanting a stone platform to grant it this levitation effect, but if not built within a <ShallowPerkLink pid="tellurian-foundation" ptitle="Foundation"/> tower, the platform will be unstable and difficult to control.</p>)
+}
+const tellurianFerromagnetism: Perk = {
+  id: "tellurian-ferromagnetism",
+  title: "Ferromagnetism",
+  cost: -1,
+  prereqs: [tellurianLift],
+  content: (<p>You can use finely controlled magnetism to move ferromagnetic metals (iron, nickel, cobalt, and their alloys). Tendrils of faint blue energy extend from your body to grasp and manipulate the metal. Most sand in Tellurian is ferromagnetic. The range of your energy tendrils is 20 feet per point spent in Tellurian, and their total weight limit is 200lbs per point spent in Tellurian.</p>)
+}
+const tellurianBolt: Perk = {
+  id: "tellurian-bolt",
+  title: "Bolt",
+  cost: -1,
+  types: ['Infusion'],
+  content: (<p>You can tap into ambient energy to deliver powerful electrical blasts, or harmlessly disperse eletrical blasts into ambient energy. A few seconds of energy gathering will yield a weak shock that may hurt but rarely harms; a quarter hour of energy gathering will yield a lightning bolt as strong as one drawn from the clouds. This power is intuitive to use, even while distracted, and you will instinctively use it to defend against any sudden electrical discharges you experience. You gather energy slightly faster with each point spent in Tellurian.</p>)
+}
+const tellurianFulgurite: Perk = {
+  id: "tellurian-fulgurite",
+  title: "Fulgurite",
+  cost: -1,
+  prereqs: [tellurianBolt],
+  types: ['Material'],
+  content: (<p>You can melt and refine the sparkling Tellurian sands with intense electrical currents, fusing them into Lightning Glass. Comparable to sandstone in durability, but with the transparency of fine clear glass, it is easy to melt and reshape with the careful application of more lightning. You can create around 1 cubic foot of Lightning Glass per minute for each point spent in Tellurian.</p>)
+}
+const tellurianFoundation: Perk = {
+  id: "tellurian-foundation",
+  title: "Foundation",
+  cost: -2,
+  prereqs: [tellurianFulgurite],
+  types: ['Outpost'],
+  content: (<p>With a week of intellectual and spiritual labor to adjust the flow of leylines, you may conjure a warded tower into existence. Its style and layout are yours to dictate, but it is always tall and sturdy. It is constructed primarily of stone, with some glass, iron, and cotton-like fabrics upholstering its simple furniture. The tower and its contents are extremely durable and well protected against damage and decay, and the tower naturally integrates well with other structures and powers, especially Outposts—though it insists on retaining its tall cylindrical shape. With each point spent in Tellurian, the tower's radius increases by ten feet and its height increases by a tenth of a mile.</p>)
+}
+const tellurianFirmament: Perk = {
+  id: "tellurian-firmament",
+  title: "Firmament",
+  cost: -1,
+  prereqs: [tellurianFoundation, tellurianLift],
+  content: (<p>You can generate a Foundation tower floating in the air, anywhere that stays within your line of sight during construction. It will stand there as stably as though it rested on solid ground, and support ten times its own weight without budging.</p>)
+}
+const tellurianBottledLightning: Perk = {
+  id: "tellurian-bottled-lightning",
+  title: "Bottled Lightning",
+  cost: -1,
+  prereqs: [tellurianFulgurite],
+  content: (<p>By manipulating and fine-tuning the composition of Lightning Glass, you can shape it into a container for Telluric energy. The crudest form of these containers is an unstable capacitor that works as little more than an explosive, but light sources are an easy upgrade from there, and with a little more work you can create batteries, heat sources, and even more complex devices. A light that shines like a candle for a day takes just a minute of work.</p>)
+}
+const tellurianCapturedSpirit: Perk = {
+  id: "tellurian-captured-spirit",
+  title: "Captured Spirit",
+  cost: -2,
+  prereqs: [tellurianBottledLightning, tellurianAkashic],
+  content: (<p>You have mastered one of the most prized achievements of the Telluric Magics: the ability to record mental impressions in Lightning Glass. The simplest way to create Mind Glass is by impressing your thoughts and sensations into a held piece of Lightning Glass in real-time, but with study and practice you can create more complex works, such as skill imprints that facilitate learning or even an immersive dream-like scenario. Anyone can read a piece of Mind Glass at a touch.</p>)
+}
+const tellurianAcademia: Perk = {
+  id: "tellurian-academia",
+  title: "Academia",
+  cost: -2,
+  prereqs: [tellurianFoundation, tellurianAkashic],
+  content: (<p>Your Foundation's base radius is doubled, and you can design its furniture with much finer control and more complex possible results. If you designate one or more rooms as libraries during construction, their shelves will fill with books on scientific subjects such as history, biology, and architecture. The tower has a connection to the World Soul that boosts learning within its walls, with one of two possible polarities: a Light tower makes it easier to learn something the more living people in the same tower have the knowledge, and a Dark tower makes it easier to learn something the more dead people died within any of your towers while having the knowledge. It takes a week-long ritual to realign a tower's polarity.</p>)
+}
+const tellurianBusyWorkshop: Perk = {
+  id: "tellurian-busy-workshop",
+  title: "Busy Workshop",
+  cost: -1,
+  types: ['Minion'],
+  content: (<p>First mold a mixture of clay, blood, vegetable matter and ash into the shape of a creature the size of a toddler, then give it a crude spark of life, choosing a type as you do. Brownies can be taught simple crafting tasks, which they do with precision and diligence, never needing a break. Gremlins are gifted at destruction, disassembly, and sabotage.</p>)
+}
+const tellurianOverflowingParapet: Perk = {
+  id: "tellurian-overflowing-parapet",
+  title: "Overflowing Parapet",
+  cost: -1,
+  prereqs: [tellurianBusyWorkshop, tellurianFoundation],
+  content: (<p>At the top of your tower, you carve runes into a set of four equidistant stones and anoint each carving with alchemically treated rainwater over a period of seven days. Each stone will mold itself into a gargoyle, animating when the treatment is complete. They are capable of movement and flight, despite being made of heavy stone, and can also spit a jet of water with enough force to knock down a grown man. Each tower where you create Gargoyles gains a water reservoir and internal plumbing system; the Gargoyles will keep the reservoir topped up if the rain doesn't.</p>)
+}
+const tellurianLodestoneFactory: Perk = {
+  id: "tellurian-lodestone-factory",
+  title: "Lodestone Factory",
+  cost: -1,
+  prereqs: [tellurianOverflowingParapet, tellurianFerromagnetism],
+  types: ['Minion'],
+  content: (<p>Advancing the craft of minion creation through metallurgy, you become capable of forging Constructs, entities composed of a stone body wrapped in a metal skin that uses a combination of magic and controlled magnetism for movement. Their strong, durable bodies are highly resistant to magic. The construction process is well-optimized for a humanoid form, but with significant effort you can create Constructs with other body layouts. Changing a Construct's chassis is nearly impossible without destroying it.</p>)
+}
+const tellurianTruesoulAltar: Perk = {
+  id: "tellurian-truesoul-altar",
+  title: "Truesoul Altar",
+  cost: -3,
+  prereqs: [tellurianAkashic, tellurianFoundation],
+  types: ['Infusion', 'Immortality'],
+  content: (<p>You have learned the terrible truth of the World Soul. Tellus, this world's creator, built it in an effort to gain ultimate knowledge. His success overwhelmed him; what remains of his mind still exists somewhere in the World Soul, as lost as a single tear in a storm-stirred ocean. Tellus is beyond saving, but armed with your knowledge of his mistakes, you can develop a means to ward your mind against the World Soul's uncaring currents. When you die and your mind joins with the World Soul, you remain intact, and over the next few days your mind assembles an elemental vessel from air, metallic sand, and energy. This new body, Genius Pura, needs no nourishment and can shift in seconds between a tangible humanoid form and an amorphous floating cloud. Even if your mind itself is damaged, these same protections allow it to heal so long as you have contact with the World Soul. If you die too far from Tellurian, your mind cannot reach the World Soul and this immortality fails.</p>)
+}
+const tellurianColorfulPavilion: Perk = {
+  id: "tellurian-colorful-pavilion",
+  title: "Colorful Pavilion",
+  cost: -2,
+  prereqs: [tellurianCapturedSpirit, tellurianOverflowingParapet],
+  types: ['Minion'],
+  content: (<p>With a month-long ritual, you can create a magical spring and garden within one of your <PerkLink perk={tellurianFoundation} /> towers. With a month of daily rituals inside that garden, you can transform a cooperative subject into a Naga; after the final ritual, they will shed their skin and emerge as a half-human half-serpent, with six arms above and a snake tail below. In this form they shed their skin once a year, emerging in full health with any missing limbs regrown and damage from aging erased. Their multitasking ability increases, but their fertility is greatly reduced; any offspring they have will hatch as humans, usually female.</p>)
+}
+const tellurianEmpyreanTemple: Perk = {
+  id: "tellurian-empyrean-temple",
+  title: "Empyrean Temple",
+  cost: -3,
+  prereqs: [tellurianLodestoneFactory, tellurianFirmament],
+  types: ['Minion'],
+  content: (<p>A Colossus is a massive humanoid construct that functions as a <PerkLink perk={tellurianFoundation} /> tower as well as a very large Minion. It must be at least a hundred feet tall, though you can build larger ones if your <PerkLink perk={tellurianFoundation} /> size limits permit. Its size allows it to power itself using Tellurian's energy currents. With a quick ritual performed inside the Colossus's head, you can join your mind to it and pilot its body directly as an extension of yourself.</p>)
+}
+const worldTellurian = {
+  id: "base-worlds-tellurian",
+  title: "Tellurian",
+  tagline: "by FacelessDude",
+  description: (
+    <>
+    <p>This is a world of deeper valleys and higher mountains, with impressive towers reaching up towards the sky, and even more impressive towers reaching down from it. Energy flows both in the ground and in the heavens, and where the two connect it can be tapped into for power and then molded into magic at the hand of scholars who dedicated their lives to refine the craft.</p>
+    <p>Transcendence of The Mind is the goal of every thinking being in Tellurian; every soul that dies in the world becomes one with the soul of the world itself. Through constant mental refinement, one can achieve a state of unity with the world soul while maintaining a sense of self. To achieve that state, people are constantly seeking to learn and to know more.</p>
+    <p>The world is a lone planet orbiting a sun-like star; it is much larger than Earth and continuously expanding, but at an extremely slow rate. There are two moons and no other planets, except perhaps somewhere among the impossibly distant constellations beyond.</p>
+    </>
+  ),
+  conduitDescription: (<p>Those influenced by Tellurian are called the Aloft. They become more prone to analytical thinking and trying to understand the world systematically and logically. At 5 points they develop a bluish hue in their hair, skin, or eyes, which deepens with each point spent, sometimes passing through a green or purple stage around 10 points before settling into a bold shade of blue or indigo at 15.</p>),
+  perks: [
+    tellurianCompass, tellurianAkashic, tellurianLift, tellurianFerromagnetism, tellurianBolt, tellurianFulgurite,
+    tellurianFoundation, tellurianFirmament, tellurianBottledLightning, tellurianCapturedSpirit, tellurianAcademia,
+    tellurianBusyWorkshop, tellurianOverflowingParapet, tellurianLodestoneFactory, tellurianTruesoulAltar,
+    tellurianColorfulPavilion, tellurianEmpyreanTemple
+  ],
+  crown: {
+    id: "tellurian-crown",
+    title: "Crown: Philosopher",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in Tellurian are called Philosophers.</p>
+      <p>You can memorize any material sample you examine with <PerkLink perk={tellurianCompass} />, and track deposits of it without needing the sample to compare to.</p>
+      <p>Using <PerkLink perk={tellurianAkashic} /> only begins to tire you when looking more than a few weeks into the past, and navigating the confusion of distant memories is more like walking a complex maze than swimming a stormy sea.</p>
+      <p>Individuals in an <PerkLink perk={tellurianAcademia} /> tower still benefit from the tower's polarity by default, but you can set their polarity differently using a one-minute ritual.</p>
+      <p>Platforms you create with <PerkLink perk={tellurianLift} /> remain stable outside your <PerkLink perk={tellurianFoundation} /> towers, and can move horizontally as well as vertically. They require a pilot to do anything more complex than move slowly back and forth along a preset path, but can easily be modified into pilotable vehicles.</p>
+      <p><PerkLink perk={tellurianBusyWorkshop} /> can create a third, combined type called a Hauflin, which is twice as tall as a Brownie or Gremlin and has all the traits of both.</p>
+      <p>By varying the ritual to create a Naga in your <PerkLink perk={tellurianColorfulPavilion} />, you can turn people into other animal-based forms, such as the avian Garuda or mammalian Rakshasa. These still have the same core benefits as the Naga, though their yearly rejuvenation may take a different form.</p>
+      <p>By incorporating Lightning Glass into your Brownies, Gremlins, Hauflins, Gargoyles, Constructs, and Colossi, you can grant them electrical abilities through <PerkLink perk={tellurianBottledLightning} /> or integrated knowledge with <PerkLink perk={tellurianCapturedSpirit} />. With work, you can even make them into true thinking beings.</p>
+      <p>You can shift into your Genius Pura forms and back as easily as you can shift between them. Your biological body will seem to be held in perfect stasis when not in use. If your biological body is destroyed, however, you will need to seek repairs elsewhere before you can use it again.</p>
+      <p>You can create Constructs and Colossi in any shape, and if they have wings, they will be able to fly.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "tellurian-dangers",
+    title: "Dangers",
+    firstTitle: "Not a drop to drink",
+    firstContent: (<p>Tellurian is covered in deserts of metallic sand and tundras of metallic snow. These environments are harsh, and the only rain they see is poured out with catastrophic force by terrible storms. Outside the single small, controlled oasis of civilization, very little life can survive.</p>),
+    secondTitle: "The Headless Titan",
+    secondContent: (<p>A massive colossus of unknown origin that used to destroy everything in its path before someone figured out how to cut off its head. Now, it still stands over its fallen head, but only moves to swat incautious climbers trying to loot its insides for raw materials.</p>),
+    thirdTitle: "Scientia est potentia",
+    thirdContent: (<p>The people of Tellurian have little in the way of advanced technology, but they are smart, educated, and eager to learn. An incautious Conduit, spreading rumors of otherworldly knowledge, might find themselves being pressed for secrets with uncomfortable intensity.</p>)
+  },
+  poi: {
+    id: "tellurian-poi",
+    title: "Heights",
+    firstTitle: "The Spine of the Multiverse",
+    firstContent: (<p>A set of floating towers above a deep valley, guarded by a trio of flying colossi shaped like a bird, a dragon, and a bat. They are rumoured to be the former home of Tellus, the creator of the world, and full of his treasures.</p>),
+    secondTitle: "The Cobalt Rose Coalition",
+    secondContent: (<p>A group of allied settlements with a total population of twenty thousand or so, more than anywhere else in Tellurian. Anyone of any importance is expected to make an appearance there.</p>),
+    thirdTitle: "The Deepest Pit",
+    thirdContent: (<p>A chasm whose depths gleam with a faint orange light, barely visible through the haze of distance. Could this be the world's molten core? How many expeditions have ventured into it? Why is there no sign of any of them except the marks they made and supplies they abandoned along the way? And why are they all so eager to go there in the first place?</p>)
+  },
+  breaching: {
+    id: "tellurian-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Near bridges to Tellurian, people become more naturally inclined to study and research, and more hesitant to act for purposes other than gathering information. Lightning storms also become more frequent. Rarely, a Brownie or Gremlin might cross, and venture forth leaving a trail of repairs or vandalism behind them.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>Wherever a Foundation tower is established, leylines begin to form, spreading out to flow and connect with bridges and other places of power. This makes the influence of Tellurian easy to notice, but hard to trace to its source.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>A Gateway to Tellurian always moves up; the top of an elevator shaft in one world links smoothly to the bottom of an identical shaft in the other, and vice versa. Although Lift is required to construct them, it's possible to remodel them with stairs, ramps, ropes, ladders, mechanical elevators, or even just an empty column. Travelers should note that when moving downward, the bottom of the shaft has no gate effect.</p>)
+  }
+}
+
+const epiphorAstrolabe: Perk = {
+  id: "epiphor-astrolabe",
+  title: "Astrolabe",
+  cost: -1,
+  content: (
+    <p>
+      No matter what paths you chart, you will always have an intuitive sense of direction.<br />
+      This is a true internal compass; if you close your eyes, or similarly orient yourself, you will understand your location according to local directions even if those directions should be alien to your understanding.
+    </p>
+  )
+}
+const epiphorOceanroads: Perk = {
+  id: "epiphor-oceanroads",
+  title: "Oceanroads",
+  cost: -2,
+  prereqs: [epiphorAstrolabe],
+  types: ['Gateway'],
+  content: (
+    <p>
+      The stars of Epiphor speed your journey across any waterlike body large enough to bear the weight of an ocean-going vessel.<br />
+      You will depart in the blink of an eye and arrive just as quickly, passing only as much time in between as you wish. Your arrival is heralded by a wave tall enough to swamp a smaller vessel or upset a larger one.<br />
+      Passengers without Astrolabe or a similar navigational aid may find this rapid transit disorienting.<br />
+      Further, should you seek the gnashing gyre of a Gateway to or from Epiphor, you will find one, if it is there to be found.
+    </p>
+  )
+}
+const epiphorMoonlitSongs: Perk = {
+  id: "epiphor-moonlit-songs",
+  title: "Moonlit Songs",
+  cost: -1,
+  prereqs: [epiphorAstrolabe],
+  content: (
+    <p>
+      When travelling under an open sky, in view of stars natural or artificial, you will hear their distant melodies.<br />
+      The transcendent experience aids in healing to an unnatural degree, mentally as well as physically.<br />
+      When you sing, you may echo the transcendent melancholy of the stars. Though the notes sound achingly lonely, for you they are an unwavering comfort against loneliness.
+    </p>
+  )
+}
+const epiphorSailorsSalvage: Perk = {
+  id: "epiphor-sailors-salvage",
+  title: "Sailors' Salvage",
+  cost: -1,
+  content: (
+    <p>
+      Though harsh and hostile to those who travel it lightly, Epiphor lovingly rewards those who call it a home.<br />
+      Your luck in finding resources and materials is extraordinary within Epiphor, and still exceptional outside it.<br />
+      Scraps and bones wash up just when you need them, and your wandering path stumbles across strangers you would do well to meet. Any resource that passes through your hands lasts a little longer and works a little better than it should, especially on projects that are meaningful to you.<br />
+      But beware—this power belonged first to the Sirens, and they will take note of you once you start to use it.
+    </p>
+  )
+}
+const epiphorSunlitSongs: Perk = {
+  id: "epiphor-sunlit-songs",
+  title: "Sunlit Songs",
+  cost: -1,
+  content: (
+    <>
+    <p>
+      You may have already glimpsed the Sirens, swimming in schools in the mezzo. Now you will meet one.<br />
+      Their almost translucent, slippery skin will remind you of the sea, as will their mournful song, as will their vicious white teeth.<br />
+      This Siren has noticed you, and watched you, and decided that you are their most treasured thing.
+    </p>
+    <p>
+      Every day you spend in Epiphor, there is a chance you will awaken to gifts.<br />
+      Perhaps old fragments of coral, or gemstone, or glass, or time-worn plastic. Perhaps a fresh kill, of a fish or a foe. Perhaps nothing but gentle whispers through external gills, and a promise in song that you are loved.
+    </p>
+    <p>Others under your protection will be protected by and from your Siren.</p>
+    </>
+  )
+}
+const epiphorSaltHymns: Perk = {
+  id: "epiphor-salt-hymns",
+  title: "Salt Hymns",
+  cost: -1,
+  prereqs: [epiphorSunlitSongs],
+  content: (
+    <>
+    <p>
+      You will attract the attention of five separate Sirens.<br />
+      Each will treat you well, though not as dearly as if you only drew the eyes of one.<br />
+      That is because they will constantly be competing with one another - violently, and sometimes fatally.<br />
+      If the others suspect you care more for one, they will likely temporarily ally to slay them.
+    </p>
+    <p>
+      Although the quality and frequency of gifts will increase, this may take a toll on the Conduit.<br />
+      It is always possible to acquire the attention of more Sirens if you only have the eyes of one.<br />
+      But to escape the danger of their rivalry, you must wait until the others are slain, or slay them yourself.<br />
+      If you choose the latter, never again will other Sirens of Epiphor set their eyes or hearts on you - and the one who remains will be more distant, singing more solemn songs.
+    </p>
+    </>
+  )
+}
+const epiphorLeviathan: Perk = {
+  id: "epiphor-leviathan",
+  title: "Leviathan",
+  cost: -3,
+  prereqs: [epiphorSunlitSongs],
+  content: (
+    <p>
+      As you come to understand the Sirens of Epiphor, their cruelties and kindnesses, so too will Epiphor come to understand you. And the Sirens' great caretakers, from their deep-water home, will begin to take an interest.<br />
+      Huge, ageless, without the need for food nor light, the whale-like Leviathans remember Epiphor as it was. They can teach the secrets of shaping liquid as if it were clay, to form weapons, art, or structures. This same discipline lets them carry the sea with them on the rare occasions when they travel to the surface.<br />
+      Unstoppable in combat on Epiphor, they will protect you from any foe that follows you to their beloved ocean—though they will never leave Epiphor, and cannot aid you outside it.<br />
+      Like the Sirens, Leviathans are generous with gifts, both of knowledge and of the lost technology they carry embedded in old wounds.
+    </p>
+  )
+}
+const epiphorCragBasalt: Perk = {
+  id: "epiphor-crag-basalt",
+  title: "Crag Basalt",
+  cost: -1,
+  types: ['Material'],
+  content: (<p>The impossibly black stone of the crags, when planted in shallow seawater, sprouts slowly into strange jagged formations like tangles of teeth. You know how to harvest it safely and sustainably, where to place it so it grows best, and all the tricks of shaping it into useful or beautiful forms.</p>)
+}
+const epiphorShiveringForests: Perk = {
+  id: "epiphor-shivering-forests",
+  title: "Shivering Forests",
+  cost: -1,
+  types: ['Material'],
+  content: (
+    <p>Aquatic wood from the mezzo, flexible as bamboo, but strong as teak when properly dried.<br />
+    It can only take root in salt water deep enough to hide all but a glimmer of natural light, and grows ever taller seeking the glow of the distant sky.<br />
+    When cultivated, Shivering Kelp attracts bountiful fish and smaller ocean plants. A flourishing forest might even draw the notice of a curious school of Sirens.
+</p>
+  )
+}
+const epiphorVentways: Perk = {
+  id: "epiphor-ventways",
+  title: "Ventways",
+  cost: -1,
+  prereqs: [epiphorCragBasalt],
+  types: ['Gateway'],
+  content: (
+    <p>
+      With refined control of the deep basalt, you can grow and shape it into dark stone arches.<br />
+      When fully submerged, these black edifices open to long tunnels, threateningly and swelteringly warm. Their heat holds no danger or discomfort for you, protected as you are by your power over the stone.<br />
+      A traveler might spend hours passing through a ventway, witnessing memories of long-ago Epiphor, the continents and cityscapes that now lie drowned beneath the ocean—only to emerge from the far side of the arch, no more than an armspan from where they started.
+    </p>
+  )
+}
+const epiphorWeatheredVeins: Perk = {
+  id: "epiphor-weathered-veins",
+  title: "Weathered Veins",
+  cost: -1,
+  types: ['Infusion'],
+  content: (
+    <p>
+      Time spent navigating Epiphor leaves you with a near-immunity to the negative effects of water.<br />
+      Heat, cold, the need for breath, crushing pressure, rapid ascent, the sting of salt and the blur of murk—you are never harmed or hindered by any of them.<br />
+      You gain these benefits only when submerged in water, but they linger for a few minutes after you leave it.
+    </p>
+  )
+}
+const epiphorDeepblooded: Perk = {
+  id: "epiphor-deepblooded",
+  title: "Deepblooded",
+  cost: -3,
+  prereqs: [epiphorLeviathan, epiphorWeatheredVeins],
+  types: ['Infusion'],
+  content: (
+    <p>
+      You have embraced Epiphor, and Epiphor has embraced you in turn. The waters of Epiphor are part of you, flowing in your veins if you have them, circulating by other paths if not. <br />
+      Drawing this water out of your body, you can control its motion with finesse, and extend that control to other fluids it touches, so long as the chain of contact to your body remains unbroken. The scope, force, and precision of this ability increase with practice.
+    </p>
+  )
+}
+const epiphorAquaforming: Perk = {
+  id: "epiphor-aquaforming",
+  title: "Aquaforming",
+  cost: -3,
+  prereqs: [epiphorDeepblooded, epiphorVentways, epiphorShiveringForests],
+  types: ['Outpost'],
+  content: (
+    <p>
+      Your mastery of land and sea is profound, and you can shape stone and shed water to create seas where none existed before, or raise new islands above the water. Any such working will take time, months without help, weeks with the aid of Leviathans in Epiphor. Islands you build will be low and rocky, unable to grow far past where the tide can reach.<br />
+      This power can break a wall or flood a city just as easily as it can raise an island or carve a sea, and destruction is always quicker and easier than creation.
+    </p>
+  )
+}
+const epiphorSongsOfYouAndI: Perk = {
+  id: "epiphor-songs-of-you-and-i",
+  title: "Songs of You and I",
+  cost: -5,
+  prereqs: [epiphorOceanroads, epiphorMoonlitSongs, epiphorSailorsSalvage],
+  types: ['Immortality'],
+  content: (
+    <>
+    <p>
+      When you perish, in any time or place, it will be as if gentle hands have slid over your eyes.<br />
+      You will experience a death like sleep, in which you remember a love that promised you it was cruel.<br />
+      The realisation that it only ever loved you will be aching and wonderful, in equal measure.<br />
+      Pain and loss do not exist here; but time will continue to pass.
+    </p>
+    <p>
+      When you awaken, you will be on an unfamiliar beach, wearing the same clothes you died in. Your immediate possessions will be scattered nearby, as though they washed up alongside you; the closer you were to open water when you died, the more of your things will make it to your resting place.<br />
+      Nothing will be lost, no memories, no abilities—<br />
+      Only time.<br />
+      Less than a day, if you died in the waters of Epiphor. Not too long, if you were near another body of water.<br />
+      The farther inland you were, the longer your peaceful rest stretches, to years or centuries or even millennia, until only the eternal Leviathans remember you.
+    </p>
+    <p>This immortality may be given up at any time by returning, with purpose, to the sea.</p>
+    </>
+  )
+}
+const worldEpiphor = {
+  id: "base-worlds-epiphor",
+  title: "Epiphor",
+  tagline: "by amomentarypangregret",
+  description: (
+    <>
+    <p>
+      There is no land between the rising and falling crests of seafoam.<br />
+      What little exposes itself is, itself, a part of the sea -<br />
+      Harsh-cut granules of sand, as much hardened water as it is landfall.
+    </p>
+    <p>Such is Epiphor, an oceanic world composed of near-endless tides.</p>
+    <p>
+      Once, there were landmasses that could have been large enough to serve as continents -<br />
+      Now, there are only the faintest rise of what were once mountain summits.<br />
+      Archipelago chains cast only their lone sandbars to the crested waves, revealing sands as the tides fall.<br />
+      Glistening, worn-down mineral shards give the colourful grains an almost crystalline sheen...
+    </p>
+    <p>Blue, black, and white sands having entrapped the remnants of old stone in their isolates, like stars in a distant sky.</p>
+    <p>
+      When a Conduit seeks to understand Epiphor, some method of travel over the sealanes will be necessary;<br />
+      And with that, caution, for Epiphor may be gentle one moment and vicious the next.<br />
+      The tyranny of waves will beckon interlopers to the depths - where the greatest promise and danger of the world lurk.
+    </p>
+    <p>
+      For, even if - with preparation - a comfortable life might be made of the surface sea and its resources...<br />
+      On plentiful water, rich plant and fish life, and careful understanding of the currents -
+    </p>
+    <p>
+      Below those selfsame tides are four distinct layers.<br />
+      The pull of the surface, hiding old buildings from the Conduits who tried - and failed - to claim Epiphor.<br />
+      The allure of the mezzo, where mighty forests of kelp have grown as strong as any terrestrial tree.<br />
+      The underground mountains of the crags, inverted and tempting the Conduit further with the promise of treasure and death -<br />
+      And the depths, where only flashes of brittle colour disturb the silence of the grave.
+    </p>
+    <p>
+      Of those who visit, few Conduits yet call Epiphor home; even those adapted to the world of the sea.<br />
+      Some lifeforms exist in the oceans, but are poorly documented. Known, in passing, are the Sirens - rarely-seen dwellers of the mezzo, who show themselves largely to beckon visitors further in -<br />
+      Usually, in the hope that they will be ruined.
+    </p>
+    <p>
+      Many of the lifeforms in the depths have peculiar traits adapted to their climes and corner of the sea.<br />
+      Gigantism, bioelectricity, active camouflage, and other - stranger - traits are all to be expected.
+    </p>
+    <p>
+      Few communicate, but that does not indicate a lack of intelligence or sentience; Epiphor is a world of hermits. Hermits who believe every other resident to be a danger -<br />
+      And often act accordingly.
+    </p>
+    </>
+  ),
+  conduitDescription: (
+    <p>
+      Those who spend much of their time as Conduits of Epiphor are known as Navigators.<br />
+      Over time, their skin is likely to show the kiss of the sun, the lash of salt, and the weathered shine of tense muscle.<br />
+      Grits of tiny starsand will cling to hair, reflecting sunlight around them, and the faintest sound of waves can often be heard nearby -<br />
+      Even if none who interact with the Navigator are anywhere near the sea.
+    </p>
+  ),
+  perks: [
+    epiphorAstrolabe, epiphorOceanroads, epiphorMoonlitSongs, epiphorSailorsSalvage, epiphorSunlitSongs, 
+    epiphorSaltHymns, epiphorLeviathan, epiphorCragBasalt, epiphorShiveringForests, epiphorVentways,
+    epiphorWeatheredVeins, epiphorDeepblooded, epiphorAquaforming, epiphorSongsOfYouAndI
+  ],
+  crown: {
+    id: "epiphor-crown",
+    title: "Crown: Songbound",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>
+        Epiphor crowns those whom it loves with song.<br />
+        It is a song of the sea; it echoes in howling wind, in hateful tempest, in gentle tides, and in the whisper of reeds. 
+      </p>
+      <p>
+        Your <PerkLink perk={epiphorAstrolabe} /> can point you in any direction, even an abstract or metaphorical one. If your route contains danger, or may prove unwise, you will hear whispers of warning.<br />
+        <PerkLink perk={epiphorOceanroads} /> you travel will be gentler to your friends, and more forceful to your enemies.
+      </p>
+      <p>
+        A <PerkLink perk={epiphorVentways} /> built near a submerged ruin will allow you to delve into the site, to see memories of its past and collect lost treasures.<br />
+        <PerkLink perk={epiphorMoonlitSongs} /> will tend to your wounds with loving skill. Under an open sky, small injuries will disappear in seconds; larger ones may spend a little time being sewn up by threads of sun-bleached green.
+      </p>
+      <p>
+        Your <PerkLink perk={epiphorSailorsSalvage} /> can find miraculous treasures, so long as you are near the sea where they might wash up.<br />
+        If you have caught the eyes of a Siren, or a few, their understanding of you will deepen. Their gifts will be more thoughtful, and so will their actions.
+      </p>
+      <p>You can grow <PerkLink perk={epiphorCragBasalt} /> or <PerkLink perk={epiphorShiveringForests} /> in a wider range of conditions, and even on land. Where you carve and plant them, pools of seawater will linger, providing comfort, rest, and a memory of Epiphor.</p>
+      <p>
+        Your <PerkLink perk={epiphorWeatheredVeins} /> will broaden their immunity. Weather and water will never trouble you, and you will adapt quickly to even the most alien of oceans.<br />
+        The scale of your <PerkLink perk={epiphorDeepblooded} /> mastery of water becomes enormous, and even very strange fluids can be brought under its sway.
+      </p>
+      <p>Sirens living in your <PerkLink perk={epiphorAquaforming} /> areas will defend them, and their other residents, down to the last drop of pale blood. The stone and seas themselves may rise to the defense, if the need is great - and if you have spent your own blood in defense of Epiphor.</p>
+      <p>
+        The songs you share with Epiphor grant no visible material benefit.<br />
+        Sometimes, a thing does not need to be seen, to be.
+      </p>
+      <p>Should you experience a true and final death as a Conduit, that may not be the end of your story.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "epiphor-dangers",
+    title: "Dangers",
+    firstTitle: "Capriciousness",
+    firstContent: (
+      <p>
+        The apparent moods of Epiphor, like all seas, change rapidly.<br />
+        A gentle sunny day may become a wall of water, crushing all that offends it.<br />
+        Everything not dear to Epiphor is forever at its mercy.
+      </p>
+    ),
+    secondTitle: "Sirens",
+    secondContent: (
+      <p>
+        When not recognised by the schools of Sirens, they will beckon to you their songs, and to death.<br />
+        It will be not be subtle, and yet the temptation will be profound.<br />
+        With nothing around but water, and harsh rocks, and white teeth, sweet songs will promise an end to long voyages.
+      </p>
+    ),
+    thirdTitle: "Old Epiphor",
+    thirdContent: (
+      <p>
+        On days the tides reach their lowest, Earth-like cities will rise from just beneath the depths.<br />
+        Those adapted to Epiphor, or otherwise capable of deep-sea travel, may investigate them for power, knowledge, or adventure's own sake.<br />
+        But the destruction of what Epiphor was is not entirely dead; only dormant.<br />
+        Ancient machines still thrum with uncompleted doctrines; and the Songless, afflicted with horrendous immortality, hunt all those who dare to tread.
+      </p>
+    )
+  },
+  poi: {
+    id: "epiphor-poi",
+    title: "Depths",
+    firstTitle: "Sunlight",
+    firstContent: (
+      <p>
+        Although the waters of the surface may shine in almost any colour perceivable, they are most often a grey-blue, or a misty green.<br />
+        Countless plants, and seas of wrecks from throughout all worlds tempt the unwary.<br />
+        Only rocks and rare sandbars reach above the water as natural outcroppings;<br />
+        And only the dead ruins of Old Epiphor, a superstructure built by Conduits, rusty and rickety platforms, stand as artificial remnants.
+      </p>
+    ),
+    secondTitle: "Twilight",
+    secondContent: (
+      <>
+      <p>
+        The mezzo is where the bulk of all life on Epiphor thrives.<br />
+        Forests of coral and kelp provide everything needed to flourish, for the sea is rich and generous.<br />
+        Here, the Sirens kill and play and sing and dance.<br />
+        It is a dangerous and beautiful place, but welcoming to those who know its secrets.
+      </p>
+      <p>
+        Between the crags are the mysteries of Old Epiphor.<br />
+        These great inverted mountains hide bounties of mineral wealth, structures and the remains of long-dead cities, preserved by salt water...<br />
+        And the occasional metal tomb, a sealed environment like a drowned space-station.<br />
+        Each possesses their own dangers - and their own temptations.
+      </p>
+      </>
+    ),
+    thirdTitle: "Midnight",
+    thirdContent: (
+      <p>
+        Where the depths stop, the seafloor sand is solid nightblack, lit up only by the starry granules of devoured minerals.<br />
+        Walking on the seafloor, the Conduit may stir sparks of starsand to light with every step - a temporary glimmer in the great blackness.<br />
+        It is here the Leviathans rest, processing memories that span universes.<br />
+        In their exhausted eternity, they love little more than warm conversation with those who are kind - and curious conversation with those who are not.
+      </p>
+    )
+  },
+  breaching: {
+    id: "epiphor-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (
+      <p>
+        A sound like waves lapping against waves can be heard, in every direction, constantly.<br />
+        It will sound furious and lethal to most, and as a gentle song to those who have listened carefully.<br />
+        Should the bridge reach open water, this is where Sirens will find precious things for those they care for, taken from those who strayed too close to song -<br />
+        And for whom the Sirens cared not.
+      </p>
+    ),
+    secondTitle: "Outposts",
+    secondContent: (
+      <p>
+        Like basalt has erupted from a breach, and then the geographic cataclysm has filled with water - that is the Outpost.<br />
+        These pools are dangerous. Sirens will make off with anything that is not secured from the fluctuating tides -
+And even the geography itself is hostile to interlopers, though seeming to curve as a welcome touch to those who are loved by Epiphor.<br />
+When formed or controlled by the Songbound, Outposts will lose some of their wild nature. The tides will be gentler, and the Sirens may confront intruders openly to ask their business, armoured in bronze and coral.
+      </p>
+    ),
+    thirdTitle: "Gateways",
+    thirdContent: (
+      <p>
+        Formed from roaring whirlpools or basalt arches, these are safe only to those trusted by Epiphor.<br />
+        The crashing of the waves warns away travelers who would break their bones in its unforgiving currents.<br />
+        To those who hear the song beneath the fury, however - a Conduit, or a sailor whose heart holds room for the sea - the journey through these Gateways is safe and pleasant, though still a little wild.<br />
+        One may even arrive accompanied by a few extra treasures, gifts of the generous sea.
+      </p>
+    )
+  }
+}
+
+const threeRingsFamiliarSpirits: Perk = {
+  id: "three-rings-familiar-spirits",
+  title: "Familiar Spirits",
+  cost: -1,
+  types: ['Minion'],
+  content: (<p>Even an apprentice theurge can summon lesser spirits and win contracts that bind them into paid employment for a mortal lifetime, but Conduits offer something that no normal theurge can offer, not even the Great Masters: the taste of otherworldly skies. In return for allowing them to join you on your journeys (which they can do easily by anchoring themselves to your selfhood, so that they are carried with you wherever and however you travel), these spirits will serve you indefinitely. They can exert no more force than a breath of air, but are useful as scouts, thanks to their ability to move quickly and silently, pass through most walls and barriers, be virtually undetectable to all who do not know their name, and to their numerous spiritual senses, including the ability to determine the name of nearly anything they observe.</p>)
+}
+const threeRingsTutelaryDeity: Perk = {
+  id: "three-rings-tutelary-deity",
+  title: "Tutelary Deity",
+  cost: -2,
+  prereqs: [threeRingsFamiliarSpirits],
+  content: (<p>With a considerable further investment, you can attract the attention of more than just minor spirits. A Tutelary, one of the gods of knowledge who patronized the First Master's ascent and codification of the Three Arts, has found worth in binding themself to you in a similar manner. Though too divine to manifest bodily in the earthly world, they can advise you through a psychic link. The Tutelaries possess oceans of knowledge both deep and wide, and while their knowledge of other worlds may be limited, they can still provide useful advice even in worlds utterly unlike Three Rings, so long as you are connected to that world and have spent at least 5 points on its perks.</p>)
+}
+const threeRingsMacronaut: Perk = {
+  id: "three-rings-macronaut",
+  title: "Macronaut",
+  cost: -2,
+  types: ['Infusion'],
+  content: (<p>A curious adaptability, of both body and mind, often finds its way into the eponymous macronauts, the sailors of the long seas that stretch between one Xeniteia and another. You too can possess this adaptability, allowing you to quickly adjust to even the strangest of environs you might encounter in the Xeniteies, or on other worlds. This perk reserves 1 point's worth of its power to adapt your body and mind to new environments; old adaptations will be discarded and new ones formed over the course of your first day in each place.</p>)
+}
+const threeRingsChrysopoet: Perk = {
+  id: "three-rings-chrysopoet",
+  title: "Chrysopoet",
+  cost: -1,
+  content: (<p>Any who study the Tablets can become an Alchemist, but few possess the dedication and opportunity to go beyond alchemy, and achieve the status of Chrysopoet, like the Great Masters who conjured the golden rings upon which the city is built did. You, as a Conduit of Three Rings, possess the privilege. This perk grants you superlative talent and skill with all forms and techniques of the Alchemic Art, comparable to a lifetime of study and experimentation; but even more, it grants you the ability to inspire the transubstantiation of stardust into materials through pure intent alone, rather than through the synthesis and transmutation of base elements.</p>)
+}
+const threeRingsEcdysiast: Perk = {
+  id: "three-rings-ecdysiast",
+  title: "Ecdysiast",
+  cost: -1,
+  prereqs: [threeRingsMacronaut, threeRingsChrysopoet],
+  types: ['Infusion'],
+  content: (<p>The adaptability of a macronaut is a kind of alchemy, the same kind practiced in the shapechanging parlors of the Outer Ring. You, with your mastery of alchemy, can analyze the essential make-up of a given adaptation and encode it as a sequence of concepts. With a pinch of stardust, you can manifest these concepts with the same ease as any other alchemic formula, changing from one form to another in a single moment. However, many such changes in quick succession can overtax the essential framework of your existence. It would be wise to not perform more ecdyses than the points you've spent in Three Rings without taking at least a day's rest to recover.</p>)
+}
+const threeRingsIronStar: Perk = {
+  id: "three-rings-iron-star",
+  title: "Iron Star",
+  cost: -4,
+  prereqs: [threeRingsChrysopoet],
+  types: ['Material'],
+  content: (<p>Conjured through Theurgy and harnessed through Alchemy, stardust is the economic lifeblood of the city of Three Rings. Collection nets in the Outer Ring unfurl to gather it when it falls from the sky, and seawater refineries all over the city churn day and night to extract it from the waters beneath. But even the stellar spirits who call down the dustshowers cannot create the stardust they summon: only a Star can do that. And you, as a Conduit, can create a Star. First you must build an enormous iron sphere, wrapped in a golden ribbon engraved with arcane sigils and enclosing a small dodecahedral hollow; then, with a spiritual labor akin to <ShallowPerkLink pid="base-bridge-building" ptitle="Bridge Building" />, you can ignite the Star's core into a sort of half-bridge that connects directly to the power of Creation underlying Three Rings. Once complete, the Star will produce just under a tonne of stardust each day, which is enough to meet fifty times the global energy needs of a modern Earth, or about a third of the industrial demands of the Outer Ring.</p>)
+}
+const threeRingsThaumaturge: Perk = {
+  id: "three-rings-thaumaturge",
+  title: "Thaumaturge",
+  cost: -3,
+  content: (<p>As a Chrysopoet directly grasps the power underlying alchemy, a Thaumaturge directly grasps the power underlying theurgy: the nature and perspective of a spirit. The world comes apart under your vision into streams of essence and layers of conceptualization and interpretation. This is a truly piercing sight, blocked only by the most powerful and arcane of barriers. What's more, you can reach along the same new dimensions that your vision spreads to, pushing and pulling and rearranging the concepts of the world around you to work miracles in much the same way the greatest of the stellar spirits do. However, this work is exhausting, both physically and spiritually; you can make only as many deep changes as you have points spent in Three Rings before needing to rest. You also have an unintrusive yet unerring sense for the calling of your name, and if the calling follows a ritual of your own design, you may freely manifest an ethereal avatar in answer.</p>)
+}
+const threeRingsMagicCircle: Perk = {
+  id: "three-rings-magic-circle",
+  title: "Magic Circle",
+  cost: -2,
+  prereqs: [threeRingsThaumaturge],
+  types: ['Gateway'],
+  content: (<p>The ritual summoning circles of theurgy are a specialized tool, able to call on a named spirit or Thaumaturge to manifest within. You can adapt them to much broader usage. By targeting your circle on the name, conceptual framework, and essential composition of any portable object or person, you can create a temporary portal and pull your target through; or, by constructing two magic circles each targeting the other's location by similar means, you can create a stable and lasting passage between them.</p>)
+}
+const threeRingsSleepless: Perk = {
+  id: "three-rings-sleepless",
+  title: "Sleepless",
+  cost: -1,
+  types: ['Infusion'],
+  content: (<p>Those who spend a lifetime studying the Tablets atop Mount Axle often find, in their later years, the desire for sleep steadily fading from their mind, their need for rest satisfied just as well by study and meditation. You too can rest in this way, if you wish to. Each hour you spend in deep contemplation, whether on pure philosophy or on more practical matters, will count for a number of hours of sleep equal to the points you've spent in Three Rings.</p>)
+}
+const threeRingsMnemon: Perk = {
+  id: "three-rings-mnemon",
+  title: "Mnemon",
+  cost: -2,
+  content: (<p>The Great Masters of Alchemy are the Chrysopoets, the Great Masters of Theurgy are the Thaumaturges, and the Great Masters of Astrology are the Mnemones, whose minds have grown beyond the limits of mortal flesh. A Mnemon's memory is flawless, able to capture the entirety of their ongoing stream of consciousness without error or compromise, and endless in its capacity. Given the time to read it all, a Mnemon's mind could contain an entire library's worth of books, and not merely their text, but nuanced interpretations and deep connections between various texts, and between the texts and the rest of the Mnemon's experiences.</p>)
+}
+const threeRingsPlanetarium: Perk = {
+  id: "three-rings-planetarium",
+  title: "Planetarium",
+  cost: -3,
+  prereqs: [threeRingsMnemon],
+  types: ['Outpost'],
+  content: (<p>The laws of motion in the heavens are obscure. The Sun and Moon's tracks are well-worn, but the planets wander along stranger paths, and the dance of the so-called 'fixed' stars is subtler still. Though they may be convoluted, the laws governing these paths are certain and exact, and with dedication a Mnemon might learn them. Beyond their straightforward use in predicting the movements of the heavens, these laws also encode the essential nature of the world of Three Rings. By creating a grand, building-sized orrery that follows these laws, inscribing the names of the stars upon the machinery, and then saturating the atmosphere with gaseous stardust, one can bring the heavens themselves down to earth, in miniature. There can be no surer place to experiment and to learn, as every condition of the Planetarium's interior can be changed, allowing it to mimic the environment of any xeniteia, whether real or imagined.</p>)
+}
+const threeRingsThriceGreat: Perk = {
+  id: "three-rings-thrice-great",
+  title: "Thrice-Great",
+  cost: -3,
+  prereqs: [threeRingsTutelaryDeity, threeRingsIronStar, threeRingsMagicCircle, threeRingsPlanetarium],
+  types: ['Infusion', 'Immortality'],
+  content: (<p>For the First Master, becoming Thrice-Great was a journey of many lifetimes; as a Conduit, you can expedite that process. First, establish a Planetarium atop the peak of Mount Axle, between the faces of the Tablets. Within it, construct the empty shell of an Iron Star. Inscribe a Magic Circle within the Star's central chamber, and summon there your Tutelary Deity, whose great night-dark body can be sustained for a short time by the Planetarium's stardust-saturated air. Then and only then, standing with your Tutelary Deity in the Iron Star's heart, you must ignite it. In the light of Creation, you and your Tutelary Deity are made as one, and your Iron Star ascends to heaven to join its brethren, engraving your essence into the very foundation of Three Rings. From your stellar throne, you may freely manifest in body or spirit anywhere in Three Rings, including its Outposts and Gateways in other worlds, and just as freely call back those manifestations. Even in the face of complete annihilation, you will return to your stellar throne as inevitably as the Sun returns to the horizon.</p>)
+}
+const worldThreeRings = {
+  id: "base-worlds-three-rings",
+  title: "Three Rings",
+  tagline: "by Fib",
+  description: (
+    <>
+    <p>A world covered by a great and wild ocean, know by many names. Scattered across its surface are innumerable floating islands, each one possessed of a strange and unique character, born from the chaotic mix of essences bubbling deep beneath the surface, in the chaos of the abyss. This vast ocean flows in a gentle, circular current, at the center of which lies the enormous Mount Axle, a mountain of solid emerald rising all the way up from the abyss. Carved into the three faces of the mountain's scintillating green apex are the Emerald Tablets, the instructions of the First Master left to guide all who chose to follow in their footsteps, to learn the Three Arts. In the generations that have passed since, many wanderers of the trackless sea have found their way to that great peak and become students of the Tablets, eventually marshalling all their powers to construct a three-ringed city of gold around Mount Axle, for which the world is named.</p>
+    <p>The people of the city of Three Rings, broadly human in character though with a much greater diversity in shapes and sizes than on Earth, divide themselves based on which of the three arts they pursue, and thus also which of the three annular districts they live and work upon. The Alchemists of the Outer Ring are the most numerous, populating the city's manufactories, where they craft every manner of machine and medicine and marvelous materials of all kinds, spun from nothing more than fire, water, and stardust. The Theurges of the Middle Ring are smaller in number, but no less industrious, as they entreat the stellar spirits to descend the night sky and bargain with the spirits for their power and wisdom, and call down rains of stardust to fuel the city. The Astrologers of the Inner Ring gaze upon the vault of heaven sleeplessly, studying the motion of the Sun, Moon, and stars, and the nameless currents of the darkness between them, divining from their studies the names and natures of all things in the heavens and the earth, and through this knowledge, chart the course of the city. The cityfolk are not the only people of this world, however: there are also the xenoi, people of the far-flung Xeniteies, the floating islands caught by the circular current, whose bodies and minds are transformed by the essence rampant of their homeland.</p>
+    </>
+  ),
+  conduitDescription: (<p>The Conduits of Three Rings are known as Smaragdines. After acquiring 5 points of perks from Three Rings, a natural urge to systematize and characterize the world around them begins to arise, along with the appearance of an emerald green sliver in their irises, which grows alongside their investment into Three Rings. By the time they've spent 20 points, their irises are pure and shining like polished emeralds.</p>),
+  perks: [
+    threeRingsFamiliarSpirits, threeRingsTutelaryDeity, threeRingsMacronaut, threeRingsChrysopoet, 
+    threeRingsEcdysiast, threeRingsIronStar, threeRingsThaumaturge, threeRingsMagicCircle, threeRingsSleepless,
+    threeRingsMnemon, threeRingsPlanetarium, threeRingsThriceGreat
+  ],
+  crown: {
+    id: "three-rings-crown",
+    title: "Crown: Visionary",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those crowned in Three Rings are, or will be, known as Visionaries. Their powers are relatively few in number, but great in significance.</p>
+      <p>Their spiritual strength and stamina, as well as the endurance of their essential self, are amplified massively, allowing for tasks such as building a bridge or igniting an <PerkLink perk={threeRingsIronStar} /> to be completed in a fraction of the time they normally take, and for an <PerkLink perk={threeRingsEcdysiast} /> to change their form many more times before needing to rest.</p>
+      <p>The Visionary's <PerkLink perk={threeRingsMagicCircle} />s no longer require the construction of a special ritual space. Any closed loop which they can view the entirety of at once suffices, such as a circular desire path worn into the grass, the frame of a doorway, or even something as simple as forming a circle with their hands or arms will work.</p>
+      <p>If the Visionary is a <PerkLink perk={threeRingsMnemon} />, their mind expands further, becoming akin to a <PerkLink perk={threeRingsPlanetarium} /> unto itself, effortlessly able to trace the state of a well-described system forwards or backwards through simulation. If the Visionary is also <PerkLink perk={threeRingsSleepless} />, time spent simulating systems counts as time spent in contemplation for the purposes of satisfying the need for sleep.</p>
+      <p>If the Visionary is <PerkLink perk={threeRingsThriceGreat} />, whenever they are seated on their stellar throne, not manifesting a body in Three Rings or any other world, they may instead view the worlds they are connected to from a god's perspective, gazing upon the entire world at once, not only its physical form but also its heavenly spirits above, and its essential foundation below. From this vantage point, the Visionary may enact world-spanning miracles and global-scale alchemic formulae, altering the very nature of an entire world, though even for a being of their elevated status such a thing is a monumental exertion, and can only be done sparingly, perhaps even only once within the time of a mortal's lifespan, or else risk dispersing themselves under the strain, and being forced to wait out the time until they can reform upon their stellar throne.</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "three-rings-dangers",
+    title: "Dangers",
+    firstTitle: "Abyssals",
+    firstContent: (<p>While the cityfolk do their best to capture as much of the stardust they call down in showers as they can, it's only natural that they can't collect it all. In fact, a majority of the stardust in any given dustshower ends up beyond their grasp, the water it dissolves into quickly sinking beneath the reach of the refineries' intake pumps. Aqueous stardust is significantly denser than ordinary seawater, and thus it falls down, without stopping, until it finally enters the bubbling, roiling chaos-stuff of the Abyss, at the very foundation of Three Rings, where its latent power is unleashed to fuel the Abyss's eternal fire. However, stardust's capacity for transmutation and transformation is immense, beyond even the Abyss's ability to completely nullify. Sometimes, when just the right mix of stardust and marine snow falls down into the Abyss, instead of being consumed, it consumes the roil, it grows and evolves, it becomes something alive. A beast of dark water and living flame, a dragon in all but name, and one which naturally remembers, in the vaguest way, the world of light above, and which sometimes yearns to return. Even without malice, do not underestimate the ruin that ignorance can wreak.</p>),
+    secondTitle: "Gnosticism",
+    secondContent: (<p>The Mnemones of Three Rings, the great advisors and counselors of the city, are by their nature curious, and that curiosity naturally leads to a liberal attitude with regards to strangers, including Conduits. However, as liberal as they are wont to be, if you prove yourself sufficiently dangerous, whether to the people of the city or to the Mnemones' plans for them, they may seek to bind you within their machinations, carefully prodding you and using your reactions to develop a model of your mind, simulating you in their Planetariums until they have built themselves a manual for how to control you. While such a thing would, by the law, only ever be used to turn you away from the city and assure its safety, it may be difficult for some of the Mnemones to resist the urge to instead seek to turn you into an asset.</p>),
+    thirdTitle: "Warlords",
+    thirdContent: (<p>Huge ships of black steel traverse the long seas, crewed by those who were not satisfied by the great prosperity of the city, who desired more than mere contentment, who stride across the xeniteies with conquest in their hearts, rather than curiosity. Some possess some talent in one or more of the Three Arts, some lead great slave-armies, some collect enormous treasuries of strange artifacts and arcane sorceries plundered from the lands they've conquered, and many have some combination of all three, but only two things unify all such warlords: an insatiable hunger for more; and the ruthless will to use every means at their disposal to acquire it.</p>)
+  },
+  poi: {
+    id: "three-rings-poi",
+    title: "Xeniteies",
+    firstTitle: "Spichoria",
+    firstContent: (<p>The single largest land-mass in terms of area, and the furthest from Mount Axle, essentially a small continent unto itself, dominated by a mountain range, curved onto itself to form two parallel lines connected by a circular arc at one end. The mountains themselves continuously grow as the island's essential nature consumes water and upwellings of abyssal fire into more stone, extending the arms of the mountain range and steadily pushing Spichoria further from the center of the world. The essence of the land likewise dictates the formation of springs of fresh water and veins of living fire to run throughout the mass of the mountains, which forms an almost sort of circulatory system for the island, and which naturally wears away the softest rock to form distinctly habitable cave networks, which occasionally break out into the surface, allowing the locals to take up residence within as is their tradition. Those locals are themselves a small-statured people, who make their living growing food in gardens amidst the plentiful rivers and rocky soil that lines the inside of the mountain range's two arms, and who are remarkably peaceful. The same channels that carry the warm fire of the mountain's heart throughout the cave system are also supernaturally effective conductors of sound, allowing for rapid and easy communication across the entire island, and which has allowed for the complex and massive web of friendship, loyalty, and alliance that helps maintain the island's peace to form.</p>),
+    secondTitle: "Deimonesia",
+    secondContent: (<p>The second largest xeniteia, though still much smaller than Spichoria on account of not consistently growing in size over time. A benighted land, shrouded in thick, dark fog that renders the day little brighter than the night. The land, when it is not cast in this utter darkness, is lit only by the pristmatic flames which occasionally kindle in the deepest chasms and crevices of the island, where last flickers of abyssal flame rising up beneath meet the dark fog of the island and catch anew. These flames possess an animate nature, naturally taking animalic forms once kindled and crawling out from their salamandrine nests. Most eventually flicker and die, but a few are able to crawl high enough to reach the surface, where the island's sparse human population can be found, humans which can serve as capable hosts and symbionts for these prismatic salamanders. One so inhabited gains remarkable powers of regeneration, able to recover nigh-instantly from injuries that would kill a normal human just as quickly, at the expense of sharing one's mind with a temperamental and capricious fire-spirit. The longer an inhabited human goes without drawing on the regenerative warmth of their salamander, the stronger and hotter that salamander grows, eventually beginning to shed its prismatic firelight from their place within their host's chest. At this point, the mind of the human and salamander are likely well-aligned, if not outright unified, and the salamander may begin to spread lesser buds of its into other humans, binding them as subordinates to their primary host in return for granting them a lesser form of regeneration, which in turn characterizes the broadly feudal structure of society on this island. Notably, at the apex of this hierarchy is a Warlord foreign to the island, whose name has been erased through powerful magic and is known only as the Megakleos.</p>),
+    thirdTitle: "The Rhagesai",
+    thirdContent: (<p>Not a single xeniteia, but rather a type or species, numerous in total though still rare to encounter without extensive work to track them across the long seas. They are, in an essential sense, alive, even if they are mostly inorganic in nature. The specifics of their form varies, naturally as individuals of any living kind do, but can be broadly described as having three main parts: a sort of 'bowl' at the base, formed from a porous pink stone, studded with rudder-like protrusions of glass which allow the Rhageisai to steer themselves; a large quantity of similarly pink sand, which serve to host one or a handful of small oases, sporting freshwater, a few palm trees, and possibly a few small animals, which serve as the Rhageisai's primary source of long-term stimulation; and an enormous tree of pink glass at the center of the island which serves as the seat a Rhageisa's consciousness as well as the sail which propels them and allows them to fight the circular current. A Rhageisa controls all of the glass attached to their body, capable of moving and changing its shape at will, even altering its physical characteristics to, such as making it soft instead of hard, flexible instead of rigid, as well as converting loose sand into more glass or glass back into sand, and possesses a powerful kinetic and topological sense for their glass, allowing them to both feel and hear through it, an experience that they nigh-univerally find highly pleasurable. They must be careful not to drain their sand entirely, as the inner surface of their bowl also possesses this sense, but with a painful degree of sensitivity, and is unsuitable for hosting the lifeforms that inhabit their surface. Visiting humans are a rare treat, and when so visited, they will often beckon the visitor to their central tree and try to entice them to stay for as long as possible with whatever sensual pleasures the Rhageisa can offer them. If one participates in such an offering, and stays for a while afterwards, it isn't rare for the Rhageisa to sing of their of past, of an age long-passed when they were the body of a kind and gentle mother-goddess, who cared for and tended to all living things above and below the water, but they were torn apart by one of her children, who in their youth strove to reach beyond the sky, though whether it is history or legend may not be clear.</p>)
+  },
+  breaching: {
+    id: "three-rings-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Near bridges to Three Rings, the scents of seaspray and chemical fumes can be smelled, and things tend to become encrusted with white salt and corroded as if they were exposed to the harsh, salty winds of the seashore.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>Planetariums in other worlds will still possess the character of Three Rings' skies, by default, but with careful attunement by an appropriately trained Mnemon, they be shifted to show the skies of the world they now exist in, allowing for the careful study of their skies and whatever spirits or stranger beings might exist there.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>If a Magic Circle is constructed around a bridge, its summoning can reach through the bridge, allowing for the creation of permanent portals, but also for the summoning of otherworldly beings and artifacts through them without opening any sort of long-term connection, which depending on the conditions of the other world, might be desirable.</p>)
+  }
+}
+
+const vineyardFruitOfTheVine: Perk = {
+  id: "vineyard-fruit-of-the-vine",
+  title: "Fruit of the Vine",
+  cost: -1,
+  types: ['Infusion'],
+  content: (<p>The grapes that grow on every island in the Vineyard are a healthy, nutritious snack, with a very particular effect: the more you eat them, the more your body shifts toward your ideal self-image. People who feel too short grow taller, or the reverse; cosmetic details like skin, hair, eyes, bone structure, muscle development, and fat distribution all rearrange themselves; injuries will tend to heal faster and more cleanly. After enough grapes, you can even end up with elf ears or fox tails. This perk lets you maintain the effects of a year's steady grape consumption no matter how far you get from your supply, actively and ongoingly even in the face of interference, and following your preferences even as your preferences shift over time.</p>)
+}
+const vineyardMakingChanges: Perk = {
+  id: "vineyard-making-changes",
+  title: "Making Changes",
+  cost: -2,
+  prereqs: [vineyardFruitOfTheVine],
+  types: ['Infusion'],
+  content: (<p>After a few years of steady grape consumption, the really big changes start coming in. Whole new functioning limbs, centaur bodies, mermaid tails, size-shifts on the order of several feet or even more, and of course rapid healing of even very severe injury and illness. This is also the level at which you no longer need to worry about aging past your prime even very slowly. Again, this perk will maintain you indefinitely at this level of preference-driven shapechanging, regardless of whether you eat any grapes.</p>)
+}
+const vineyardVineheart: Perk = {
+  id: "vineyard-vineheart",
+  title: "Vineheart",
+  cost: -3,
+  prereqs: [vineyardMakingChanges],
+  types: ['Infusion', 'Immortality'],
+  content: (<p>You become one with the essence of the Vine. Your body is a projection of your deepest self, shifting according to your whim, near-instantly reverting all unwanted change and uninvited harm. However, its reserves are limited. If you reconstruct your body from scratch twice in the same month, you will lose Vineheart's protection and drop down to the Making Changes level until you spend a full year eating several grapes every day.</p>)
+}
+const vineyardTrellis: Perk = {
+  id: "vineyard-trellis",
+  title: "Trellis",
+  cost: -1,
+  prereqs: [vineyardVineheart],
+  content: (<p>Vineheart's buffer now holds as many full reconstructions as your points spent in the Vineyard. It still takes one year of steady grape consumption to restore it when emptied, but when the buffer is only partially depleted, refilling it takes no more than a week of ordinary life.</p>)
+}
+const vineyardSoulseeker: Perk = {
+  id: "vineyard-soulseeker",
+  title: "Soulseeker",
+  cost: -2,
+  prereqs: [vineyardFruitOfTheVine],
+  content: (<p>The protection and support of grape consumption and related perks will now apply to the mind as well as the body, letting you grow at your own pace into your best self and protecting you against external mental injury or influence. This effect supports and accelerates the Vineyard's mental influence on you, but also supports and enhances the ways in which that influence conforms to your own preferences about who you are and who you want to be.</p>)
+}
+const vineyardClaywright: Perk = {
+  id: "vineyard-claywright",
+  title: "Claywright",
+  cost: -1,
+  types: ['Material'],
+  content: (<p>Clay is abundant in the Vineyard, with banks of it by every stream and river, always smooth and easy to work. It takes a special touch, however, to harvest it the right way so that it will soon grow back, and to shape it into forms besides ordinary pottery. With this power, you can harvest several pounds of clay per day from a small bank indefinitely, or more from a large one; and you can transmute your clay into other mundane materials, such as metal or leather or wood, by working and firing it just so. Changing the clay's colour by working your will into it is the easiest such transmutation; more complex ones may be trickier to learn, though you can be assured of figuring them all out eventually.</p>)
+}
+const vineyardClaywake: Perk = {
+  id: "vineyard-claywake",
+  title: "Claywake",
+  cost: -1,
+  prereqs: [vineyardClaywright],
+  content: (<p>You can now give life to your clay creations, creating living plants or animals out of specially worked clay.</p>)
+}
+const vineyardClayfolk: Perk = {
+  id: "vineyard-clayfolk",
+  title: "Clayfolk",
+  cost: -2,
+  prereqs: [vineyardClaywake],
+  content: (<p>The People of the Vine reproduce by sculpting new people out of clay; they usually sculpt babies or children, but for some purposes might choose to make adults instead. Now you can do the same. Note that your creations are not in any way bound to obey you, though they will tend to come out with the vinelings' usual friendly disposition. Note also that the level of care and sophistication you put into sculpting your creations will affect the results; it's normal for one person to put about a year's work into making a baby or small child, and two or three years into making an adult, though collaboration can accelerate the process.</p>)
+}
+const vineyardSelfCreation: Perk = {
+  id: "vineyard-self-creation",
+  title: "Self-Creation",
+  cost: -2,
+  prereqs: [vineyardClayfolk],
+  content: (<p>With significant skill and effort, it's possible to sculpt a person whose base personality is a perfect copy of the artist's: all the same personality traits and inclinations, all the same talents, all the same strengths and weaknesses. Like any Clayfolk, however, they will wake with no memories or skills beyond the basic forms of bodily movement appropriate to their apparent age.</p>)
+}
+const vineyardGlazecraft: Perk = {
+  id: "vineyard-glazecraft",
+  title: "Glazecraft",
+  cost: -2,
+  prereqs: [vineyardClaywright],
+  types: ['Gateway'],
+  content: (<p>Magical glazes allow nonliving clay creations to be imbued with permanent magic. The most common use of glazes, and one of the easiest to master, is artificial springstones that mimic the water sources found naturally on wild islands. Many more applications are possible. A glaze made with a few drops of Conduit blood, for example, can be used to craft linked pairs of portals.</p>)
+}
+const vineyardWingcraft: Perk = {
+  id: "vineyard-wingcraft",
+  title: "Wingcraft",
+  cost: -1,
+  prereqs: [vineyardClaywake, vineyardGlazecraft],
+  content: (<p>A highly specialized but eternally popular discipline: the art of constructing a pair of mechanical wings that fold up into a discreet backpack harness and respond to the wearer as naturally as their own limbs. Living wood is an essential component, and the difficulty of integrating glazes with living material is most of the reason why this craft is so hard to learn. Wings like this are available to buy or borrow on any populated island, but unless you make friends with a top-tier artisan, you'll get far better results by crafting your own.</p>)
+}
+const vineyardStrangeClay: Perk = {
+  id: "vineyard-strange-clay",
+  title: "Strange Clay",
+  cost: -3,
+  prereqs: [vineyardGlazecraft],
+  content: (<p>This power allows you to transmute clay into any material you're deeply familiar with or connected to, even esoteric ones from other worlds. If you have Clayfolk, this allows you to create people imbued with whatever otherworldly energies and materials you have access to through your other perks. If you have Claywake, you can now sculpt proper magic grapevines. Even with just Claywright, your creations are now self-maintaining in the Vineyard style, seamlessly repairing normal wear and tear and staying tidy through all but the worst messes.</p>)
+}
+const vineyardIslet: Perk = {
+  id: "vineyard-islet",
+  title: "Islet",
+  cost: -2,
+  content: (<p>Leashing a wild islet is a tricky and sometimes hazardous endeavour, but you have a gift for it. You know how to sense them on the wind, how to land on them safely, and how to construct and operate the fins and sails and docking ramps and mooring lines that turn an islet from a floating rock into a civilized home. Most islets have a small stream with a claybank, a few trees, and several wild grapevines; you can reliably find ones with enough room for a small but comfortable house next to all that.</p>)
+}
+const vineyardLandcraft: Perk = {
+  id: "vineyard-landcraft",
+  title: "Landcraft",
+  cost: -2,
+  prereqs: [vineyardIslet, vineyardClaywake, vineyardGlazecraft],
+  types: ['Outpost'],
+  content: (<p>You gain the skill and craft to expand your islet naturally and seamlessly with transmuted clay, or even sculpt a new islet from scratch.</p>)
+}
+const worldVineyard = {
+  id: "base-worlds-vineyard",
+  title: "Vineyard",
+  tagline: "a Vinifera Variant original",
+  description: (
+    <>
+    <p>Islands float in an endless sky, with ambient light cycling from bright gold to soft silver and back. Colourful birds roost in the abundant greenery.</p>
+    <p>The People of the Vine are mostly humanoid most of the time, but beyond that, details vary. They tend to be friendly and welcoming, but may be cautious around outsiders.</p>
+    </>
+  ),
+  conduitDescription: (<p>Those influenced by the Vineyard are called Skyfarers. There are no physical effects, and the mental effects always adapt to the psyche of the individual Conduit. With each point spent, a Skyfarer tends to become more resilient, more curious, more compassionate, and more sincere, but to what extent and in what balance may differ widely depending on personality.</p>),
+  perks: [
+    vineyardFruitOfTheVine, vineyardMakingChanges, vineyardVineheart, vineyardTrellis, vineyardSoulseeker,
+    vineyardClaywright, vineyardClaywake, vineyardClayfolk, vineyardSelfCreation, vineyardGlazecraft, vineyardWingcraft,
+    vineyardStrangeClay, vineyardIslet, vineyardLandcraft
+  ],
+  crown: {
+    id: "vineyard-crown",
+    title: "Crown: Entangled",
+    isCrown: true,
+    cost: -5,
+    content: (
+      <>
+      <p>Those Crowned in the Vineyard are called the Entangled, because upon taking up their Crown, they join a hive mind consisting of all other Entangled, alongside a broad range of natives who all have the equivalent of the <PerkLink perk={vineyardVineheart} /> and <PerkLink perk={vineyardSoulseeker} /> powers. Individual identity is easy to maintain within the link, but resistance to the Vineyard's influence is not; even Immutable is not enough to shield the mind against direct contact with the thoughts and feelings of so many People of the Vine.</p>
+      <p>Your <PerkLink perk={vineyardSelfCreation} /> copies can now include your memories and skills as well as your base personality, though they still do not share your Conduit powers.</p>
+      <p>With <PerkLink perk={vineyardVineheart} />, you can split your body into multiple networked duplicates who do share your Conduit powers, increasing your attention and mental capacity appropriately. Developing these duplicates takes time, however: you will be ready for your first duplication after a year, your second after two more years, your third after four more, your fourth after eight more, and so on. This will not allow you to gain points any faster, but will multiply your production of all other physical, mental, and spiritual resources that are part of you, and will allow you to work in multiple worlds simultaneously (though your rate of point gain will be split among them, so if you're gaining points in two worlds you will gain each at half speed).</p>
+      </>
+    )
+  },
+  dangers: {
+    id: "vineyard-dangers",
+    title: "Dangers",
+    firstTitle: "War",
+    firstContent: (<p>Although the People of the Vine are generally a very friendly bunch, they can be fierce indeed if sufficiently provoked.</p>),
+    secondTitle: "Rocs",
+    secondContent: (<p>Outside of civilized areas, wild islands ride the skies, uninhabited except by unsettlingly large birds. To such a creature, you might look like a juicy meal to bring back to the nest.</p>),
+    thirdTitle: "Wind",
+    thirdContent: (<p>Near the inhabited parts of the sky, the air currents are usually predictable, if not always convenient... but if you stray too far from the safe zones mapped by the locals, you could get caught in a wild wind and tossed hundreds or thousands of miles out of your way.</p>)
+  },
+  poi: {
+    id: "vineyard-poi",
+    title: "Skymarks",
+    firstTitle: "The Continent",
+    firstContent: (<p>Where most people live who are into population density. Insofar as the Vineyard has a center of government, it's here.</p>),
+    secondTitle: "The Archipelago",
+    secondContent: (<p>A long string of islands, some moored together, some just steering into the same winds. Tiny islets just following along; massive mini-continents covered edge to edge in a sprawl of buildings; and, most commonly, single mid-sized islands with single mid-sized towns devoted to some specific craft, like trees or pottery or lifesculpting or clockwork. If there's a subject you want to study, there's an island where you're welcome to study it, alongside some of the Vineyard's top specialists.</p>),
+    thirdTitle: "The Moon",
+    thirdContent: (<p>"Chasing the moon" is an idiom for going off into the deep sky, perhaps never to return. There isn't a moon, nor a sun; the ambient light shines equally from all corners of the sky. But if that's true, where exactly did the expression come from?</p>)
+  },
+  breaching: {
+    id: "vineyard-breaching",
+    title: "The Breaching of Worlds",
+    firstTitle: "Bridges",
+    firstContent: (<p>Where the Vineyard touches other worlds, learning is easier and lying is more difficult. Plants grow faster and more healthily, and things stay clean and in good repair longer than you'd expect.</p>),
+    secondTitle: "Outposts",
+    secondContent: (<p>The Vineyard's outposts in other worlds are islets. They may need to be tethered in place to prevent them from drifting away on the wind. It's possible, though tricky, to coax one to settle on the surface of a body of water; getting them to integrate with another landmass is right out. If they do start to drift, the bridge they're built on will likely snap, leaving them unmoored and disconnected until a new one can be stably built.</p>),
+    thirdTitle: "Gateways",
+    thirdContent: (<p>A glazed portal built across a bridge. They may be simple and sturdy, or ornately engraved, depending on the whims of the artisan.</p>)
+  }
+}
+
 export const baseWorlds: readonly World[] = [
   worldEarth, worldBevin, worldPrison, worldRim, worldYomi, worldDesert, worldAether, worldCrucible, worldMu, 
-  worldKuiper, worldAcademy, worldRorch, worldArbor, worldBrazen, worldCarnation, worldAsphodel
+  worldKuiper, worldAcademy, worldRorch, worldArbor, worldBrazen, worldCarnation, worldAsphodel, worldTellurian,
+  worldEpiphor, worldThreeRings, worldVineyard
 ]
