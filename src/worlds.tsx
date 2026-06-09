@@ -25,6 +25,35 @@ export interface World {
   readonly breaching: Triptych;
 }
 
+// export interface WorldPack {
+//   worlds: {[worldId: string]: DehydratedWorld};
+//   perks: {[perkId: string]: DehydratedPerk};
+// }
+
+// const dehydratedPerks:  {[perkId: string]: DehydratedPerk} = {};
+// const hydratedPerks:  {[perkId: string]: Perk} = {};
+
+// function hydratePerk(perkId: string) {
+//   getHydratedPerk(perkId);
+// }
+
+// function getHydratedPerk(perkId: string): Perk {
+//   if (hydratedPerks[perkId] != null) {
+//     return hydratedPerks[perkId];
+//   }
+
+//   const dehydratedPerk = dehydratedPerks[perkId];
+//   // hydrate prereqs 
+//   const hydratedPrereqs = dehydratedPerk.prereqs?.map((prereqPerkId) => {
+//     return getHydratedPerk(prereqPerkId);
+//   });
+
+//   const hydratedPerk = {...dehydratedPerk, prereqs: hydratedPrereqs}
+//   hydratedPerks[perkId] = hydratedPerk;
+
+//   return hydratedPerk;
+// }
+
 function TriptychListing({ tri }: { tri: Triptych }) {
   return (
     <div id={tri.id}>
@@ -2844,12 +2873,14 @@ const asphodelPlainspeech: Perk = {
   id: "asphodel-plainspeech",
   title: "Plainspeech",
   cost: -2,
+  prereqs: [asphodelHeartspeech],
   content: (<p>You can understand and be understood by speakers of any language.</p>)
 }
 const asphodelTruespeech: Perk = {
   id: "asphodel-truespeech",
   title: "Truespeech",
   cost: -2,
+  prereqs: [asphodelPlainspeech],
   content: (<p>When you speak honestly, the truth of your intentions and beliefs is clear to your listeners.</p>)
 }
 const asphodelSustainingEmbrace: Perk = {

@@ -18,10 +18,23 @@ export interface Perk {
   readonly repeatable?: boolean;
   readonly worldtied?: boolean;
   readonly investiture?: boolean;
-  readonly iscrown?: boolean;
+  readonly isCrown?: boolean;
   readonly cost: number;
   readonly content: ReactNode;
 }
+
+// export interface DehydratedPerk {
+//   readonly id: string;
+//   readonly title: string;
+//   readonly types?: readonly PerkType[];
+//   readonly prereqs?: readonly string[];
+//   readonly repeatable?: boolean;
+//   readonly worldtied?: boolean;
+//   readonly investiture?: boolean;
+//   readonly isCrown?: boolean;
+//   readonly cost: number;
+//   readonly content: ReactNode;
+// }
 
 type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -67,7 +80,7 @@ export function ShallowPerkLink({ pid, ptitle }: { pid: string, ptitle: string }
   );
 }
 
-const COSTFORMAT = new Intl.NumberFormat(undefined, { signDisplay: "always" });
+const COST_FORMAT = new Intl.NumberFormat(undefined, { signDisplay: "always" });
 
 function CommaSeparatedList({ items }: { items: ReactNode[] }) {
   if (items.length === 1) {
@@ -89,7 +102,7 @@ export function PerkListing({ perk }: { perk: Perk }) {
   return (
     <div id={perk.id}>
       <div className='perk-title'>
-        <b>{perk.title}</b> | {COSTFORMAT.format(perk.cost)}
+        <b>{perk.title}</b> | {COST_FORMAT.format(perk.cost)}
         {!!perk.prereqs?.length && <> | Requires <CommaSeparatedList items={perk.prereqs?.map((p) => <PerkLink perk={p} />)} /></>}
         {!!perk.types?.length && <> |</>} {perk.types?.map((t) => <PerkTypeIdentifier key={t} perkType={t} />)}
         {perk.repeatable && <> | Repeatable{perk.worldtied && <> (Per World)</>}</>}
@@ -103,7 +116,7 @@ export function PerkListing({ perk }: { perk: Perk }) {
 
 function App() {
   const [count, setCount] = useState(0)
-  const basePerkExtraWorld = {
+  const basePerkExtraWorld: Perk = {
     id: "base-extra-world",
     title: "Extra World",
     cost: -2,
