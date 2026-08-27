@@ -1950,7 +1950,7 @@ const academyWaifu: Perk = {
   cost: -3,
   prereqs: [academyEmptyHeart],
   types: ['Immortality'],
-  content: (<p>Your companion's heart is no longer truly empty, but is filled with you. Your bond surpasses the limits of boundaries between worlds, and acts like a bridge that constantly connects you: you can jump to her and if you have Calling you can pull her to you. Your bond also surpasses the boundary between life and death and if either of you dies, the other can resurrect them by sacrificing a human, Lily, or other person. You can also take her injuries for her, just as she can take yours for you.</p>)
+  content: (<p>Your companion's heart is no longer truly empty, but is filled with you. Your bond surpasses the boundary between life and death, and if either of you dies, the other can sacrifice a person to resurrect them. Either of you can take the other's injuries, as well, and will know if the other is hurt, in danger, or calling you to their side. Your bond also surpasses the limits of time and space: each of you knows in your heart the path leading to the other, and can cross that path in a montage of landmarks to arrive at their side in only a few seconds. No obstacle can bar your way, except for bridges, which are still effortful for a Conduit with Hard Jumps and impassable to a non-Conduit—but with Calling, you can call your Waifu to your side even along a path between worlds.</p>)
 }
 const academyHarem: Perk = {
   id: "academy-harem",
